@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>INFORMATION TECHNOLOGY - SIR BHAVSINHJI POLYTECHNIC INSTITUTE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="website icon" href="img/BPTI.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- AOS Stylesheet -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <!-- Swiper JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      AOS.init({ duration: 1000, once: true });
+      lucide.createIcons();
+    });
+  </script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      AOS.init({ duration: 1000, once: true });
+    });
+  </script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    .typing {
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid #f7b733;
+      animation: typing 3s steps(18) 1s 1 normal both, blink 0.7s step-end infinite;
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #f7b733 }
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-up {
+      animation: fadeUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
+
+    .delay-1 { animation-delay: 0.3s; }
+    .delay-2 { animation-delay: 0.6s; }
+    .delay-3 { animation-delay: 0.9s; }
+    .delay-4 { animation-delay: 1.2s; }
+    .delay-5 { animation-delay: 1.5s; }
+    .delay-6 { animation-delay: 1.8s; }
+    .delay-7 { animation-delay: 2.1s; }
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-700 dark:bg-brandNavy dark:text-gray-100">
+
+
+<!-- Toggle Script -->
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    menu.classList.toggle('hidden');
+  }
+  function toggleSubmenu(id) {
+    const el = document.getElementById(id);
+    el.classList.toggle('hidden');
+  }
+</script>
+
+<!-- Top Info Section -->
+<a href="index.html">
+  <div class="bg-white text-center py-6 shadow-sm border-b border-teal-300">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center sm:justify-start sm:space-x-6">
+      <!-- Logo -->
+      <img src="./img/BPTI.jpg" alt="Logo" class="w-20 h-20 rounded-full border border-green-500 mb-3 sm:mb-0" />
+
+      <!-- Department Text -->
+      <div class="text-center sm:text-left">
+        <h1 class="text-xl sm:text-2xl font-bold text-green-800 tracking-wide uppercase leading-tight">
+          Information Technology Department
+        </h1>
+        <p class="text-sm sm:text-base text-green-700 mt-1 font-medium">
+          Sir Bhavsinhji Polytechnic Institute, Bhavnagar
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+
+<!-- Navbar -->
+<header class="bg-teal-100 shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+    <!-- Semester Dropdown -->
+    <div class="flex items-center space-x-4">
+      <div class="relative group">
+        <button class="flex items-center gap-2 border border-green-600 text-green-800 px-4 py-2 rounded-md hover:bg-green-50">
+          Select Semester
+          <i class="fas fa-chevron-down text-green-600 text-sm"></i>
+        </button>
+        <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border w-40 rounded shadow-md z-50">
+          <li><a href="semester/1st.html" class="block px-4 py-2 hover:bg-green-50">First</a></li>
+          <li><a href="semester/2nd.html" class="block px-4 py-2 hover:bg-green-50">Second</a></li>
+          <li><a href="semester/3rd.html" class="block px-4 py-2 hover:bg-green-50">Third</a></li>
+          <li><a href="semester/4th.html" class="block px-4 py-2 hover:bg-green-50">Fourth</a></li>
+          <li><a href="semester/5th.html" class="block px-4 py-2 hover:bg-green-50">Fifth</a></li>
+          <li><a href="semester/6th.html" class="block px-4 py-2 hover:bg-green-50">Sixth</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Hamburger (Mobile) -->
+    <div class="md:hidden">
+      <button onclick="toggleMenu()" class="text-green-700 focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-6 text-green-900 font-semibold">
+      <a href="index.html" class="hover:text-green-700">Home</a>
+
+      <!-- About Institute Dropdown -->
+      <div class="relative group">
+        <a href="discover_institute.html" class="flex items-center gap-1 hover:text-green-700 cursor-pointer">
+          About Our Institute
+        </a>
+      </div>
+
+      <!-- About Department Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-green-700">
+          Know the Department
+          <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+        </button>
+        <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-64 z-50">
+          <li><a href="discover_dept.html" class="block px-4 py-2 hover:bg-green-50">About Department </a></li>
+          <li><a href="PEO&PSO.html" class="block px-4 py-2 hover:bg-green-50">Dept. PEOs & PSOs</a></li>
+          <li><a href="faculty.html" class="block px-4 py-2 hover:bg-green-50">Faculty</a></li>
+          <li><a href="lab.html" class="block px-4 py-2 hover:bg-green-50">Laboratory</a></li>
+          <li><a href="photo.html" class="block px-4 py-2 hover:bg-green-50">Photo Gallery</a></li>
+        </ul>
+      </div>
+
+      <a href="anounce.html" class="hover:text-green-700">Announcement</a>
+
+      <!-- Student Corner Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-green-700">
+          Student Corner
+          <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+        </button>
+        <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-56 z-50">
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Academic Calendar</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Time Table</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Examination Section</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Online Fees Payment</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Useful Links</a></li>
+        </ul>
+      </div>
+
+      <a href="#" class="hover:text-green-700">Departmental Activities</a>
+      <a href="#" class="hover:text-green-700">Feedback</a>
+    </nav>
+  </div>
+
+  <!-- Mobile Nav (All Links Expanded) -->
+  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-white shadow text-green-800 font-semibold">
+    <a href="#" class="block py-2 border-b">Home</a>
+
+    <!-- About Institute -->
+    <button onclick="toggleSubmenu('institute-sub')" class="w-full text-left py-2 border-b">About Institute <i class="fas fa-chevron-down text-green-600 text-sm"></i></button> 
+    <div id="institute-sub" class="hidden pl-4">
+      
+    </div>
+
+    <!-- About Department -->
+    <button onclick="toggleSubmenu('dept-sub')" class="w-full text-left py-2 border-b">About Department <i class="fas fa-chevron-down text-green-600 text-sm"></i></button>
+    <div id="dept-sub" class="hidden pl-4">
+      <a href="#" class="block py-1">› Discover Department</a>
+      <a href="#" class="block py-1">› From HoD’s Desk</a>
+      <a href="#" class="block py-1">› Dept. Vision & Mission</a>
+      <a href="PEO&PSO.html" class="block py-1">› Dept. PEOs & PSOs</a>
+      <a href="faculty.html" class="block py-1">› Faculty</a>
+      <a href="#" class="block py-1">› Laboratory</a>
+      <a href="#" class="block py-1">› Photo Gallery</a>
+    </div>
+
+    <a href="anounce.html" class="block py-2 border-b">Announcement</a>
+    <a href="#" class="block py-2 border-b">Academics</a>
+
+    <!-- Student Corner -->
+    <button onclick="toggleSubmenu('student-sub')" class="w-full text-left py-2 border-b">Student Corner <i class="fas fa-chevron-down text-green-600 text-sm"></i></button>
+    <div id="student-sub" class="hidden pl-4">
+      <a href="#" class="block py-1">› Academic Calendar</a>
+      <a href="#" class="block py-1">› Time Table</a>
+      <a href="#" class="block py-1">› Examination Section</a>
+      <a href="#" class="block py-1">› Online Fees Payment</a>
+      <a href="#" class="block py-1">› Useful Links</a>
+    </div>
+
+    <a href="#" class="block py-2">Departmental Activities</a>
+  </div>
+
+</header>
+
+
+
+    <!-- ===== HERO ===== -->
+<section class="bg-[#f0f8fc] overflow-x-hidden overflow-y-hidden relative">
+
+      <!-- Background Elements -->
+      <div class="absolute top-[-60px] right-[-60px] w-[400px] h-[400px] bg-pink-200 opacity-20 rounded-full blur-3xl z-0"></div>
+      <div class="absolute left-[-100px] bottom-[-100px] w-[300px] h-[300px] bg-purple-300 opacity-30 rounded-full blur-2xl z-0"></div>
+      <div class="absolute top-20 left-[48%] w-10 z-0">
+        <svg viewBox="0 0 24 24" fill="none">
+          <path d="M4 4c1.5 2 1.5 4 3 6s1.5 4 3 6 1.5 4 3 6" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="absolute top-[10%] left-[20%] w-2 h-2 bg-indigo-500 rounded-full opacity-40 animate-ping"></div>
+      <div class="absolute top-[60%] right-[10%] w-3 h-3 bg-yellow-400 rounded-full opacity-50 animate-ping"></div>
+
+      <!-- Hero Section -->
+      <section class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 py-5 flex flex-col-reverse lg:flex-row items-center gap-12">
+        
+        <!-- Text Column -->
+        <div class="flex-1 text-center lg:text-left space-y-6">
+          <span class="inline-block px-4 py-1 bg-orange-100 text-red-600 rounded-full text-sm font-semibold mb-3 fade-in">
+              🎓 Gujarat’s Trusted IT Department
+            </span>
+
+          <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight space-y-2">
+            <div class="fade-up delay-2">Future-Ready IT</div>
+            <div class="fade-up delay-3">Education &</div>
+            <div class="text-transparent bg-gradient-to-r from-[#fc4a1a] to-[#f7b733] bg-clip-text typing">Career Building</div>
+          </h1>
+
+          <p class="text-gray-600 text-lg max-w-md mx-auto lg:mx-0 fade-up delay-4">
+            Learn with top-tier IT faculty and stay industry-ready. Achieve success with 92% placement in tech roles. Explore career-focused programs in Programming, Networking, AI & more.
+          </p>
+
+          <div class="flex justify-center lg:justify-start gap-4 fade-up delay-5">
+            <a href="#" class="px-6 py-3 bg-gradient-to-r from-purple-500 to-indigo-600 text-white rounded-full shadow hover:scale-105 transition">View Subjects</a>
+            <a href="admission.html" class="px-6 py-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-full shadow hover:scale-105 transition">Admission</a>
+          </div>
+        </div>
+
+        <!-- Student & Cards -->
+        <div class="relative flex-1 fade-up delay-6">
+          <!-- Blurred Background Blobs -->
+          <div class="absolute -top-28 -right-28 w-[350px] h-[350px] bg-purple-300 opacity-20 blur-3xl rounded-full z-0"></div>
+          <div class="absolute -bottom-24 -left-24 w-[250px] h-[250px] bg-orange-200 opacity-30 blur-2xl rounded-full z-0"></div>
+
+          <!-- Dotted SVG BG -->
+          <svg class="absolute -top-10 left-0 w-40 h-40 z-0 opacity-10" viewBox="0 0 100 100">
+            <defs>
+              <pattern id="dots" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+                <circle cx="1" cy="1" r="1" fill="#6366F1" />
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#dots)" />
+          </svg>
+
+          <!-- Student -->
+          <div class="relative z-10 w-fit mx-auto">
+            <img src="img/hero-main.png" class="w-[450px] h-auto rounded-xl shadow-xl" />
+          </div>
+
+          <!-- Card 1 (Top Left) -->
+          <div class="absolute top-[10%] left-[10%] w-48 p-4 bg-white shadow-xl rounded-2xl animate-float z-10">
+            <h3 class="font-bold text-sm text-gray-700">Expret IT Faculty</h3>
+            <p class="text-xs text-gray-400">Certified & experienced</p>
+          </div>
+
+          <!-- Card 2 (Top Right) -->
+          <div class="absolute top-[5%] right-[5%] w-44 p-3 bg-white shadow-xl rounded-2xl animate-float delay-2 z-10">
+            <h3 class="font-bold text-sm text-gray-700">92% Placement Rate</h3>
+            <div class="text-green-500 text-xs mt-1">↑ 2024 Record</div>
+          </div>
+
+          <!-- Card 3 (Bottom Left) -->
+          <div class="absolute bottom-[5%] left-[3%] w-48 p-3 bg-white shadow-xl rounded-2xl animate-float delay-3 z-10">
+            <h3 class="font-bold text-sm text-gray-700">Student Success</h3>
+            <p class="text-xs text-gray-400">Stories from our alumni</p>
+          </div>
+
+          <!-- Card 4 (Bottom Right) -->
+          <div class="absolute bottom-[10%] right-[5%] w-48 p-3 bg-white shadow-xl rounded-2xl animate-float delay-4 z-10">
+            <h3 class="font-bold text-sm text-gray-700">Core IT subjects</h3>
+            <p class="text-xs text-gray-400">AI, PYTHON, JAVA</p>
+          </div>
+        </div>
+    </section>
+
+
+    <!-- Inside IT Department Section with Custom Lightbox -->
+<section class="relative py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto bg-white">
+    <!-- Minimal Header -->
+    <!-- Enhanced Header Section -->
+<div class="relative text-center mb-16 overflow-hidden">
+        <!-- Animated background elements -->
+        <div class="absolute inset-0 z-0 opacity-10">
+            <div class="absolute top-0 left-1/4 w-32 h-32 bg-blue-400 rounded-full filter blur-3xl animate-float-slow"></div>
+            <div class="absolute top-1/3 right-1/4 w-40 h-40 bg-purple-400 rounded-full filter blur-3xl animate-float-medium"></div>
+            <div class="absolute bottom-0 left-1/2 w-28 h-28 bg-teal-400 rounded-full filter blur-3xl animate-float-fast"></div>
+        </div>
+
+        <!-- Header content with AOS animations -->
+        <div class="relative z-10">
+            <span class="inline-block px-5 py-2 text-xs font-semibold tracking-wider text-blue-600 uppercase bg-blue-100/80 rounded-full mb-6 shadow-sm backdrop-blur-sm border border-blue-200"
+                  data-aos="fade-down"
+                  data-aos-delay="100">
+                <i class="fas fa-building mr-2"></i> Campus Showcase
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold mb-4 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-gray-800 to-blue-600"
+                data-aos="fade-up"
+                data-aos-delay="200">
+                Explore Our <span class="whitespace-nowrap">IT Infrastructure</span>
+            </h2>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-blue-400 to-blue-200 rounded-full mx-auto mb-6"
+                 data-aos="zoom-in"
+                 data-aos-delay="300"></div>
+            <p class="text-lg text-gray-600 max-w-2xl mx-auto"
+               data-aos="fade-up"
+               data-aos-delay="400">
+                A visual journey through our state-of-the-art technology facilities
+            </p>
+        </div>
+    </div>
+
+<!-- Add these animations to your stylesheet -->
+<style>
+    @keyframes float-slow {
+        0%, 100% { transform: translateY(0) translateX(0); }
+        50% { transform: translateY(-20px) translateX(10px); }
+    }
+    @keyframes float-medium {
+        0%, 100% { transform: translateY(0) translateX(0); }
+        50% { transform: translateY(-15px) translateX(-15px); }
+    }
+    @keyframes float-fast {
+        0%, 100% { transform: translateY(0) translateX(0); }
+        50% { transform: translateY(10px) translateX(5px); }
+    }
+    @keyframes text-focus {
+        0% { opacity: 0.5; letter-spacing: -0.05em; }
+        100% { opacity: 1; letter-spacing: normal; }
+    }
+    @keyframes line-expand {
+        0% { width: 0; opacity: 0; }
+        100% { width: 6rem; opacity: 1; }
+    }
+    @keyframes fade-in {
+        0% { opacity: 0; transform: scale(0.95); }
+        100% { opacity: 1; transform: scale(1); }
+    }
+    @keyframes fade-in-up {
+        0% { opacity: 0; transform: translateY(10px); }
+        100% { opacity: 1; transform: translateY(0); }
+    }
+    .animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+    .animate-float-medium { animation: float-medium 6s ease-in-out infinite; }
+    .animate-float-fast { animation: float-fast 5s ease-in-out infinite; }
+    .animate-text-focus { animation: text-focus 1s ease-out forwards; }
+    .animate-line-expand { animation: line-expand 0.8s ease-out 0.3s forwards; }
+    .animate-fade-in { animation: fade-in 0.6s ease-out forwards; }
+    .animate-fade-in-up { animation: fade-in-up 0.6s ease-out 0.4s forwards; }
+</style>
+
+    <!-- Modern Image Carousel -->
+    <div class="relative group">
+        <!-- Main Carousel Container -->
+        <div id="campus-gallery" class="relative w-full h-96 md:h-[600px] overflow-hidden rounded-xl shadow-lg">
+            <!-- Slide 1 -->
+            <div class="gallery-slide absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-100">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                     class="w-full h-full object-cover" 
+                     alt="Data Center Campus">
+                <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/70 to-transparent">
+                    <p class="text-white text-sm font-medium">Main Data Center Facility</p>
+                </div>
+            </div>
+            
+            <!-- Slide 2 -->
+            <div class="gallery-slide absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-0">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" 
+                     class="w-full h-full object-cover" 
+                     alt="Network Operations Center">
+                <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/70 to-transparent">
+                    <p class="text-white text-sm font-medium">Network Operations Center</p>
+                </div>
+            </div>
+            
+            <!-- Slide 3 -->
+            <div class="gallery-slide absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-0">
+                <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" 
+                     class="w-full h-full object-cover" 
+                     alt="Security Operations">
+                <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/70 to-transparent">
+                    <p class="text-white text-sm font-medium">Security Operations Center</p>
+                </div>
+            </div>
+            
+            <!-- Slide 4 -->
+            <div class="gallery-slide absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out opacity-0">
+                <img src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" 
+                     class="w-full h-full object-cover" 
+                     alt="Server Room">
+                <div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/70 to-transparent">
+                    <p class="text-white text-sm font-medium">Server Room Complex</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Arrows -->
+        <button id="gallery-prev" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-md transition-all opacity-0 group-hover:opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+            </svg>
+        </button>
+        <button id="gallery-next" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-md transition-all opacity-0 group-hover:opacity-100">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+        </button>
+        
+        <!-- Dot Indicators -->
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2">
+            <button class="gallery-indicator w-2 h-2 rounded-full bg-white/80 transition-all" data-slide="0"></button>
+            <button class="gallery-indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-all" data-slide="1"></button>
+            <button class="gallery-indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-all" data-slide="2"></button>
+            <button class="gallery-indicator w-2 h-2 rounded-full bg-white/30 hover:bg-white/60 transition-all" data-slide="3"></button>
+        </div>
+    </div>
+
+    <!-- Thumbnail Grid -->
+    <div class="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <button class="thumbnail-btn relative h-24 md:h-32 rounded-lg overflow-hidden transition-all hover:opacity-90" data-slide="0">
+            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                 class="w-full h-full object-cover" 
+                 alt="Data Center Thumbnail">
+            <div class="absolute inset-0 bg-black/20 transition-all"></div>
+        </button>
+        <button class="thumbnail-btn relative h-24 md:h-32 rounded-lg overflow-hidden transition-all hover:opacity-90" data-slide="1">
+            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                 class="w-full h-full object-cover" 
+                 alt="NOC Thumbnail">
+            <div class="absolute inset-0 bg-black/20 transition-all"></div>
+        </button>
+        <button class="thumbnail-btn relative h-24 md:h-32 rounded-lg overflow-hidden transition-all hover:opacity-90" data-slide="2">
+            <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                 class="w-full h-full object-cover" 
+                 alt="SOC Thumbnail">
+            <div class="absolute inset-0 bg-black/20 transition-all"></div>
+        </button>
+        <button class="thumbnail-btn relative h-24 md:h-32 rounded-lg overflow-hidden transition-all hover:opacity-90" data-slide="3">
+            <img src="https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+                 class="w-full h-full object-cover" 
+                 alt="Server Room Thumbnail">
+            <div class="absolute inset-0 bg-black/20 transition-all"></div>
+        </button>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const gallery = document.getElementById('campus-gallery');
+            const slides = gallery.querySelectorAll('.gallery-slide');
+            const prevBtn = document.getElementById('gallery-prev');
+            const nextBtn = document.getElementById('gallery-next');
+            const indicators = document.querySelectorAll('.gallery-indicator');
+            const thumbnails = document.querySelectorAll('.thumbnail-btn');
+            
+            let currentSlide = 0;
+            const totalSlides = slides.length;
+            let autoSlideInterval;
+            
+            function showSlide(index) {
+                // Hide all slides
+                slides.forEach(slide => {
+                    slide.classList.remove('opacity-100');
+                    slide.classList.add('opacity-0');
+                });
+                
+                // Show current slide
+                slides[index].classList.remove('opacity-0');
+                slides[index].classList.add('opacity-100');
+                
+                // Update indicators
+                indicators.forEach((indicator, i) => {
+                    if (i === index) {
+                        indicator.classList.remove('bg-white/30');
+                        indicator.classList.add('bg-white/80');
+                    } else {
+                        indicator.classList.remove('bg-white/80');
+                        indicator.classList.add('bg-white/30');
+                    }
+                });
+                
+                currentSlide = index;
+            }
+            
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }
+            
+            function prevSlide() {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(currentSlide);
+            }
+            
+            function startAutoSlide() {
+                autoSlideInterval = setInterval(nextSlide, 5000);
+            }
+            
+            function resetAutoSlide() {
+                clearInterval(autoSlideInterval);
+                startAutoSlide();
+            }
+            
+            // Event listeners
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                resetAutoSlide();
+            });
+            
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                resetAutoSlide();
+            });
+            
+            indicators.forEach(indicator => {
+                indicator.addEventListener('click', function() {
+                    const slideIndex = parseInt(this.getAttribute('data-slide'));
+                    showSlide(slideIndex);
+                    resetAutoSlide();
+                });
+            });
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    const slideIndex = parseInt(this.getAttribute('data-slide'));
+                    showSlide(slideIndex);
+                    resetAutoSlide();
+                });
+            });
+            
+            // Initialize first slide
+            showSlide(0);
+            startAutoSlide();
+            
+            // Pause on hover
+            gallery.addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
+            gallery.addEventListener('mouseleave', startAutoSlide);
+        });
+    </script>
+</section>
+
+
+
+
+    <!-- ===== MODERN STATS SECTION ===== -->
+    <section id="stats" class="relative py-28 overflow-hidden bg-gradient-to-b from-white to-gray-50 dark:from-brandNavy dark:to-brandNavy/90">
+      
+      <!-- Abstract background elements -->
+      <div class="absolute inset-0 overflow-hidden -z-10">
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-purple-400/10 blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-80 h-80 rounded-full bg-pink-400/10 blur-3xl animate-pulse delay-1000"></div>
+        <div class="absolute top-1/3 right-1/3 w-64 h-64 rounded-full bg-blue-400/10 blur-2xl animate-pulse delay-500"></div>
+        
+        <!-- SVG dot grid -->
+        <svg class="absolute top-0 left-0 w-full h-full opacity-10" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid" width="24" height="24" patternUnits="userSpaceOnUse">
+              <circle cx="2" cy="2" r="2" fill="#cbd5e1" />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#grid)" />
+        </svg>
+      </div>
+
+      <!-- Grid container -->
+      <div class="max-w-7xl mx-auto px-6 sm:px-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+
+        <!-- === CARD 1 === -->
+        <div class="group perspective-1000" data-aos="fade-right">
+          <div class="relative h-full transform-style-preserve-3d transition-all duration-700 group-hover:rotate-y-10">
+            <div class="backdrop-blur-xl bg-white/80 dark:bg-brandNavy/80 rounded-2xl p-8 shadow-lg border border-white/30 dark:border-brandNavy/30 overflow-hidden">
+              <div class="absolute -top-10 -right-10 w-32 h-32 rounded-full bg-pink-400/20 blur-xl"></div>
+              <div class="relative z-10 flex flex-col items-center gap-6">
+                <div class="w-20 h-20 rounded-xl bg-white dark:bg-brandNavy shadow-md flex items-center justify-center rotate-45 overflow-hidden">
+                  <div class="-rotate-45">
+                    <svg class="w-8 h-8 text-pink-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                      <path d="M4 19h16M4 15h16M4 11h16M4 7h16M4 3h16" />
+                    </svg>
+                  </div>
+                </div>
+                <h3 class="text-5xl font-extrabold bg-gradient-to-r from-pink-500 to-fuchsia-600 bg-clip-text text-transparent">
+                  <span class="counter" data-target="10" data-suffix="K+">0</span>
+                </h3>
+                <p class="text-lg font-medium text-gray-600 dark:text-gray-300">Diploma Courses</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- === CARD 2 === -->
+        <div class="group perspective-1000" data-aos="fade-up">
+          <div class="relative h-full transform-style-preserve-3d transition-all duration-700 group-hover:rotate-x-10">
+            <div class="backdrop-blur-xl bg-white/80 dark:bg-brandNavy/80 rounded-2xl p-8 shadow-lg border border-white/30 dark:border-brandNavy/30 overflow-hidden">
+              <div class="absolute -bottom-10 -left-10 w-32 h-32 rounded-full bg-purple-400/20 blur-xl"></div>
+              <div class="relative z-10 flex flex-col items-center gap-6">
+                <div class="w-20 h-20 rounded-xl bg-white dark:bg-brandNavy shadow-md flex items-center justify-center">
+                  <svg class="w-8 h-8 text-purple-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M16 14a4 4 0 0 1 4 4v2M4 20v-2a4 4 0 0 1 4-4m8-4a4 4 0 1 0-8 0 4 4 0 0 0 8 0z" />
+                  </svg>
+                </div>
+                <h3 class="text-5xl font-extrabold bg-gradient-to-r from-purple-600 to-indigo-500 bg-clip-text text-transparent">
+                  <span class="counter" data-target="186" data-suffix="+">0</span>
+                </h3>
+                <p class="text-lg font-medium text-gray-600 dark:text-gray-300">Expert Tutors</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- === CARD 3 === -->
+        <div class="group" data-aos="zoom-in">
+          <div class="relative h-full transition-transform duration-500 group-hover:-translate-y-2">
+            <div class="absolute inset-0 rounded-2xl bg-gradient-to-tr from-pink-500 to-fuchsia-600 p-0.5 -z-10"></div>
+            <div class="backdrop-blur-xl bg-white/80 dark:bg-brandNavy/80 rounded-2xl p-8 shadow-lg border border-white/30 dark:border-brandNavy/30 h-full">
+              <div class="flex flex-col items-center gap-6">
+                <div class="w-20 h-20 rounded-full bg-gradient-to-tr from-pink-500 to-fuchsia-600 shadow-lg flex items-center justify-center">
+                  <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M9 12l2 2 4-4M12 22a10 10 0 1 1 0-20 10 10 0 0 1 0 20z" />
+                  </svg>
+                </div>
+                <h3 class="text-5xl font-extrabold text-gray-800 dark:text-white">
+                  <span class="counter" data-target="5" data-suffix="K+">0</span>
+                </h3>
+                <p class="text-lg font-medium text-gray-600 dark:text-gray-300">Certified Courses</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- === CARD 4 === -->
+        <div class="group" data-aos="fade-left">
+          <div class="relative h-full transition-all duration-500 group-hover:scale-[1.03]">
+            <div class="absolute inset-0 rounded-2xl bg-blue-400/20 blur-md group-hover:blur-lg transition-all duration-500 -z-10"></div>
+            <div class="backdrop-blur-xl bg-white/80 dark:bg-brandNavy/80 rounded-2xl p-8 shadow-lg border border-white/30 dark:border-brandNavy/30 h-full">
+              <div class="flex flex-col items-center gap-6">
+                <div class="w-20 h-20 rounded-full bg-blue-100 dark:bg-blue-900/50 shadow-md flex items-center justify-center animate-float">
+                  <svg class="w-8 h-8 text-blue-600 dark:text-blue-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M12 2L20 6l-8 4-8-4 8-4zM12 22V10" />
+                  </svg>
+                </div>
+                <h3 class="text-5xl font-extrabold bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
+                  <span class="counter" data-target="55" data-suffix="K+">0</span>
+                </h3>
+                <p class="text-lg font-medium text-gray-600 dark:text-gray-300">Students</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Clean Campus Mission Section -->
+    <section class="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      <!-- Decorative elements -->
+        <div class="absolute top-0 right-0 w-48 h-48 bg-teal-100 rounded-full opacity-10 -mt-24 -mr-24" 
+          data-aos="fade-left" data-aos-duration="800"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-blue-100 rounded-full opacity-10 -mb-32 -ml-32"
+          data-aos="fade-right" data-aos-duration="800"></div>
+        <div class="absolute inset-0 pattern-dots pattern-gray-200 pattern-opacity-20 pattern-size-4"></div>
+      
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl relative">
+        <!-- Section header with animated underline -->
+        <!-- Enhanced Section Header -->
+        <div class="text-center mb-20 px-4 sm:px-0">
+          <!-- Top decorative accent -->
+          <div class="flex justify-center mb-4" data-aos="fade-up" data-aos-duration="600">
+            <div class="w-16 h-1 bg-gradient-to-r from-blue-400 to-teal-400 rounded-full"></div>
+          </div>
+          
+          <!-- Badge with icon -->
+          <div class="inline-flex items-center px-4 py-2 bg-white rounded-full shadow-sm border border-gray-100 mb-6"
+              data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+            <div class="mr-2 text-blue-500">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" />
+              </svg>
+            </div>
+            <span class="text-sm font-medium text-gray-600">August 12, 2025</span>
+          </div>
+          
+          <!-- Main heading with animated underline -->
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4 relative inline-block"
+              data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+            <span class="relative z-10 px-1 bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent">
+              Our Recent Event
+            </span>
+            <span class="absolute bottom-0 left-0 w-full h-1.5 bg-gray-200 rounded-full overflow-hidden">
+              <span class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-400 to-teal-400 rounded-full transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-700 ease-out"></span>
+            </span>
+          </h2>
+          
+          <!-- Subheading with decorative elements -->
+          <div class="max-w-3xl mx-auto relative" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+            <div class="absolute left-0 top-1/2 w-full h-px bg-gray-100 -z-10"></div>
+            <p class="text-xl text-gray-600 inline-block px-4 bg-white relative">
+              Clean Campus Mission by IT Department
+            </p>
+          </div>
+        </div>
+
+        <!-- Premium Content Grid -->
+        <div class="grid lg:grid-cols-2 gap-16 items-center mb-24">
+          <!-- Luxury Carousel -->
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl border border-white/20 bg-white/5 backdrop-blur-sm group"
+              data-aos="fade-right" data-aos-duration="800">
+            <div class="aspect-w-16 aspect-h-9 relative">
+              <!-- Carousel with parallax effect -->
+              <div class="relative h-full w-full overflow-hidden" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+                <div id="carousel-images" class="h-full w-full flex transition-transform duration-700 ease-out">
+                  <div class="w-full h-full flex-shrink-0 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" 
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" alt="Clean campus mission 1">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  </div>
+                  <div class="w-full h-full flex-shrink-0 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" alt="Clean campus mission 2">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  </div>
+                  <div class="w-full h-full flex-shrink-0 relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80" 
+                        class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000" alt="Clean campus mission 3">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Luxury navigation arrows -->
+              <button onclick="prevMissionImage()" class="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 hover:bg-white hover:scale-110">
+                <i class="fas fa-chevron-left text-gray-700"></i>
+              </button>
+              <button onclick="nextMissionImage()" class="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 z-10 hover:bg-white hover:scale-110">
+                <i class="fas fa-chevron-right text-gray-700"></i>
+              </button>
+              
+              <!-- Premium IT Department badge -->
+              <div class="absolute top-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg flex items-center z-10 border border-white/20">
+                <div class="w-8 h-8 bg-gradient-to-br from-blue-600 to-teal-500 rounded-full flex items-center justify-center mr-2 shadow-sm">
+                  <i class="fas fa-laptop-code text-white text-sm"></i>
+                </div>
+                <span class="text-sm font-medium text-gray-800">IT Department Initiative</span>
+              </div>
+              
+              <!-- Elegant image counter -->
+              <div class="absolute bottom-6 left-6 bg-black/70 text-white text-sm px-3 py-1.5 rounded-full z-10 flex items-center shadow">
+                <i class="fas fa-camera mr-2 text-blue-300"></i>
+                <span id="current-image">1</span>/<span id="total-images">3</span>
+              </div>
+            </div>
+            
+            <!-- Premium thumbnail navigation -->
+            <div class="absolute bottom-6 right-6 flex space-x-3 z-10">
+              <button onclick="goToMissionImage(0)" class="w-12 h-12 rounded-lg overflow-hidden border-2 border-white shadow-lg transition-all duration-300 hover:scale-110 hover:border-blue-300">
+                <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1472&q=80" 
+                    class="w-full h-full object-cover" alt="Thumbnail 1">
+              </button>
+              <button onclick="goToMissionImage(1)" class="w-12 h-12 rounded-lg overflow-hidden border-2 border-white shadow-lg transition-all duration-300 hover:scale-110 hover:border-blue-300">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                    class="w-full h-full object-cover" alt="Thumbnail 2">
+              </button>
+              <button onclick="goToMissionImage(2)" class="w-12 h-12 rounded-lg overflow-hidden border-2 border-white shadow-lg transition-all duration-300 hover:scale-110 hover:border-blue-300">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80" 
+                    class="w-full h-full object-cover" alt="Thumbnail 3">
+              </button>
+            </div>
+          </div>
+          
+          <!-- Premium Content -->
+          <div class="relative" data-aos="fade-left" data-aos-duration="800" data-aos-delay="200">
+            <!-- Floating decorative element -->
+            <div class="absolute -top-6 -left-6 w-24 h-24 bg-teal-100 rounded-full opacity-20 -z-10"></div>
+            
+            <h3 class="text-3xl font-bold text-gray-900 mb-6 leading-tight">
+              <span class="bg-gradient-to-r from-blue-600 to-teal-500 bg-clip-text text-transparent">IT Department</span> Leads Sustainable Campus Initiative
+            </h3>
+            
+            <div class="prose prose-lg text-gray-600 mb-8">
+              <p>On August 12, 2025, our department spearheaded a comprehensive cleaning initiative across the IT campus. Students and faculty collaborated to implement sustainable waste management solutions while beautifying our learning environment.</p>
+              <p>The initiative featured our department's innovative <span class="font-semibold text-blue-600">smart waste tracking system</span> and <span class="font-semibold text-teal-600">digital volunteer coordination platform</span>.</p>
+            </div>
+            
+            <!-- Stats cards with hover effects -->
+            <div class="grid sm:grid-cols-2 gap-5 mb-8">
+              <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                <div class="flex items-center">
+                  <div class="bg-blue-100 p-3 rounded-xl mr-4 shadow-inner">
+                    <i class="fas fa-users text-blue-600 text-xl"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm text-gray-500 mb-1">Participants</p>
+                    <p class="font-semibold text-gray-900 text-2xl">45+</p>
+                    <p class="text-xs text-gray-400">Students & Faculty</p>
+                  </div>
+                </div>
+              </div>
+              <div class="bg-white p-6 rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1">
+                <div class="flex items-center">
+                  <div class="bg-teal-100 p-3 rounded-xl mr-4 shadow-inner">
+                    <i class="fas fa-recycle text-teal-600 text-xl"></i>
+                  </div>
+                  <div>
+                    <p class="text-sm text-gray-500 mb-1">Waste Processed</p>
+                    <p class="font-semibold text-gray-900 text-2xl">80%</p>
+                    <p class="text-xs text-gray-400">Recycling Rate</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <a href="#" class="inline-flex items-center group text-blue-600 font-medium hover:text-blue-700 transition-colors duration-300">
+              <span class="mr-3">View full event gallery</span>
+              <div class="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center transition-all duration-300 group-hover:bg-blue-200 group-hover:translate-x-1">
+                <i class="fas fa-arrow-right text-blue-600"></i>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Luxury Before/After comparison -->
+        <div class="bg-white rounded-3xl shadow-xl p-10 mb-24 border border-gray-100 relative overflow-hidden"
+            data-aos="fade-up" data-aos-duration="800">
+          <!-- Decorative corner element -->
+          <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-bl-full opacity-20 -z-0"></div>
+          
+          <div class="relative z-10">
+            <h3 class="text-3xl font-bold text-center text-gray-900 mb-8">
+              <span class="relative">
+                <span class="relative z-10">The Remarkable Transformation</span>
+                <span class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-teal-400 transform scale-x-75 -translate-y-1"></span>
+              </span>
+            </h3>
+            
+            <p class="text-lg text-gray-600 mb-12 text-center max-w-3xl mx-auto">
+              Drag the slider to witness the dramatic change in our IT Department campus after the cleanup initiative
+            </p>
+            
+            <div class="relative rounded-2xl overflow-hidden h-96 bg-gray-100 shadow-inner border border-gray-200">
+              <!-- Before image -->
+              <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                  alt="Before cleanup" class="absolute inset-0 w-full h-full object-cover">
+              
+              <!-- After image with resizable width -->
+              <div id="after-container" class="absolute inset-0 overflow-hidden" style="width:50%">
+                <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1474&q=80" 
+                    alt="After cleanup" class="w-full h-full object-cover">
+              </div>
+              
+              <!-- Slider control -->
+              <input type="range" min="0" max="100" value="50" 
+                    class="absolute top-0 bottom-0 w-full h-full opacity-0 cursor-ew-resize z-20" 
+                    id="comparison-slider">
+              
+              <!-- Premium slider handle -->
+              <div id="comparison-handle" class="absolute top-0 bottom-0 w-1.5 bg-white shadow-xl z-10" style="left:50%">
+                <div class="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-xl border-2 border-blue-200 hover:border-blue-300 transition-colors duration-300">
+                  <i class="fas fa-arrows-left-right text-gray-700"></i>
+                </div>
+              </div>
+              
+              <!-- Premium labels -->
+              <div class="absolute top-6 left-6 bg-black/70 text-white px-4 py-1.5 rounded-full text-sm z-10 flex items-center shadow">
+                <i class="fas fa-calendar-times mr-2 text-blue-300"></i>
+                Before: August 10
+              </div>
+              <div class="absolute top-6 right-6 bg-black/70 text-white px-4 py-1.5 rounded-full text-sm z-10 flex items-center shadow">
+                <i class="fas fa-calendar-check mr-2 text-teal-300"></i>
+                After: August 12
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<style>
+  .pattern-dots {
+    background-image: radial-gradient(currentColor 1px, transparent 1px);
+    background-size: 15px 15px;
+  }
+</style>
+
+<script>
+  // Enhanced Carousel Functionality
+  const carousel = document.getElementById('carousel-images');
+  const images = carousel.querySelectorAll('div');
+  const totalImages = images.length;
+  let currentIndex = 0;
+  let isAnimating = false;
+  
+  // Initialize
+  document.getElementById('total-images').textContent = totalImages;
+  updateCarousel();
+  
+  function updateCarousel() {
+    if (isAnimating) return;
+    
+    isAnimating = true;
+    const offset = -currentIndex * 100;
+    carousel.style.transform = `translateX(${offset}%)`;
+    document.getElementById('current-image').textContent = currentIndex + 1;
+    
+    // Reset animation flag after transition ends
+    carousel.addEventListener('transitionend', () => {
+      isAnimating = false;
+    }, { once: true });
+  }
+  
+  function goToMissionImage(index) {
+    currentIndex = index;
+    updateCarousel();
+  }
+  
+  function nextMissionImage() {
+    if (isAnimating) return;
+    currentIndex = (currentIndex + 1) % totalImages;
+    updateCarousel();
+  }
+  
+  function prevMissionImage() {
+    if (isAnimating) return;
+    currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+    updateCarousel();
+  }
+  
+  // Auto-rotate carousel with pause/resume
+  let carouselInterval = setInterval(nextMissionImage, 5000);
+  
+  const carouselContainer = document.querySelector('.group');
+  carouselContainer.addEventListener('mouseenter', () => {
+    clearInterval(carouselInterval);
+  });
+  
+  carouselContainer.addEventListener('mouseleave', () => {
+    carouselInterval = setInterval(nextMissionImage, 5000);
+  });
+
+  // Interactive Before/After Comparison
+  const slider = document.getElementById('comparison-slider');
+  const afterContainer = document.getElementById('after-container');
+  const handle = document.getElementById('comparison-handle');
+  
+  slider.addEventListener('input', function() {
+    const value = this.value + '%';
+    afterContainer.style.width = value;
+    handle.style.left = value;
+  });
+  
+  // Enhanced handle dragging
+  let isDragging = false;
+  let startX = 0;
+  let startWidth = 0;
+  
+  handle.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    startWidth = parseFloat(afterContainer.style.width);
+    document.body.style.cursor = 'ew-resize';
+    document.addEventListener('mousemove', handleDrag);
+    document.addEventListener('mouseup', stopDrag);
+    e.preventDefault();
+  });
+  
+  function handleDrag(e) {
+    if (!isDragging) return;
+    
+    const container = afterContainer.parentElement;
+    const rect = container.getBoundingClientRect();
+    const deltaX = e.clientX - startX;
+    const newWidth = startWidth + (deltaX / rect.width) * 100;
+    
+    // Constrain between 0 and 100
+    const percent = Math.max(0, Math.min(newWidth, 100));
+    
+    slider.value = percent;
+    afterContainer.style.width = percent + '%';
+    handle.style.left = percent + '%';
+  }
+  
+  function stopDrag() {
+    isDragging = false;
+    document.body.style.cursor = '';
+    document.removeEventListener('mousemove', handleDrag);
+    document.removeEventListener('mouseup', stopDrag);
+  }
+  
+  // Touch support for mobile devices
+  handle.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startX = e.touches[0].clientX;
+    startWidth = parseFloat(afterContainer.style.width);
+    document.body.style.cursor = 'ew-resize';
+    document.addEventListener('touchmove', handleTouchDrag);
+    document.addEventListener('touchend', stopTouchDrag);
+    e.preventDefault();
+  });
+  
+  function handleTouchDrag(e) {
+    if (!isDragging) return;
+    
+    const container = afterContainer.parentElement;
+    const rect = container.getBoundingClientRect();
+    const deltaX = e.touches[0].clientX - startX;
+    const newWidth = startWidth + (deltaX / rect.width) * 100;
+    
+    // Constrain between 0 and 100
+    const percent = Math.max(0, Math.min(newWidth, 100));
+    
+    slider.value = percent;
+    afterContainer.style.width = percent + '%';
+    handle.style.left = percent + '%';
+  }
+  
+  function stopTouchDrag() {
+    isDragging = false;
+    document.body.style.cursor = '';
+    document.removeEventListener('touchmove', handleTouchDrag);
+    document.removeEventListener('touchend', stopTouchDrag);
+  }
+</script>
+
+
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      .perspective-1000 {
+        perspective: 1000px;
+      }
+      .transform-style-preserve-3d {
+        transform-style: preserve-3d;
+      }
+    </style>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll('.course-card');
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry, index) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animate-card-' + (index + 1));
+            }
+          });
+        }, { threshold: 0.4 });
+
+        cards.forEach(card => observer.observe(card));
+      });
+    </script>
+
+
+<!-- ===== MODERN COURSES SECTION ===== -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    
+    .course-title {
+      font-family: 'Playfair Display', serif;
+    }
+    
+    @keyframes glow {
+      0%, 100% { filter: drop-shadow(0 0 5px currentColor); }
+      50% { filter: drop-shadow(0 0 15px currentColor); }
+    }
+    
+    .glow-icon {
+      animation: glow 8s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+    
+    .animate-float {
+      animation: float 4s ease-in-out infinite;
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; box-shadow: 0 0 20px currentColor; }
+    }
+    
+    .pulse-glow {
+      animation: pulse-glow 7s ease infinite;
+    }
+    
+    .card-1 { background: linear-gradient(145deg, #ffffff 0%, #f0f4ff 100%); }
+    .card-2 { background: linear-gradient(145deg, #fff9f0 0%, #fff0f5 100%); }
+    .card-3 { background: linear-gradient(145deg, #f0fff5 0%, #f0f8ff 100%); }
+    
+    .decorative-circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.1;
+      z-index: 0;
+    }
+    
+    .course-badge {
+      position: absolute;
+      top: -10px;
+      right: 30px;
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      z-index: 2;
+    }
+    
+    .price-tag {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+    
+    .price-tag::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(45deg, transparent 25%, rgba(255,255,255,0.3) 50%, transparent 75%);
+      background-size: 200% 200%;
+      animation: shine 3s infinite;
+    }
+    
+    @keyframes shine {
+      0% { background-position: 100% 100%; }
+      100% { background-position: 0 0; }
+    }
+    @keyframes dropInCard {
+  0% {
+    transform: translateX(-300px) translateY(50px) scale(0.9);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(20px) translateY(-10px) scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+}
+.card-animated-entry {
+  animation: dropInCard 4s ease-out forwards;
+}
+@keyframes from-left {
+  0% { transform: translateX(-300px) scale(0.9); opacity: 0; }
+  100% { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+@keyframes from-bottom {
+  0% { transform: translateY(200px) scale(0.9); opacity: 0; }
+  100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+@keyframes from-right {
+  0% { transform: translateX(300px) scale(0.9); opacity: 0; }
+  100% { transform: translateX(0) scale(1); opacity: 1; }
+}
+
+.animate-card-1 {
+  animation: from-left 1s ease-out forwards;
+}
+.animate-card-2 {
+  animation: from-bottom 1s ease-out forwards;
+}
+.animate-card-3 {
+  animation: from-right 1s ease-out forwards;
+}
+
+
+  </style>
+</head>
+<body class="bg-gray-50">
+
+<!-- Featured Courses Section -->
+
+<script>
+  lucide.createIcons();
+</script>
+
+<section class="relative py-24 px-6 md:px-12 lg:px-28 bg-gradient-to-tr from-white via-slate-50 to-gray-100">
+  <div class="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-16 relative z-10">
+    
+    <!-- Left Content -->
+    <div class="w-full lg:w-1/2" data-aos="fade-right">
+      <span class="inline-block px-4 py-1 bg-red-100 text-red-600 rounded-full text-sm font-semibold mb-3 fade-in">
+          What’s New
+        </span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+         Build <span class="text-indigo-600">IT skills</span> to boost your <span class="text-rose-500">career</span>
+      </h1>
+      <p class="text-gray-600 mb-10"></p>
+
+      <!-- Feature Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <!-- Box 1 -->
+        <div class="flex items-center gap-4 p-4 rounded-2xl border shadow-sm blur-icon-bg" data-aos="fade-up" data-aos-delay="50">
+          <img src="https://cdn-icons-png.flaticon.com/512/2436/2436731.png" class="w-10 h-10" alt="">
+          <p class="text-sm font-medium text-gray-700">Modern curriculum with industry tools</p>
+        </div>
+        <!-- Box 2 -->
+        <div class="flex items-center gap-4 p-4 rounded-2xl border shadow-sm blur-icon-bg" data-aos="fade-up" data-aos-delay="100">
+          <img src="https://cdn-icons-png.flaticon.com/512/4951/4951311.png" class="w-10 h-10" alt="">
+          <p class="text-sm font-medium text-gray-700">Cloud innovation for future readiness</p>
+        </div>
+        <!-- Box 3 -->
+        <div class="flex items-center gap-4 p-4 rounded-2xl border shadow-sm blur-icon-bg" data-aos="fade-up" data-aos-delay="150">
+          <img src="https://cdn-icons-png.flaticon.com/512/857/857681.png" class="w-10 h-10" alt="">
+          <p class="text-sm font-medium text-gray-700">Certifications in top tech stacks</p>
+        </div>
+        <!-- Box 4 -->
+        <div class="flex items-center gap-4 p-4 rounded-2xl border shadow-sm blur-icon-bg" data-aos="fade-up" data-aos-delay="200">
+          <img src="https://cdn-icons-png.flaticon.com/512/1043/1043407.png" class="w-10 h-10" alt="">
+          <p class="text-sm font-medium text-gray-700">Hands-on coding & real projects</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Image -->
+    <div class="w-full lg:w-1/2 relative flex justify-center" data-aos="fade-left">
+      <img src="img/about.png" class="w-[360px] max-w-full z-10 relative" alt="Student">
+      <!-- Floating Icons -->
+      <img src="https://cdn-icons-png.flaticon.com/512/847/847969.png" class="w-12 absolute top-0 left-1/4 animate-float" alt="">
+      <img src="https://cdn-icons-png.flaticon.com/512/906/906175.png" class="w-12 absolute bottom-6 right-1/3 animate-float" alt="">
+      <img src="https://cdn-icons-png.flaticon.com/512/3534/3534139.png" class="w-12 absolute top-20 right-12 animate-float" alt="">
+      <img src="https://cdn-icons-png.flaticon.com/512/4221/4221763.png" class="w-12 absolute bottom-10 left-10 animate-float" alt="">
+    </div>
+  </div>
+
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+   .heading-fancy {
+  font-family: 'Playfair Display', serif;
+}
+
+    .blur-icon-bg {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(14px);
+    }
+  </style>
+</section>
+
+<!-- Animation Scripts -->
+<script>
+  AOS.init({ duration: 1000, once: true });
+</script>
+
+ <!-- Partners Section -->
+<!-- Trusted By Section -->
+<section class="relative bg-gradient-to-br from-green-50 via-teal-50 to-green-100 py-20 overflow-hidden">
+  <div class="text-center mb-12">
+    <span class="inline-block px-4 py-1 bg-green-100 text-green-600 rounded-full text-sm font-semibold mb-3">TRUSTED BY</span>
+    <h2 class="text-4xl font-bold text-gray-800">Our Valued Partners</h2>
+    <p class="text-lg text-gray-600 mt-2">Recognized by top global education & tech brands</p>
+  </div>
+
+  <!-- Elevator container -->
+  <div class="relative h-44 overflow-hidden">
+    <div class="elevator-track space-y-10">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 place-items-center">
+        <img src="./img/partners/coursera.png" class="h-14 object-contain" />
+        <img src="./img/partners/udemy.webp" class="h-14 object-contain" />
+        <img src="./img/partners/edx.png" class="h-14 object-contain" />
+        <img src="./img/partners/open.png" class="h-14 object-contain" />
+        <img src="./img/partners/google.png" class="h-14 object-contain" />
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 place-items-center">
+        <img src="./img/partners/microsoft.png" class="h-14 object-contain" />
+        <img src="./img/partners/ibm.png" class="h-14 object-contain" />
+        <img src="./img/partners/nvidia.png" class="h-14 object-contain" />
+        <img src="./img/partners/linkedin.png" class="h-14 object-contain" />
+        <img src="./img/partners/simplilearn.png" class="h-14 object-contain" />
+      </div>
+      <!-- Clone both rows for infinite loop -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 place-items-center">
+        <img src="./img/partners/coursera.png" class="h-14 object-contain" />
+        <img src="./img/partners/udemy.webp" class="h-14 object-contain" />
+        <img src="./img/partners/edx.png" class="h-14 object-contain" />
+        <img src="./img/partners/open.png" class="h-14 object-contain" />
+        <img src="./img/partners/google.png" class="h-14 object-contain" />
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 place-items-center">
+        <img src="./img/partners/microsoft.png" class="h-14 object-contain" />
+        <img src="./img/partners/ibm.png" class="h-14 object-contain" />
+        <img src="./img/partners/nvidia.png" class="h-14 object-contain" />
+        <img src="./img/partners/linkedin.png" class="h-14 object-contain" />
+        <img src="./img/partners/simplilearn.png" class="h-14 object-contain" />
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Styles -->
+<style>
+@keyframes scrollUp {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.elevator-track {
+  animation: scrollUp 15s linear infinite;
+}
+</style>
+
+<style>
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+.slide-in-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: slideInLeft 0.8s ease forwards;
+}
+.slide-in-right {
+  opacity: 0;
+  transform: translateX(30px);
+  animation: slideInRight 0.8s ease forwards;
+}
+.slide-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideInUp 0.8s ease forwards;
+}
+
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-900 { animation-delay: 0.9s; }
+.delay-\[1000ms\] { animation-delay: 1s; }
+.delay-\[1100ms\] { animation-delay: 1.1s; }
+.delay-\[1200ms\] { animation-delay: 1.2s; }
+.delay-\[1300ms\] { animation-delay: 1.3s; }
+.delay-\[1400ms\] { animation-delay: 1.4s; }
+.delay-\[1500ms\] { animation-delay: 1.5s; }
+.delay-\[1600ms\] { animation-delay: 1.6s; }
+.delay-\[1700ms\] { animation-delay: 1.7s; }
+.delay-\[1800ms\] { animation-delay: 1.8s; }
+
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInLeft {
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+
+
+  <section class="py-24 bg-gradient-to-br from-white text-black relative z-10">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <!-- Heading -->
+    <div class="text-center mb-16">
+      <span class="inline-block px-4 py-1 bg-green-100 text-green-600 rounded-full text-sm font-semibold mb-3 fade-in">
+          Testimonials
+        </span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+        Trusted <span class="text-indigo-600">By Our</span> Thousands of<span class="text-rose-500"> Students</span>
+      </h1>
+      <p class="mt-4 text-gray-400 text-lg max-w-2xl mx-auto">What professionals say about our platform</p>
+    </div>
+
+    <!-- Testimonial Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      
+      <!-- Card 1 -->
+      <div class="testimonial-card opacity-0 -translate-x-10 transition-all duration-700 delay-[0ms]">
+        <div class="bg-gradient-to-tr from-indigo-900 via-purple-800 to-fuchsia-700 h-28 w-full -mb-14 relative z-0 rounded-b-[100px]"></div>
+        <div class="flex justify-center -mt-16 z-10 relative">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Freddie" class="w-28 h-28 object-cover rounded-full border-4 border-white shadow-lg">
+        </div>
+        <div class="text-center p-6">
+          <p class="text-xs uppercase text-gray-300 font-semibold tracking-wide mb-2">Testimonial</p>
+          <div class="flex justify-center mb-3">
+            <div class="flex gap-1 text-yellow-400">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+          <h4 class="text-lg font-semibold">Dhruv Patel</h4>
+          <p class="text-sm text-red-400 mb-4">Diploma in Information Technology, Batch 2022</p>
+          <p class="text-sm text-black-200 italic">“Joining BPIT was the turning point in my career. The practical labs, industry-aligned curriculum, and career guidance helped me land a core job right after graduation. Highly recommended for anyone serious about technical education.”</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="testimonial-card opacity-0 translate-y-10 transition-all duration-700 delay-[150ms]">
+        <div class="bg-gradient-to-tr from-blue-900 via-cyan-800 to-teal-700 h-28 w-full -mb-14 relative z-0 rounded-b-[100px]"></div>
+        <div class="flex justify-center -mt-16 z-10 relative">
+          <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Cameron" class="w-28 h-28 object-cover rounded-full border-4 border-white shadow-lg">
+        </div>
+        <div class="text-center p-6">
+          <p class="text-xs uppercase text-gray-300 font-semibold tracking-wide mb-2">Testimonial</p>
+          <div class="flex justify-center mb-3">
+            <div class="flex gap-1 text-yellow-400">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+          <h4 class="text-lg font-semibold">Dev Parmar</h4>
+          <p class="text-sm text-red-400 mb-4">Diploma in Civil Engineering, Batch 2020</p>
+          <p class="text-sm text-black-200 italic">“As a parent, I truly appreciate the dedication BPIT faculty shows towards students’ overall development. The mentorship, safety, and results are impressive. I saw a real transformation in my daughter’s confidence and skills.”</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="testimonial-card opacity-0 translate-x-10 transition-all duration-700 delay-[300ms]">
+        <div class="bg-gradient-to-tr from-gray-900 via-gray-800 to-gray-700 h-28 w-full -mb-14 relative z-0 rounded-b-[100px]"></div>
+        <div class="flex justify-center -mt-16 z-10 relative">
+          <img src="https://randomuser.me/api/portraits/men/90.jpg" alt="Garry" class="w-28 h-28 object-cover rounded-full border-4 border-white shadow-lg">
+        </div>
+        <div class="text-center p-6">
+          <p class="text-xs uppercase text-gray-300 font-semibold tracking-wide mb-2">Testimonial</p>
+          <div class="flex justify-center mb-3">
+            <div class="flex gap-1 text-yellow-400">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+          </div>
+          <h4 class="text-lg font-semibold">Jadeja Mahesh</h4>
+          <p class="text-sm text-red-400 mb-4">Diploma in Electrical Engineering, Batch 2022</p>
+          <p class="text-sm text-black-200 italic">“We regularly recruit from BPIT because their students come job-ready. The technical exposure and soft skills BPIT instills in its graduates are a perfect fit for our industry needs.”</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".testimonial-card");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0", "translate-x-10", "-translate-x-10", "translate-y-10");
+        entry.target.classList.add("opacity-100", "translate-y-0", "translate-x-0");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  cards.forEach(card => observer.observe(card));
+});
+</script>
+
+<!-- Font Awesome for star icons -->
+<script src="https://kit.fontawesome.com/yourFontAwesomeKit.js" crossorigin="anonymous"></script>
+
+
+<section class="py-24 bg-gradient-to-b from-purple-50 to-white" id="bpti-instructors">
+  <div class="max-w-7xl mx-auto px-6 text-center">
+    <span class="inline-block px-4 py-1 bg-green-100 text-green-600 rounded-full text-sm font-semibold mb-3 fade-in">
+          Our Team
+        </span>
+    <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
+        Meet <span class="text-indigo-600">Your</span> BPTI <span class="text-rose-500">Instructors</span>
+      </h1>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-12">Learn from the best minds in engineering, business, and technology who bring years of real-world experience into every session.</p>
+
+    <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+
+      <!-- Instructor 1 -->
+      <div class="instructor-card bg-white rounded-3xl shadow-xl p-6 relative opacity-0 scale-90 translate-y-10 transition-all duration-700 group hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(0,0,0,0.15)] hover:border-indigo-300 border border-transparent">
+
+        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-md mb-4 border-4 border-purple-100">
+          <img src="./img/Screenshot 2025-07-10 152438.png" alt="Instructor" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 group-hover:text-purple-700 transition">Prof. Vishal Patel</h3>
+        <p class="text-sm text-purple-600 mt-1 font-semibold">Senior Lecturer, Computer Engineering</p>
+        <p class="text-sm text-gray-500 mt-1">Experience: 12+ Years in AI & Software Development</p>
+        <div class="mt-4 text-sm text-gray-600">Specializes in full-stack development, machine learning, and mentoring startup teams.</div>
+      </div>
+
+      <!-- Instructor 2 -->
+      <div class="instructor-card bg-white rounded-3xl shadow-xl p-6 relative opacity-0 scale-90 translate-y-10 transition-all duration-700 group hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(0,0,0,0.15)] hover:border-indigo-300 border border-transparent">
+        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-md mb-4 border-4 border-yellow-100">
+          <img src="./img/Screenshot 2025-07-10 152438.png" alt="Instructor" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 group-hover:text-yellow-600 transition">Prof. Akshay Khanna</h3>
+        <p class="text-sm text-yellow-600 mt-1 font-semibold">Head of Department, Business Studies</p>
+        <p class="text-sm text-gray-500 mt-1">Experience: 18+ Years in Strategic Management</p>
+        <div class="mt-4 text-sm text-gray-600">Expert in leadership training, business innovation, and organizational strategy.</div>
+      </div>
+
+      <!-- Instructor 3 -->
+      <div class="instructor-card bg-white rounded-3xl shadow-xl p-6 relative opacity-0 scale-90 translate-y-10 transition-all duration-700 group hover:scale-[1.02] hover:shadow-[0_10px_40px_rgba(0,0,0,0.15)] hover:border-indigo-300 border border-transparent">
+        <div class="w-32 h-32 mx-auto rounded-full overflow-hidden shadow-md mb-4 border-4 border-emerald-100">
+          <img src="./img/Screenshot 2025-07-10 152438.png" alt="Instructor" class="w-full h-full object-cover">
+        </div>
+        <h3 class="text-xl font-bold text-gray-800 group-hover:text-emerald-600 transition">Mr. Rajiv Sharma</h3>
+        <p class="text-sm text-emerald-600 mt-1 font-semibold">Industry Mentor, Data Science</p>
+        <p class="text-sm text-gray-500 mt-1">Experience: 10+ Years with Fortune 500 Companies</p>
+        <div class="mt-4 text-sm text-gray-600">Focuses on big data, analytics, and transforming students into job-ready professionals.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".instructor-card");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.remove("opacity-0", "translate-y-10", "scale-90");
+          entry.target.classList.add("opacity-100", "translate-y-0", "scale-100");
+        }, index * 150); // Stagger delay
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  cards.forEach(card => observer.observe(card));
+});
+</script>
+
+<footer class="relative bg-[#0B3C38] text-white pt-12 pb-6 overflow-hidden">
+  <!-- Background Triangle Lines -->
+  <div class="absolute inset-0 z-0 pointer-events-none">
+    <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#ffffff11" />
+          <stop offset="100%" stop-color="#ffffff05" />
+        </linearGradient>
+      </defs>
+      <path d="M0,100 L50,0 L100,100" stroke="url(#lineGradient)" stroke-width="0.5" fill="none" />
+      <path d="M25,100 L60,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+      <path d="M10,100 L70,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+    </svg>
+  </div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+    <!-- Logo + Tagline -->
+    <div>
+      <div class="flex items-center gap-2">
+        <img src="img/BPTI.jpg" alt="Logo" class="h-6">
+        <span class="font-semibold text-xl">INFORMATION TECHNOLOGY</span>
+      </div>
+      <p class="mt-4 text-sm leading-relaxed text-gray-300">
+        Empowering students with industry-ready IT skills and modern tools to build future-ready professionals.
+      </p>
+
+      <!-- Social Icons -->
+      <div class="flex space-x-4 mt-6 text-white text-lg">
+        <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-x"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="LinkedIn"><i class="fab fa-facebook"></i></a>
+      </div>
+
+      <!-- Back to Top -->
+      <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        class="mt-6 px-4 py-2 border border-white hover:bg-white hover:text-black transition rounded flex items-center gap-2">
+        <i class="ri-arrow-up-line"></i> BACK TO TOP
+      </button>
+    </div>
+
+    <!-- Site Map -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Site Map</h3>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li class="flex items-center gap-2"><i class="ri-home-3-line text-white"></i> <a href="index.html">Homepage</a></li>
+        <li class="flex items-center gap-2"><i class="ri-notification-2-line text-white"></i> <a href="anounce.html">Announcement</a></li>
+        <li class="flex items-center gap-2"><i class="ri-building-line text-white"></i> <a href="#">About Department</a></li>
+        <li class="flex items-center gap-2"><i class="ri-newspaper-line text-white"></i> <a href="#">Academics</a></li>
+        <li class="flex items-center gap-2"><i class="ri-briefcase-line text-white"></i> <a href="#">Student Corner</a></li>
+        <li class="flex items-center gap-2"><i class="ri-contacts-book-line text-white"></i> <a href="#">Departmental Activities</a></li>
+        <li class="flex items-center gap-2"><i class="ri-key-line text-white"></i> <a href="contact.html">Contact us</a></li>
+      </ul>
+    </div>
+
+    <!-- Legal -->
+    <div>
+      <h3 class="text-lg font-semibold mb-4">Legal</h3>
+      <ul class="space-y-2 text-sm text-gray-300">
+        <li class="flex items-center gap-2"><i class="ri-lock-line text-white"></i> <a href="#">Privacy Policy</a></li>
+        <li class="flex items-center gap-2"><i class="ri-file-list-2-line text-white"></i> <a href="terms.html">Terms of Services</a></li>
+        <li class="flex items-center gap-2"><i class="ri-user-3-line text-white"></i> <a href="#">Student Guidelines</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="relative z-10 bg-[#D8953A] text-center text-xs text-black font-medium py-2 mt-10">
+    Copyright © 2025 Department of Information Technology, SIR BPTI. All Rights Reserved.
+  </div>
+</footer>
+
+<!-- ICONS -->
+<link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+
+
+
+
+<script>
+  // Enhanced counter animation with easing
+  document.querySelectorAll(".counter").forEach(counter => {
+    const update = () => {
+      const target = +counter.dataset.target;
+      const suffix = counter.dataset.suffix || "";
+      const current = +counter.innerText.replace(/[^0-9]/g, '');
+      const increment = Math.ceil(target / (50 + Math.random() * 20)); // Randomize speed slightly
+      
+      if (current < target) {
+        // Ease-out function
+        const progress = current / target;
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const nextValue = Math.ceil(target * ease);
+        
+        counter.innerText = nextValue + suffix;
+        setTimeout(update, 20);
+      } else {
+        counter.innerText = target + suffix;
+      }
+    };
+    
+    // Intersection Observer to trigger animation when in view
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          update();
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    
+    observer.observe(counter);
+  });
+</script>
+
+<style>
+  /* Custom animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .animate-float { animation: float 3s ease-in-out infinite; }
+  
+  .perspective-1000 { perspective: 1000px; }
+  .transform-style-preserve-3d { transform-style: preserve-3d; }
+  .rotate-y-10 { transform: rotateY(10deg); }
+  .rotate-x-10 { transform: rotateX(10deg); }
+</style>
+
+    <!-- ===== Utility classes extracted ===== -->
+    <style>
+      .btn-primary {
+        @apply relative px-6 py-2 rounded-full font-semibold text-white bg-brandPink hover:bg-brandPink/90 shadow-md transition;
+      }
+      .btn-secondary {
+        @apply px-6 py-2 rounded-full bg-white/60 backdrop-blur font-semibold text-brandNavy dark:text-white shadow-sm hover:shadow-md transition;
+      }
+      .link-nav {
+        @apply relative text-brandNavy dark:text-gray-200 after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-brandPink after:transition-transform hover:after:w-full;
+      }
+      .nav-mobile {
+        @apply text-brandNavy dark:text-gray-50 hover:text-brandPink dark:hover:text-brandPink transition;
+      }
+      .nav-mobile-active {
+        @apply text-brandPink;
+      }
+      .stat-card {
+        @apply flex items-center gap-4 p-6 bg-white dark:bg-brandNavy/70 rounded-2xl border border-gray-100 dark:border-brandNavy/40 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1;
+      }
+      .icon-holder {
+        @apply flex-shrink-0 w-16 h-16 rounded-full flex items-center justify-center;
+      }
+      .icon-stroke {
+        @apply w-7 h-7 stroke-1.5;
+      }
+      .stat-number {
+        @apply text-xl font-extrabold text-brandNavy dark:text-white;
+      }
+      .stat-label {
+        @apply text-sm text-brandNavy/70 dark:text-gray-300 mt-1;
+      }
+    </style>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script>
+      // Mobile nav toggle
+      const navToggle = document.getElementById('nav-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      navToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+        document.body.classList.toggle('overflow-hidden', !mobileMenu.classList.contains('hidden'));
+      });
+
+      // Dark mode toggle
+      const themeToggle = document.getElementById('themeToggle');
+      const sunIcon = document.getElementById('sunIcon');
+      const moonIcon = document.getElementById('moonIcon');
+      const userPref = localStorage.getItem('theme');
+      if (userPref === 'dark' || (!userPref && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.classList.add('dark');
+        sunIcon.classList.remove('hidden');
+        moonIcon.classList.add('hidden');
+      }
+      themeToggle.addEventListener('click', () => {
+        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.contains('dark');
+        sunIcon.classList.toggle('hidden', !isDark);
+        moonIcon.classList.toggle('hidden', isDark);
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+
+      // Counter animation when visible
+      function animateCounter(el) {
+        const target = +el.dataset.target;
+        const suffix = el.dataset.suffix || '';
+        const duration = 1600;
+        const frameDuration = 1000 / 60;
+        const totalFrames = Math.round(duration / frameDuration);
+        let frame = 0;
+        const counter = setInterval(() => {
+          frame++;
+          const progress = Math.min(frame / totalFrames, 1);
+          const current = Math.round(target * progress);
+          el.textContent = current + suffix;
+          if (progress === 1) clearInterval(counter);
+        }, frameDuration);
+      }
+      const counters = document.querySelectorAll('.counter');
+      const io = new IntersectionObserver(
+        (entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !entry.target.classList.contains('counted')) {
+              entry.target.classList.add('counted');
+              animateCounter(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.6 }
+      );
+      counters.forEach((el) => io.observe(el));
+    </script>
+    <!-- AOS Script -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+  });
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter");
+
+  counters.forEach(counter => {
+    const target = parseInt(counter.dataset.target);
+    const suffix = counter.dataset.suffix || "";
+    let started = false;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !started) {
+          started = true;
+          let current = 0;
+          const step = Math.max(1, Math.ceil(target / 100)); // speed boost
+          
+          const interval = setInterval(() => {
+            current += step;
+            if (current >= target) {
+              counter.innerText = target + suffix;
+              clearInterval(interval);
+            } else {
+              counter.innerText = current + suffix;
+            }
+          }, 15);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(counter);
+  });
+});
+</script>
+
+  </body>
+</html>
