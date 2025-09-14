@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University IT Department - Light Theme</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    },
+                    colors: {
+                        'primary': '#2563eb',
+                        'secondary': '#8b5cf6',
+                        'accent': '#ec4899',
+                        'light-bg': '#f8fafc',
+                        'light-card': '#ffffff',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        }
+        
+        .poppins {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .modern-card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        
+        .modern-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+        
+        .carousel-slide {
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            transform: translateY(20px);
+        }
+        
+        .carousel-slide.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hex-pattern {
+            background-image: 
+                linear-gradient(30deg, #f1f5f9 12%, transparent 12.5%, transparent 87%, #f1f5f9 87.5%, #f1f5f9),
+                linear-gradient(150deg, #f1f5f9 12%, transparent 12.5%, transparent 87%, #f1f5f9 87.5%, #f1f5f9),
+                linear-gradient(30deg, #f1f5f9 12%, transparent 12.5%, transparent 87%, #f1f5f9 87.5%, #f1f5f9),
+                linear-gradient(150deg, #f1f5f9 12%, transparent 12.5%, transparent 87%, #f1f5f9 87.5%, #f1f5f9),
+                linear-gradient(60deg, rgba(226, 232, 240, 0.5) 25%, transparent 25.5%, transparent 75%, rgba(226, 232, 240, 0.5) 75%, rgba(226, 232, 240, 0.5));
+            background-size: 40px 70px;
+            background-position: 0 0, 0 0, 20px 35px, 20px 35px, 0 0, 20px 35px;
+        }
+        
+        .gradient-border {
+            position: relative;
+            border: 1px solid transparent;
+            background-clip: padding-box;
+        }
+        
+        .gradient-border::before {
+            content: '';
+            position: absolute;
+            top: 0; right: 0; bottom: 0; left: 0;
+            z-index: -1;
+            margin: -2px;
+            border-radius: inherit;
+            background: linear-gradient(70deg, #2563eb, #8b5cf6, #ec4899);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            background: linear-gradient(135deg, #2563eb 0%, #8b5cf6 100%);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+        }
+        
+        .carousel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-slide.active .carousel-image {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="text-slate-800 min-h-screen overflow-x-hidden">
+
+  <!-- Top Info Section -->
+  <a href="index.html">
+    <div class="bg-white text-center py-6 shadow-sm border-b border-teal-300">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center sm:justify-start sm:space-x-6">
+        <!-- Logo -->
+        <img src="./img/BPTI.jpg" alt="Logo" class="w-20 h-20 rounded-full border border-green-500 mb-3 sm:mb-0" />
+
+        <!-- Department Text -->
+        <div class="text-center sm:text-left">
+          <h1 class="text-xl sm:text-2xl font-bold text-green-800 tracking-wide uppercase leading-tight">
+            Information Technology Department
+          </h1>
+          <p class="text-sm sm:text-base text-green-700 mt-1 font-medium">
+            Sir Bhavsinhji Polytechnic Institute, Bhavnagar
+          </p>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Navbar -->
+  <header class="bg-teal-100 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+      <!-- Semester Dropdown -->
+      <div class="flex items-center space-x-4">
+        <div class="relative group">
+          <button class="flex items-center gap-2 border border-green-600 text-green-800 px-4 py-2 rounded-md hover:bg-green-50">
+            Select Semester
+            <i class="fas fa-chevron-down text-green-600 text-sm"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border w-40 rounded shadow-md z-50">
+            <li><a href="semester/1st.html" class="block px-4 py-2 hover:bg-green-50">First</a></li>
+            <li><a href="semester/2nd.html" class="block px-4 py-2 hover:bg-green-50">Second</a></li>
+            <li><a href="semester/3rd.html" class="block px-4 py-2 hover:bg-green-50">Third</a></li>
+            <li><a href="semester/4th.html" class="block px-4 py-2 hover:bg-green-50">Fourth</a></li>
+            <li><a href="semester/5th.html" class="block px-4 py-2 hover:bg-green-50">Fifth</a></li>
+            <li><a href="semester/6th.html" class="block px-4 py-2 hover:bg-green-50">Sixth</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hamburger (Mobile) -->
+      <div class="md:hidden">
+        <button onclick="toggleMenu()" class="text-green-700 focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 text-green-900 font-semibold">
+        <a href="index.html" class="hover:text-green-700">Home</a>
+
+        <!-- About Institute Dropdown -->
+        <div class="relative group">
+          <a href="discover_institute.html" class="flex items-center gap-1 hover:text-green-700 cursor-pointer">
+            About Our Institute
+          </a>
+        </div>
+
+        <!-- About Department Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-green-700">
+            Know the Department
+            <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-64 z-50">
+            <li><a href="itdepartment.html" class="block px-4 py-2 hover:bg-green-50">About Department </a></li>
+            <li><a href="PEO&PSO.html" class="block px-4 py-2 hover:bg-green-50">Dept. PEOs & PSOs</a></li>
+            <li><a href="faculty.html" class="block px-4 py-2 hover:bg-green-50">Faculty</a></li>
+            <li><a href="lab.html" class="block px-4 py-2 hover:bg-green-50">Laboratory</a></li>
+          </ul>
+        </div>
+
+        <a href="anounce.html" class="hover:text-green-700">Announcement</a>
+
+        <!-- Student Corner Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-green-700">
+            Student Corner
+            <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-56 z-50">
+            <li><a href="examination_section.html" class="block px-4 py-2 hover:bg-green-50">Examination Section</a></li>
+            <li><a href="https://www.eduqfix.com/PayDirect/#/student" class="block px-4 py-2 hover:bg-green-50">Online Fees Payment</a></li>
+          </ul>
+        </div>
+
+        <a href="addmission.html" class="hover:text-green-700">Addmission</a>
+        <a href="contact.html" class="hover:text-green-700">Contact Us</a>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav (All Links Expanded) -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-white shadow text-green-800 font-semibold">
+      <a href="#" class="block py-2 border-b">Home</a>
+
+      <!-- About Institute -->
+      <a href="discover_institute.html" class="block py-2 border-b">About Our Institute</a>
+
+      <!-- About Department -->
+      <button onclick="toggleSubmenu('dept-sub')" class="w-full text-left py-2 border-b">Know the Department <i class="fas fa-chevron-down text-green-600 text-sm"></i></button>
+      <div id="dept-sub" class="hidden pl-4">
+        <a href="itdepartment.html" class="block py-1">›About Department</a>
+        <a href="PEO&PSO.html" class="block py-1">› Dept. PEOs & PSOs</a>
+        <a href="faculty.html" class="block py-1">› Faculty</a>
+        <a href="lab.html" class="block py-1">› Laboratory</a>
+      </div>
+
+      <a href="anounce.html" class="block py-2 border-b">Announcement</a>
+
+      <!-- Student Corner -->
+      <button onclick="toggleSubmenu('student-sub')" class="w-full text-left py-2 border-b">Student Corner <i class="fas fa-chevron-down text-green-600 text-sm"></i></button>
+      <div id="student-sub" class="hidden pl-4">
+        <a href="examination_section.html" class="block py-1">› Examination Section</a>
+        <a href="https://www.eduqfix.com/PayDirect/#/student" class="block py-1">› Online Fees Payment</a>
+      </div>
+
+      <a href="addmission.html" class="block py-2">Addmission</a>
+      <a href="contact.html" class="block py-2">Contact Us</a>
+    </div>
+
+  </header>
+
+
+
+
+
+    <!-- Hero Section -->
+    <section class="min-h-screen relative flex flex-col justify-center overflow-hidden py-12">
+        <!-- Background elements -->
+        <div class="absolute inset-0 hex-pattern opacity-30"></div>
+        
+        <!-- Floating elements -->
+        <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-200 rounded-full opacity-40 blur-3xl animate-pulse-slow"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-96 h-96 bg-purple-200 rounded-full opacity-40 blur-3xl animate-pulse-slow animation-delay-1000"></div>
+        
+        <!-- Main content -->
+        <div class="container mx-auto px-4 py-16 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <!-- Text content -->
+                <div class="flex-1 max-w-2xl">
+                    <div class="mb-8 gradient-border rounded-xl p-1 inline-block">
+                        <div class="bg-white rounded-xl px-4 py-2">
+                            <span class="text-primary font-semibold"><i class="fas fa-trophy mr-2"></i>#1 Ranked IT Program 2023</span>
+                        </div>
+                    </div>
+                    
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 poppins">
+                        <span class="text-slate-800">Shaping The</span>
+                        <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Digital Future</span>
+                        <span class="text-slate-800">Of Education</span>
+                    </h1>
+                    
+                    <p class="text-xl text-slate-600 mb-10 leading-relaxed">
+                        Where innovation meets education. Our cutting-edge IT department prepares students for the challenges of tomorrow with state-of-the-art facilities, industry partnerships, and world-class faculty.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 mb-12">
+                        <a href="#" class="px-8 py-4 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-xl transition-all duration-300 transform hover:-translate-y-1 shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 flex items-center justify-center gap-2">
+                            <span>Explore Programs</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#" class="px-8 py-4 bg-white text-primary font-semibold rounded-xl transition-all duration-300 border border-slate-200 hover:border-primary/50 flex items-center justify-center gap-2 shadow-md hover:shadow-lg">
+                            <span>Virtual Tour</span>
+                            <i class="fas fa-vr-cardboard"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="flex items-center gap-3">
+                            <div class="feature-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                            <span class="text-sm font-medium">AI & Machine Learning Labs</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="feature-icon">
+                                <i class="fas fa-quantum-computer"></i>
+                            </div>
+                            <span class="text-sm font-medium">Quantum Computing Research</span>
+                        </div>
+                    </div>
+                </div>
+                
+<!-- Carousel container -->
+<div class="flex-1 max-w-2xl">
+    <div class="modern-card rounded-2xl overflow-hidden p-1">
+        <div class="carousel-container relative rounded-xl overflow-hidden">
+            <!-- Carousel slides -->
+            <div class="carousel-slides relative h-96 md:h-[500px]">
+                <!-- Slide 1 -->
+                <div class="carousel-slide active absolute inset-0 opacity-100">
+                    <div class="h-full bg-gradient-to-br from-white to-slate-100 rounded-xl p-6 flex flex-col justify-center">
+                        <div class="mb-6">
+                            <span class="text-primary font-semibold"><i class="fas fa-flask mr-2"></i>LAB TOUR</span>
+                            <h2 class="text-2xl font-bold poppins mt-2">Advanced AI Research Center</h2>
+                        </div>
+                        <div class="relative h-64 md:h-72 rounded-xl overflow-hidden shadow-lg">
+                            <div class="absolute inset-0 bg-gradient-to-r from-blue-500/10 to-purple-500/10"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-4 glass-effect rounded-t-xl">
+                                <p class="text-sm">Students working with our next-generation neural network systems</p>
+                            </div>
+                            <!-- Image for AI Research Center -->
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="AI Research Lab" 
+                                 class="carousel-image w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-slide absolute inset-0 opacity-0">
+                    <div class="h-full bg-gradient-to-br from-white to-slate-100 rounded-xl p-6 flex flex-col justify-center">
+                        <div class="mb-6">
+                            <span class="text-secondary font-semibold"><i class="fas fa-lightbulb mr-2"></i>INNOVATION</span>
+                            <h2 class="text-2xl font-bold poppins mt-2">Quantum Computing Lab</h2>
+                        </div>
+                        <div class="relative h-64 md:h-72 rounded-xl overflow-hidden shadow-lg">
+                            <div class="absolute inset-0 bg-gradient-to-r from-purple-500/10 to-pink-500/10"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-4 glass-effect rounded-t-xl">
+                                <p class="text-sm">Our students exploring quantum algorithms and applications</p>
+                            </div>
+                            <!-- Image for Quantum Computing Lab -->
+                            <img src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="Quantum Computing Lab" 
+                                 class="carousel-image w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-slide absolute inset-0 opacity-0">
+                    <div class="h-full bg-gradient-to-br from-white to-slate-100 rounded-xl p-6 flex flex-col justify-center">
+                        <div class="mb-6">
+                            <span class="text-accent font-semibold"><i class="fas fa-vr-cardboard mr-2"></i>TECH SHOWCASE</span>
+                            <h2 class="text-2xl font-bold poppins mt-2">XR Development Studio</h2>
+                        </div>
+                        <div class="relative h-64 md:h-72 rounded-xl overflow-hidden shadow-lg">
+                            <div class="absolute inset-0 bg-gradient-to-r from-pink-500/10 to-blue-500/10"></div>
+                            <div class="absolute bottom-0 left-0 right-0 p-4 glass-effect rounded-t-xl">
+                                <p class="text-sm">Creating immersive experiences with augmented and virtual reality</p>
+                            </div>
+                            <!-- Image for XR Development Studio -->
+                            <img src="https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" 
+                                 alt="XR Development Studio" 
+                                 class="carousel-image w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel controls -->
+            <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-3">
+                <button class="carousel-indicator w-3 h-3 rounded-full bg-slate-300 active:bg-primary transition-all duration-300 active" aria-label="Slide 1"></button>
+                <button class="carousel-indicator w-3 h-3 rounded-full bg-slate-300 active:bg-secondary transition-all duration-300" aria-label="Slide 2"></button>
+                <button class="carousel-indicator w-3 h-3 rounded-full bg-slate-300 active:bg-accent transition-all duration-300" aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Navigation arrows -->
+            <button class="carousel-prev absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 text-slate-700 p-3 rounded-full shadow-md hover:bg-white">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="carousel-next absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 text-slate-700 p-3 rounded-full shadow-md hover:bg-white">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </div>
+</div>
+            </div>
+        </div>
+        
+    <!-- Stats Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="text-center p-6 rounded-xl bg-blue-50 shadow-md animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-graduation-cap text-2xl text-blue-600"></i>
+            </div>
+            <p
+              class="text-4xl font-bold text-blue-800 stat-number"
+              data-target="50"
+            >
+              0
+            </p>
+            <p class="text-gray-600 mt-2">Years of Legacy</p>
+          </div>
+
+          <div
+            class="text-center p-6 rounded-xl bg-purple-50 shadow-md animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-users text-2xl text-purple-600"></i>
+            </div>
+            <p
+              class="text-4xl font-bold text-purple-800 stat-number"
+              data-target="15000"
+            >
+              0
+            </p>
+            <p class="text-gray-600 mt-2">Global Alumni</p>
+          </div>
+
+          <div
+            class="text-center p-6 rounded-xl bg-pink-50 shadow-md animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-globe-americas text-2xl text-pink-600"></i>
+            </div>
+            <p
+              class="text-4xl font-bold text-pink-800 stat-number"
+              data-target="42"
+            >
+              0
+            </p>
+            <p class="text-gray-600 mt-2">Partner Countries</p>
+          </div>
+
+          <div
+            class="text-center p-6 rounded-xl bg-blue-50 shadow-md animate-on-scroll"
+          >
+            <div
+              class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"
+            >
+              <i class="fas fa-chart-line text-2xl text-blue-600"></i>
+            </div>
+            <p
+              class="text-4xl font-bold text-blue-800 stat-number"
+              data-target="98"
+            >
+              0
+            </p>
+            <p class="text-gray-600 mt-2">Success Rate (%)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+        
+        <!-- Section divider -->
+        <div class="absolute bottom-0 left-0 w-full">
+            <svg class="w-full h-16 md:h-20 text-white" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                <path d="M0,70 C150,30 350,130 500,70 C650,10 850,70 1000,30 L1000,100 L0,100 Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-20 bg-white relative overflow-hidden">
+        <div class="absolute -top-20 -right-20 w-60 h-60 rounded-full bg-primary opacity-5"></div>
+        <div class="absolute -bottom-20 -left-20 w-60 h-60 rounded-full bg-accent opacity-5"></div>
+        
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-heading font-black text-center mb-4" data-aos="fade-up">Department Gallery</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">Explore our facilities and community through these glimpses</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="gallery-item" data-aos="zoom-in" data-aos-duration="1000">
+                    <img src="img/IT1.jpg" alt="Students working in lab" class="w-full h-72 object-cover">
+                    <div class="gallery-caption">
+                        <h3 class="text-xl font-bold">Advanced Computing Lab</h3>
+                        <p>Students working on research projects</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+                    <img src="img/IT2.jpg" alt="Students in discussion" class="w-full h-72 object-cover">
+                    <div class="gallery-caption">
+                        <h3 class="text-xl font-bold">Student Collaboration</h3>
+                        <p>Group discussion in the common area</p>
+                    </div>
+                </div>
+                
+                <div class="gallery-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+                    <img src="img/IT1.jpg" alt="Department event" class="w-full h-72 object-cover">
+                    <div class="gallery-caption">
+                        <h3 class="text-xl font-bold">Annual Tech Symposium</h3>
+                        <p>Students presenting their projects</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12" data-aos="fade-up" data-aos-duration="1000">
+                <button class="bg-primary text-white font-bold py-3 px-8 rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg flex items-center gap-2 mx-auto">
+                    <span>View More</span>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOD's Message Section -->
+    <section class="hod-section">
+      <div class="hod-container">
+        
+        <!-- Heading -->
+        <div class="hod-heading">
+          <h2>Message from the HOD</h2>
+          <p>A note of inspiration, vision, and leadership from our Head of Department</p>
+        </div>
+
+        <div class="hod-content">
+          
+          <!-- Profile -->
+          <div class="hod-profile">
+            <div class="hod-img-frame">
+              <img src="Screenshot 2025-09-12 124050.png" alt="HOD">
+            </div>
+            <div class="hod-profile-details">
+              <h3>Dr. Sarah Johnson</h3>
+              <p class="designation">Head of Department</p>
+              <p><b>Qualification:</b> PhD, Stanford University</p>
+              <p><b>Experience:</b> 20+ Years</p>
+              <p><b>Email:</b> hod.cs@university.edu</p>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="hod-message">
+            <p>
+              It gives me immense pleasure to welcome you to the <b>Department of Computer Science</b>.  
+              Over the years, our department has grown into a center of <span class="highlight">academic excellence and innovation</span>.  
+              We are committed to building not just skilled engineers, but also <span class="highlight2">responsible leaders</span> who are equipped to face the dynamic challenges of the digital era.
+            </p>
+
+            <p>
+              Our curriculum is continuously updated to align with global trends in Artificial Intelligence, Data Science, Cloud Computing, and Cybersecurity.  
+              Along with technical proficiency, we emphasize <span class="highlight">ethics, teamwork, creativity, and lifelong learning</span>.  
+              With strong industry collaborations and active research, students gain exposure to real-world problem-solving and innovation.
+            </p>
+
+            <!-- Only 3 Cards -->
+            <div class="hod-highlights">
+              <div class="card">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <h4>Holistic Learning</h4>
+                <p>Blending theory, practical skills, and personality development to nurture future-ready graduates.</p>
+              </div>
+              <div class="card">
+                <i class="fa-solid fa-lightbulb"></i>
+                <h4>Research & Innovation</h4>
+                <p>Encouraging innovation labs, startup culture, and impactful publications across domains.</p>
+              </div>
+              <div class="card">
+                <i class="fa-solid fa-people-group"></i>
+                <h4>Global Outreach</h4>
+                <p>Connecting with alumni, industries, and international partners for a stronger community.</p>
+              </div>
+            </div>
+
+            <p>
+              I invite you to explore the opportunities and experiences our department has to offer.  
+              Together, let us create a learning environment that inspires curiosity, fosters innovation, and instills values that shape <span class="highlight2">responsible global citizens</span>.
+            </p>
+
+            <blockquote>
+              "Our vision is not only to excel in academics but to empower students to become innovators, leaders, and change-makers of tomorrow."
+            </blockquote>
+
+            <div class="hod-stats">
+              <div>
+                <h3>20+</h3>
+                <p>Years of Excellence</p>
+              </div>
+              <div>
+                <h3>5000+</h3>
+                <p>Successful Alumni</p>
+              </div>
+              <div>
+                <h3>80+</h3>
+                <p>Research Publications</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Extra CSS -->
+    <style>
+    .hod-section {
+      background: linear-gradient(135deg, #fdf2f8, #f5f3ff, #eff6ff);
+      padding: 90px 20px;
+      font-family: 'Segoe UI', sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+    .hod-heading {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    .hod-heading h2 {
+      font-size: 44px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #6366f1, #9333ea, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 12px;
+    }
+    .hod-heading p {
+      color: #4b5563;
+      font-size: 18px;
+    }
+    .hod-content {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-start;
+    }
+
+    /* --- Premium HOD Card --- */
+    .hod-profile {
+      flex: 1;
+      min-width: 300px;
+      background: linear-gradient(145deg, #ffffff, #f9fafb);
+      border-radius: 24px;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.08);
+      padding: 20px;
+      transition: 0.4s ease;
+    }
+    .hod-profile:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 50px rgba(99,102,241,0.25);
+    }
+    .hod-img-frame {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 4px solid transparent;
+      background: linear-gradient(90deg, #6366f1, #ec4899, #9333ea);
+      padding: 4px;
+    }
+    .hod-img-frame img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 16px;
+    }
+    .hod-profile-details {
+      padding: 20px;
+      text-align: center;
+    }
+    .hod-profile-details h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+    .hod-profile-details .designation {
+      color: #6366f1;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    /* --- Message --- */
+    .hod-message {
+      flex: 2;
+      background: #fff;
+      padding: 35px;
+      border-radius: 22px;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    }
+    .hod-message p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #374151;
+      margin-bottom: 18px;
+    }
+    .hod-message .highlight {
+      color: #6366f1;
+      font-weight: 600;
+    }
+    .hod-message .highlight2 {
+      color: #9333ea;
+      font-weight: 600;
+    }
+
+    /* --- 3 Highlight Cards --- */
+    .hod-highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
+      margin: 30px 0;
+    }
+    .hod-highlights .card {
+      background: linear-gradient(145deg, #ffffff, #f9fafb);
+      padding: 22px;
+      border-radius: 18px;
+      text-align: center;
+      transition: 0.4s ease;
+      border: 1px solid #f0f0f0;
+    }
+    .hod-highlights .card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 12px 28px rgba(99,102,241,0.2);
+    }
+    .hod-highlights i {
+      font-size: 32px;
+      margin-bottom: 12px;
+      color: #6366f1;
+    }
+    .hod-highlights h4 {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #111827;
+    }
+    .hod-highlights p {
+      color: #4b5563;
+      font-size: 15px;
+    }
+
+    /* --- Blockquote --- */
+    blockquote {
+      font-size: 18px;
+      font-style: italic;
+      background: linear-gradient(to right, #eef2ff, #fce7f3);
+      padding: 22px;
+      border-left: 5px solid #6366f1;
+      border-radius: 12px;
+      margin: 25px 0;
+    }
+
+    /* --- Stats --- */
+    .hod-stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 35px;
+    }
+    .hod-stats div {
+      background: linear-gradient(145deg, #f9fafb, #ffffff);
+      padding: 22px;
+      border-radius: 16px;
+      flex: 1;
+      margin: 0 10px;
+      text-align: center;
+      transition: 0.3s ease;
+    }
+    .hod-stats div:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 25px rgba(236,72,153,0.2);
+    }
+    .hod-stats h3 {
+      font-size: 34px;
+      font-weight: 800;
+      background: linear-gradient(90deg, #6366f1, #ec4899);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hod-stats p {
+      font-size: 15px;
+      color: #4b5563;
+    }
+    </style>
+
+        <!-- Vision & Mission Section -->
+    <section class="vision-mission">
+      <div class="vision-container">
+        <h2 class="section-title">Our Vision & Mission</h2>
+        <p class="section-subtitle">Guiding principles that define our department’s journey toward excellence</p>
+
+        <div class="vision-mission-grid">
+          <!-- Vision -->
+          <div class="vm-card">
+            <div class="vm-icon pink"><i class="fas fa-eye"></i></div>
+            <h3>Our Vision</h3>
+            <table>
+              <tr><td><i class="fas fa-globe"></i></td><td>To be a <b>globally recognized hub</b> of computer science education and research.</td></tr>
+              <tr><td><i class="fas fa-lightbulb"></i></td><td>Inspire <b>innovation</b> that solves real-world problems.</td></tr>
+              <tr><td><i class="fas fa-people-group"></i></td><td>Develop <b>ethical leaders</b> who shape the digital future responsibly.</td></tr>
+              <tr><td><i class="fas fa-rocket"></i></td><td>Encourage <b>startups, projects, and breakthroughs</b> that create global impact.</td></tr>
+              <tr><td><i class="fas fa-leaf"></i></td><td>Promote <b>sustainability and eco-friendly technology</b> practices.</td></tr>
+            </table>
+          </div>
+
+          <!-- Mission -->
+          <div class="vm-card">
+            <div class="vm-icon blue"><i class="fas fa-bullseye"></i></div>
+            <h3>Our Mission</h3>
+            <table>
+              <tr><td><i class="fas fa-chalkboard-user"></i></td><td>Deliver <b>industry-driven teaching</b> with cutting-edge curriculum.</td></tr>
+              <tr><td><i class="fas fa-flask"></i></td><td>Advance <b>research and innovation</b> through collaborations.</td></tr>
+              <tr><td><i class="fas fa-hands-helping"></i></td><td>Foster <b>inclusivity, diversity, and teamwork</b> in learning.</td></tr>
+              <tr><td><i class="fas fa-graduation-cap"></i></td><td>Prepare graduates for <b>successful global careers</b> and lifelong learning.</td></tr>
+              <tr><td><i class="fas fa-network-wired"></i></td><td>Strengthen <b>ties with industry, alumni, and global partners</b>.</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decorative Background Shapes -->
+      <div class="shape shape1"></div>
+      <div class="shape shape2"></div>
+      <div class="shape shape3"></div>
+    </section>
+
+
+
+  <!-- footer -->
+  <footer class="relative bg-[#0B3C38] text-white pt-12 pb-6 overflow-hidden">
+    <!-- Background Triangle Lines -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ffffff11" />
+            <stop offset="100%" stop-color="#ffffff05" />
+          </linearGradient>
+        </defs>
+        <path d="M0,100 L50,0 L100,100" stroke="url(#lineGradient)" stroke-width="0.5" fill="none" />
+        <path d="M25,100 L60,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+        <path d="M10,100 L70,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Logo + Tagline -->
+      <div>
+        <div class="flex items-center gap-2">
+          <img src="img/BPTI.jpg" alt="Logo" class="h-6">
+          <span class="font-semibold text-xl">INFORMATION TECHNOLOGY</span>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-gray-300">
+          Empowering students with industry-ready IT skills and modern tools to build future-ready professionals.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex space-x-4 mt-6 text-white text-lg">
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-x"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-facebook"></i></a>
+        </div>
+
+        <!-- Back to Top -->
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+          class="mt-6 px-4 py-2 border border-white hover:bg-white hover:text-black transition rounded flex items-center gap-2">
+          <i class="ri-arrow-up-line"></i> BACK TO TOP
+        </button>
+      </div>
+
+      <!-- Site Map -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Site Map</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i class="ri-home-3-line text-white"></i> <a href="index.html">Homepage</a></li>
+          <li class="flex items-center gap-2"><i class="ri-notification-2-line text-white"></i> <a href="anounce.html">Announcement</a></li>
+          <li class="flex items-center gap-2"><i class="ri-building-line text-white"></i> <a href="#">About Department</a></li>
+          <li class="flex items-center gap-2"><i class="ri-newspaper-line text-white"></i> <a href="#">Academics</a></li>
+          <li class="flex items-center gap-2"><i class="ri-briefcase-line text-white"></i> <a href="#">Student Corner</a></li>
+          <li class="flex items-center gap-2"><i class="ri-contacts-book-line text-white"></i> <a href="#">Departmental Activities</a></li>
+          <li class="flex items-center gap-2"><i class="ri-key-line text-white"></i> <a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Legal</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i class="ri-lock-line text-white"></i> <a href="#">Privacy Policy</a></li>
+          <li class="flex items-center gap-2"><i class="ri-file-list-2-line text-white"></i> <a href="terms.html">Terms of Services</a></li>
+          <li class="flex items-center gap-2"><i class="ri-user-3-line text-white"></i> <a href="#">Student Guidelines</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="relative z-10 bg-[#D8953A] text-center text-xs text-black font-medium py-2 mt-10">
+      Copyright © 2025 Department of Information Technology, SIR BPTI. All Rights Reserved.
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+    <!-- Styles -->
+    <style>
+    .vision-mission {
+      background: linear-gradient(135deg, #fdfbfb, #ebedee);
+      padding: 100px 20px;
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 42px;
+      font-weight: 800;
+      margin-bottom: 12px;
+      background: linear-gradient(to right, #ff6a00, #ee0979, #6c63ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .section-subtitle {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 60px;
+      color: #555;
+    }
+    .vision-mission-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .vm-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 35px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+      position: relative;
+      z-index: 2;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .vm-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+    }
+    .vm-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .vm-icon.pink { background: linear-gradient(135deg, #ff6a00, #ee0979); }
+    .vm-icon.blue { background: linear-gradient(135deg, #42e695, #3bb2b8); }
+    .vm-card h3 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: #222;
+    }
+    .vm-card table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .vm-card table tr {
+      border-bottom: 1px solid #eee;
+    }
+    .vm-card table td {
+      padding: 12px 8px;
+      font-size: 16px;
+      color: #444;
+      vertical-align: top;
+    }
+    .vm-card table td:first-child {
+      width: 40px;
+      font-size: 18px;
+      color: #ff6a00;
+    }
+    .vm-card table tr:last-child {
+      border-bottom: none;
+    }
+
+    /* Decorative Background Shapes */
+    .shape {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.15;
+      z-index: 1;
+    }
+    .shape1 {
+      width: 250px; height: 250px;
+      background: #ff6a00;
+      top: -60px; left: -60px;
+    }
+    .shape2 {
+      width: 180px; height: 180px;
+      background: #6c63ff;
+      bottom: -50px; right: -50px;
+    }
+    .shape3 {
+      width: 120px; height: 120px;
+      background: #00c6ff;
+      top: 30%; right: 10%;
+    }
+    </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.carousel-slide');
+        const indicators = document.querySelectorAll('.carousel-indicator');
+        const prevButton = document.querySelector('.carousel-prev');
+        const nextButton = document.querySelector('.carousel-next');
+        let currentSlide = 0;
+        let slideInterval;
+
+        function showSlide(index) {
+            // Hide all slides
+            slides.forEach(slide => slide.classList.remove('active'));
+            indicators.forEach(indicator => indicator.classList.remove('active'));
+            
+            // Handle looping
+            if (index >= slides.length) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = slides.length - 1;
+            } else {
+                currentSlide = index;
+            }
+            
+            // Show the selected slide
+            slides[currentSlide].classList.add('active');
+            indicators[currentSlide].classList.add('active');
+        }
+
+        // Next slide function
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        // Set up auto-advance
+        function startSlideShow() {
+            slideInterval = setInterval(nextSlide, 5000);
+        }
+
+        // Event listeners for controls
+        nextButton.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            nextSlide();
+            startSlideShow();
+        });
+
+        prevButton.addEventListener('click', () => {
+            clearInterval(slideInterval);
+            showSlide(currentSlide - 1);
+            startSlideShow();
+        });
+
+        // Add click events to indicators
+        indicators.forEach((indicator, index) => {
+            indicator.addEventListener('click', () => {
+                clearInterval(slideInterval);
+                showSlide(index);
+                startSlideShow();
+            });
+        });
+
+        // Pause on hover
+        const carousel = document.querySelector('.carousel-container');
+        if (carousel) {
+            carousel.addEventListener('mouseenter', () => clearInterval(slideInterval));
+            carousel.addEventListener('mouseleave', startSlideShow);
+        }
+
+        // Initialize the carousel
+        startSlideShow();
+    });
+</script>
+    <!-- AOS Animation Library Initialization -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200,
+            once: true,
+        });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Animation on scroll
+        const animatedElements =
+          document.querySelectorAll(".animate-on-scroll");
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
+
+        animatedElements.forEach((el) => {
+          observer.observe(el);
+        });
+
+        // Counter animation for stats
+        const statElements = document.querySelectorAll(".stat-number");
+
+        const counterObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const target = +entry.target.getAttribute("data-target");
+                const duration = 2000; // 2 seconds
+                const steps = 60; // 60 steps
+                const increment = target / steps;
+                let current = 0;
+
+                const timer = setInterval(() => {
+                  current += increment;
+                  if (current >= target) {
+                    entry.target.textContent = target;
+                    clearInterval(timer);
+                  } else {
+                    entry.target.textContent = Math.round(current);
+                  }
+                }, duration / steps);
+
+                counterObserver.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+
+        statElements.forEach((el) => {
+          counterObserver.observe(el);
+        });
+      });
+    </script>
+</body>
+</html>

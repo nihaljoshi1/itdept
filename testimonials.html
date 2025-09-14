@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>IT DEPARTMENT REVIEWS | SIR BHAVSINHJI POLYTECHNIC INSTITUTE</title>
+  <link rel="website icon" href="img/BPTI.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="./dist/output.css" rel="stylesheet">
+  
+  <style>
+    
+    /* Hexagonal Card Styles */
+    .testimonial-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 100%;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .top-section {
+      background: linear-gradient(to right, #fca311, #f77f00);
+      padding: 40px 20px 60px;
+      position: relative;
+    }
+    
+    .top-section h2 {
+      font-family: 'Pacifico', cursive;
+      font-size: 20px;
+      color: #fff4e5;
+    }
+    
+    .top-section h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: rgb(255, 255, 255);
+      letter-spacing: 1px;
+    }
+    
+    .feedback-box {
+      position: absolute;
+      top: 15px;
+      left: 20px;
+      font-size: 12px;
+      color: white;
+      font-weight: bold;
+    }
+    
+    .profile {
+      margin: 20px auto 0;
+      width: 100px;
+      height: 100px;
+      background: white;
+      padding: 5px;
+      border-radius: 15px;
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+    }
+    
+    .profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    
+    .user-details {
+      margin-top: 15px;
+      color: rgb(111, 1, 1);
+    }
+    
+    .user-details h3 {
+      font-size: 16px;
+      font-weight: 700;
+    }
+    
+    .user-details p {
+      font-size: 13px;
+      margin-top: 5px;
+    }
+    
+    .stars {
+      margin: 20px auto 10px;
+      color: #fca311;
+      font-size: 20px;
+    }
+    
+    .quote-box {
+      margin: 0 20px 30px;
+      padding: 20px;
+      border: 2px solid #fca311;
+      border-radius: 15px;
+      position: relative;
+    }
+    
+    .quote-box::before {
+      content: '“';
+      position: absolute;
+      font-size: 30px;
+      top: -20px;
+      left: -10px;
+      color: #fca311;
+    }
+    
+    .quote-box::after {
+      content: '”';
+      position: absolute;
+      font-size: 30px;
+      bottom: -20px;
+      right: -10px;
+      color: #fca311;
+    }
+    
+    .quote-box p {
+      font-size: 13px;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    /* Section Title */
+    .section-title {
+      text-align: center;
+      margin-bottom: 20px;
+      padding-top: 40px;
+    }
+    
+    .section-title h2 {
+      font-family: 'Pacifico', cursive;
+      color: #f77f00;
+      font-size: 26px;
+    }
+    
+    .section-title h1 {
+      font-size: 40px;
+      color: #222;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+    }
+
+    .testimonial-header {
+      background: linear-gradient(to bottom, #35c450, #2cae42);
+      color: white;
+      text-align: center;
+      padding: 60px 20px 80px;
+      border-top-left-radius: 0px;
+      border-top-right-radius: 0px;
+      border-bottom-left-radius: 100px;
+      border-bottom-right-radius: 100px;
+      position: relative;
+    }
+
+    .testimonial-header h2 {
+      font-size: 28px;
+      font-style: italic;
+      font-weight: 300;
+      margin-bottom: 5px;
+    }
+
+    .testimonial-header h1 {
+      font-size: 40px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 40px;
+      border: 2px dotted #cfcfcf;
+      max-width: 600px;
+      margin: -60px auto 40px;
+      padding: 80px 30px 40px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .testimonial-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 6px solid white;
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      object-fit: cover;
+    }
+
+    .testimonial-card h3 {
+      color: #4CAF50;
+      font-size: 20px;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    .testimonial-card p.title {
+      font-size: 14px;
+      color: #555;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    .testimonial-card p.description {
+      font-size: 14px;
+      color: #444;
+      padding: 0 10px;
+      line-height: 1.6;
+    }
+
+    .stars {
+      color: #fbbf24;
+      font-size: 18px;
+      margin-top: 15px;
+    }
+
+    /* 2nd section */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+
+.gradient-top {
+  background: linear-gradient(to bottom right, #25b45b, #81d83f);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.testimonial-card {
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  /* remove or comment this ↓ */
+  /* max-width: 380px; */
+}
+
+
+
+.testimonial-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(to right, #25b45b, #81d83f);
+}
+
+.client-font {
+  font-family: 'Brush Script MT', cursive;
+}
+
+.profile-shadow {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.quote-icon {
+  opacity: 0.1;
+  font-size: 50px;
+  position: absolute;
+}
+
+.quote-left {
+  top: 10px;
+  left: 10px;
+}
+
+.quote-right {
+  bottom: 10px;
+  right: 10px;
+  transform: rotate(180deg);
+}
+  </style>
+</head>
+<body class="font-sans antialiased text-gray-700">
+
+    <!-- Top Info Section -->
+  <a href="index.html">
+    <div class="bg-white text-center py-6 shadow-sm border-b border-teal-300">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center sm:justify-start sm:space-x-6">
+        <!-- Logo -->
+        <img src="./img/BPTI.jpg" alt="Logo" class="w-20 h-20 rounded-full border border-green-500 mb-3 sm:mb-0" />
+
+        <!-- Department Text -->
+        <div class="text-center sm:text-left">
+          <h1 class="text-xl sm:text-2xl font-bold text-green-800 tracking-wide uppercase leading-tight">
+            Information Technology Department
+          </h1>
+          <p class="text-sm sm:text-base text-green-700 mt-1 font-medium">
+            Sir Bhavsinhji Polytechnic Institute, Bhavnagar
+          </p>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Navbar -->
+  <header class="bg-teal-100 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+      <!-- Semester Dropdown -->
+      <div class="flex items-center space-x-4">
+        <div class="relative group">
+          <button class="flex items-center gap-2 border border-green-600 text-green-800 px-4 py-2 rounded-md hover:bg-green-50">
+            Select Semester
+            <i class="fas fa-chevron-down text-green-600 text-sm"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border w-40 rounded shadow-md z-50">
+            <li><a href="semester/1st.html" class="block px-4 py-2 hover:bg-green-50">First</a></li>
+            <li><a href="semester/2nd.html" class="block px-4 py-2 hover:bg-green-50">Second</a></li>
+            <li><a href="semester/3rd.html" class="block px-4 py-2 hover:bg-green-50">Third</a></li>
+            <li><a href="semester/4th.html" class="block px-4 py-2 hover:bg-green-50">Fourth</a></li>
+            <li><a href="semester/5th.html" class="block px-4 py-2 hover:bg-green-50">Fifth</a></li>
+            <li><a href="semester/6th.html" class="block px-4 py-2 hover:bg-green-50">Sixth</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hamburger (Mobile) -->
+      <div class="md:hidden">
+        <button onclick="toggleMenu()" class="text-green-700 focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 text-green-900 font-semibold">
+        <a href="index.html" class="hover:text-green-700">Home</a>
+
+        <!-- About Institute Dropdown -->
+        <div class="relative group">
+          <a href="discover_institute.html" class="flex items-center gap-1 hover:text-green-700 cursor-pointer">
+            About Our Institute
+          </a>
+        </div>
+
+        <!-- About Department Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-green-700">
+            Know the Department
+            <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-64 z-50">
+            <li><a href="itdepartment.html" class="block px-4 py-2 hover:bg-green-50">About Department </a></li>
+            <li><a href="PEO&PSO.html" class="block px-4 py-2 hover:bg-green-50">Dept. PEOs & PSOs</a></li>
+            <li><a href="faculty.html" class="block px-4 py-2 hover:bg-green-50">Faculty</a></li>
+            <li><a href="lab.html" class="block px-4 py-2 hover:bg-green-50">Laboratory</a></li>
+          </ul>
+        </div>
+
+        <a href="anounce.html" class="hover:text-green-700">Announcement</a>
+
+        <!-- Student Corner Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-green-700">
+            Student Corner
+            <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-56 z-50">
+            <li><a href="examination_section.html" class="block px-4 py-2 hover:bg-green-50">Examination Section</a></li>
+            <li><a href="https://www.eduqfix.com/PayDirect/#/student" class="block px-4 py-2 hover:bg-green-50">Online Fees Payment</a></li>
+          </ul>
+        </div>
+
+        <a href="addmission.html" class="hover:text-green-700">Addmission</a>
+        <a href="contact.html" class="hover:text-green-700">Contact Us</a>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav (All Links Expanded) -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-white shadow text-green-800 font-semibold">
+      <a href="#" class="block py-2 border-b">Home</a>
+
+      <!-- About Institute -->
+      <a href="discover_institute.html" class="block py-2 border-b">About Our Institute</a>
+
+      <!-- About Department -->
+      <button onclick="toggleSubmenu('dept-sub')" class="w-full text-left py-2 border-b">Know the Department <i class="fas fa-chevron-down text-green-600 text-sm"></i></button>
+      <div id="dept-sub" class="hidden pl-4">
+        <a href="itdepartment.html" class="block py-1">›About Department</a>
+        <a href="PEO&PSO.html" class="block py-1">› Dept. PEOs & PSOs</a>
+        <a href="faculty.html" class="block py-1">› Faculty</a>
+        <a href="lab.html" class="block py-1">› Laboratory</a>
+      </div>
+
+      <a href="anounce.html" class="block py-2 border-b">Announcement</a>
+
+      <!-- Student Corner -->
+      <button onclick="toggleSubmenu('student-sub')" class="w-full text-left py-2 border-b">Student Corner <i class="fas fa-chevron-down text-green-600 text-sm"></i></button>
+      <div id="student-sub" class="hidden pl-4">
+        <a href="examination_section.html" class="block py-1">› Examination Section</a>
+        <a href="https://www.eduqfix.com/PayDirect/#/student" class="block py-1">› Online Fees Payment</a>
+      </div>
+
+      <a href="addmission.html" class="block py-2">Addmission</a>
+      <a href="contact.html" class="block py-2">Contact Us</a>
+    </div>
+
+  </header>
+
+  <!-- Hero Section -->
+  <section class="w-full h-[120vh] relative bg-cover bg-center" style="background-image: url('img/testimonial.jpeg');">
+    <div class="absolute top-1/2 -translate-y-1/2 left-6 sm:left-10 md:left-16 max-w-xl text-white">
+      <!-- Hero content here -->
+    </div>
+  </section>
+
+  <!-- Testimonial Section -->
+  <div class="bg-gradient-to-br from-white to-gray-50 py-16">
+    <div class="section-title">
+      <h2>What Our Students Say</h2>
+      <h1>Testimonials</h1>
+  </div>
+    
+    <!-- Hexagonal Testimonial Cards -->
+  <div class="testimonial-section">
+      <div class="card">
+        <div class="top-section">
+          <div class="feedback-box">100%<br>FEEDBACK</div>
+          <h2>Student review</h2>
+          <h1>PRESENTATION</h1>
+          <div class="profile">
+            <img src="Screenshot_2025-07-22_231037-removebg-preview.png" alt="Profile Image">
+          </div>
+        </div>
+        <div class="user-details">
+          <h3>HARSHVARDHAN</h3>
+          <p>Student</p>
+        </div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-box">
+          <p>“The environment at BPTI is inspiring. We get access to amazing lab facilities, and every teacher genuinely pushes us to do better. Proud to be a part of BPTI!”</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="top-section">
+          <div class="feedback-box">100%<br>FEEDBACK</div>
+          <h2>Student review</h2>
+          <h1>PRESENTATION</h1>
+          <div class="profile">
+            <img src="Screenshot_2025-07-22_231037-removebg-preview.png" alt="Profile Image">
+          </div>
+        </div>
+        <div class="user-details">
+          <h3>AARAV MEHTA</h3>
+          <p>BLOCKCHAIN DEVELOPER</p>
+        </div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-box">
+          <p>"BPTI has transformed my learning experience. The faculty is always supportive, and the practical sessions helped me build real skills. I feel much more confident now!"</p>
+        </div>
+      </div>
+      
+      <div class="card">
+        <div class="top-section">
+          <div class="feedback-box">100%<br>FEEDBACK</div>
+          <h2>Student review</h2>
+          <h1>PRESENTATION</h1>
+          <div class="profile">
+            <img src="Screenshot_2025-07-22_231037-removebg-preview.png" alt="Profile Image">
+          </div>
+        </div>
+        <div class="user-details">
+          <h3>VIKAS PATEL</h3>
+          <p>Software Developer</p>
+        </div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-box">
+          <p>“What I love most about BPTI is the balance of academics and real-world exposure. From expert lectures to campus events — it's been a complete journey of growth!”</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="top-section">
+          <div class="feedback-box">100%<br>FEEDBACK</div>
+          <h2>Student review</h2>
+          <h1>PRESENTATION</h1>
+          <div class="profile">
+            <img src="Screenshot_2025-07-22_231037-removebg-preview.png" alt="Profile Image">
+          </div>
+        </div>
+        <div class="user-details">
+          <h3>VIKAS PATEL</h3>
+          <p>Software Developer</p>
+        </div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-box">
+          <p>“What I love most about BPTI is the balance of academics and real-world exposure. From expert lectures to campus events — it's been a complete journey of growth!”</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="top-section">
+          <div class="feedback-box">100%<br>FEEDBACK</div>
+          <h2>Student review</h2>
+          <h1>PRESENTATION</h1>
+          <div class="profile">
+            <img src="Screenshot_2025-07-22_231037-removebg-preview.png" alt="Profile Image">
+          </div>
+        </div>
+        <div class="user-details">
+          <h3>VIKAS PATEL</h3>
+          <p>Software Developer</p>
+        </div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-box">
+          <p>“What I love most about BPTI is the balance of academics and real-world exposure. From expert lectures to campus events — it's been a complete journey of growth!”</p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="top-section">
+          <div class="feedback-box">100%<br>FEEDBACK</div>
+          <h2>Student review</h2>
+          <h1>PRESENTATION</h1>
+          <div class="profile">
+            <img src="Screenshot_2025-07-22_231037-removebg-preview.png" alt="Profile Image">
+          </div>
+        </div>
+        <div class="user-details">
+          <h3>VIKAS PATEL</h3>
+          <p>Software Developer</p>
+        </div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-box">
+          <p>“What I love most about BPTI is the balance of academics and real-world exposure. From expert lectures to campus events — it's been a complete journey of growth!”</p>
+        </div>
+      </div>
+  </div>
+
+
+      <div class="testimonial-grid">
+      <!-- Card 1 -->
+      <section class="w-full bg-white rounded-[30px] overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="gradient-top p-4 text-center relative overflow-hidden">
+          <h2 class="text-white text-xl font-semibold client-font relative">Student</h2>
+          <h1 class="text-white text-2xl font-bold mt-[-5px] relative">TESTIMONIAL</h1>
+        </div>
+        <div class="flex justify-center -mt-8 relative z-10">
+          <img src="Screenshot_2025-07-22_231037-removebg-preview.png" alt="Client" class="w-16 h-16 rounded-full border-4 border-white profile-shadow object-cover">
+        </div>
+        <div class="bg-white px-4 pb-4 pt-3 testimonial-card mt-[-12px] text-center relative">
+          <i class="fas fa-quote-left quote-icon quote-left"></i>
+          <i class="fas fa-quote-left quote-icon quote-right"></i>
+          <h3 class="text-green-600 text-lg font-bold mb-1">RAJ</h3>
+          <p class="text-gray-500 uppercase text-xs tracking-wider mb-4">CEO, AGENCY</p>
+          <p class="text-gray-700 text-xs leading-relaxed mb-4 px-1 relative z-10">
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          </p>
+          <div class="flex justify-center text-yellow-400 space-x-1 text-sm mb-1">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="text-gray-400 text-xs">Verified Student</p>
+        </div>
+      </section>
+
+      <!-- Card 2 -->
+      <section class="w-full bg-white rounded-[30px] overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="gradient-top p-4 text-center relative overflow-hidden">
+          <h2 class="text-white text-xl font-semibold client-font relative">Student</h2>
+          <h1 class="text-white text-2xl font-bold mt-[-5px] relative">TESTIMONIAL</h1>
+        </div>
+        <div class="flex justify-center -mt-8 relative z-10">
+          <img src="Screenshot_2025-07-22_231037-removebg-preview.png" alt="Client" class="w-16 h-16 rounded-full border-4 border-white profile-shadow object-cover">
+        </div>
+        <div class="bg-white px-4 pb-4 pt-3 testimonial-card mt-[-12px] text-center relative">
+          <i class="fas fa-quote-left quote-icon quote-left"></i>
+          <i class="fas fa-quote-left quote-icon quote-right"></i>
+          <h3 class="text-green-600 text-lg font-bold mb-1">Rohan</h3>
+          <p class="text-gray-500 uppercase text-xs tracking-wider mb-4">CEO, AGENCY</p>
+          <p class="text-gray-700 text-xs leading-relaxed mb-4 px-1 relative z-10">
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          </p>
+          <div class="flex justify-center text-yellow-400 space-x-1 text-sm mb-1">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="text-gray-400 text-xs">Verified Student</p>
+        </div>
+      </section>
+
+      <!-- Card 3 -->
+      <section class="w-full bg-white rounded-[30px] overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+        <div class="gradient-top p-4 text-center relative overflow-hidden">
+          <h2 class="text-white text-xl font-semibold client-font relative">Student</h2>
+          <h1 class="text-white text-2xl font-bold mt-[-5px] relative">TESTIMONIAL</h1>
+        </div>
+        <div class="flex justify-center -mt-8 relative z-10">
+          <img src="Screenshot_2025-07-22_231037-removebg-preview.png" alt="Client" class="w-16 h-16 rounded-full border-4 border-white profile-shadow object-cover">
+        </div>
+        <div class="bg-white px-4 pb-4 pt-3 testimonial-card mt-[-12px] text-center relative">
+          <i class="fas fa-quote-left quote-icon quote-left"></i>
+          <i class="fas fa-quote-left quote-icon quote-right"></i>
+          <h3 class="text-green-600 text-lg font-bold mb-1">jack</h3>
+          <p class="text-gray-500 uppercase text-xs tracking-wider mb-4">CEO, AGENCY</p>
+          <p class="text-gray-700 text-xs leading-relaxed mb-4 px-1 relative z-10">
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+          </p>
+          <div class="flex justify-center text-yellow-400 space-x-1 text-sm mb-1">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+          <p class="text-gray-400 text-xs">Verified Student</p>
+        </div>
+      </div>
+</section>
+  <!-- Background shapes -->
+  <div class="bg-shape-1"></div>
+  <div class="bg-shape-2"></div>
+
+  <!-- footer -->
+  <footer class="relative bg-[#0B3C38] text-white pt-12 pb-6 overflow-hidden">
+    <!-- Background Triangle Lines -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ffffff11" />
+            <stop offset="100%" stop-color="#ffffff05" />
+          </linearGradient>
+        </defs>
+        <path d="M0,100 L50,0 L100,100" stroke="url(#lineGradient)" stroke-width="0.5" fill="none" />
+        <path d="M25,100 L60,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+        <path d="M10,100 L70,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Logo + Tagline -->
+      <div>
+        <div class="flex items-center gap-2">
+          <img src="img/BPTI.jpg" alt="Logo" class="h-6">
+          <span class="font-semibold text-xl">INFORMATION TECHNOLOGY</span>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-gray-300">
+          Empowering students with industry-ready IT skills and modern tools to build future-ready professionals.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex space-x-4 mt-6 text-white text-lg">
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-x"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-facebook"></i></a>
+        </div>
+
+        <!-- Back to Top -->
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+          class="mt-6 px-4 py-2 border border-white hover:bg-white hover:text-black transition rounded flex items-center gap-2">
+          <i class="ri-arrow-up-line"></i> BACK TO TOP
+        </button>
+      </div>
+
+      <!-- Site Map -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Site Map</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i class="ri-home-3-line text-white"></i> <a href="index.html">Homepage</a></li>
+          <li class="flex items-center gap-2"><i class="ri-notification-2-line text-white"></i> <a href="anounce.html">Announcement</a></li>
+          <li class="flex items-center gap-2"><i class="ri-building-line text-white"></i> <a href="#">About Department</a></li>
+          <li class="flex items-center gap-2"><i class="ri-newspaper-line text-white"></i> <a href="#">Academics</a></li>
+          <li class="flex items-center gap-2"><i class="ri-briefcase-line text-white"></i> <a href="#">Student Corner</a></li>
+          <li class="flex items-center gap-2"><i class="ri-contacts-book-line text-white"></i> <a href="#">Departmental Activities</a></li>
+          <li class="flex items-center gap-2"><i class="ri-key-line text-white"></i> <a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Legal</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i class="ri-lock-line text-white"></i> <a href="#">Privacy Policy</a></li>
+          <li class="flex items-center gap-2"><i class="ri-file-list-2-line text-white"></i> <a href="terms.html">Terms of Services</a></li>
+          <li class="flex items-center gap-2"><i class="ri-user-3-line text-white"></i> <a href="#">Student Guidelines</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="relative z-10 bg-[#D8953A] text-center text-xs text-black font-medium py-2 mt-10">
+      Copyright © 2025 Department of Information Technology, SIR BPTI. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

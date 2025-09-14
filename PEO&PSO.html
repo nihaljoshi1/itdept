@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IT DEPARTMENT PEO's & PSO's | SIR BHAVSINHJI POLYTECHNIC INSTITUTE, BHAVNAGAR</title>
+  <link href="dist/output.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4361ee;
+      --secondary: #3a0ca3;
+      --accent: #4895ef;
+      --light: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-dark: #2b2d42;
+      --text-light: #6c757d;
+      --success: #4cc9f0;
+      --highlight: #7209b7;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .main-container {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f7ff;
+      color: var(--text-dark);
+      line-height: 1.6;
+      margin: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      color: var(--secondary);
+      margin-bottom: 1rem;
+      background: linear-gradient(90deg, var(--secondary), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .subtitle {
+      color: var(--text-light);
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .heading-pill {
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  background-color: #ffe5e5; /* soft pink */
+  color: #d62828; /* rich red */
+  font-weight: 700;
+  border-radius: 999px; /* pill shape */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+
+    .outcomes-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .outcome-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      padding: 2.5rem;
+      box-shadow: 0 10px 30px rgba(67, 97, 238, 0.1);
+      border-top: 4px solid var(--primary);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .outcome-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(67, 97, 238, 0.15);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .icon-wrapper {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--primary), var(--highlight));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 1.5rem;
+      color: white;
+      font-size: 1.5rem;
+      box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+    }
+
+    .card-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--secondary);
+    }
+
+    .card-subtitle {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+    }
+
+    .outcome-list {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    .outcome-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1.25rem;
+      color: var(--text-dark);
+    }
+
+.outcome-item::before {
+  content: '✔';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary);
+  font-weight: bold;
+}
+
+
+    .outcome-item strong {
+      color: var(--secondary);
+      font-weight: 600;
+    }
+
+    .peos-card {
+      border-top-color: var(--highlight);
+    }
+
+    .peos-card .icon-wrapper {
+      background: linear-gradient(135deg, var(--highlight), var(--primary));
+    }
+
+    .psos-card {
+      border-top-color: var(--success);
+    }
+
+    .psos-card .icon-wrapper {
+      background: linear-gradient(135deg, var(--success), var(--accent));
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .outcomes-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .outcome-card {
+        padding: 2rem;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+  <!-- Top Info Section -->
+<a href="index.html">
+  <div class="bg-white text-center py-6 shadow-sm border-b border-teal-300">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center sm:justify-start sm:space-x-6">
+      <!-- Logo -->
+      <img src="./img/BPTI.jpg" alt="Logo" class="w-20 h-20 rounded-full border border-green-500 mb-3 sm:mb-0" />
+
+      <!-- Department Text -->
+      <div class="text-center sm:text-left">
+        <h1 class="text-xl sm:text-2xl font-bold text-green-800 tracking-wide uppercase leading-tight">
+          Information Technology Department
+        </h1>
+        <p class="text-sm sm:text-base text-green-700 mt-1 font-medium">
+          Sir Bhavsinhji Polytechnic Institute, Bhavnagar
+        </p>
+      </div>
+    </div>
+  </div>
+</a>
+
+<!-- Navbar -->
+<header class="bg-teal-100 shadow-md sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+    <!-- Semester Dropdown -->
+    <div class="flex items-center space-x-4">
+      <div class="relative group">
+        <button class="flex items-center gap-2 border border-green-600 text-green-800 px-4 py-2 rounded-md hover:bg-green-50">
+          Select Semester
+          <i class="fas fa-chevron-down text-green-600 text-sm"></i>
+        </button>
+        <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border w-40 rounded shadow-md z-50">
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">First</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Second</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Third</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Fourth</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Fifth</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Sixth</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Hamburger (Mobile) -->
+    <div class="md:hidden">
+      <button onclick="toggleMenu()" class="text-green-700 focus:outline-none">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-6 text-green-900 font-semibold">
+      <a href="#" class="hover:text-green-700">Home</a>
+
+      <!-- About Institute Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-green-700">
+          About Institute
+          <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+        </button>
+        <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-56 z-50">
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Discover Institute</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Principal's Message</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Vision and Mission</a></li>
+        </ul>
+      </div>
+
+      <!-- About Department Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-green-700">
+          About Department
+          <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+        </button>
+        <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-64 z-50">
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Discover Department</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">From HoD’s Desk</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Dept. Vision & Mission</a></li>
+          <li><a href="PEO's & PSO's.html" class="block px-4 py-2 hover:bg-green-50">Dept. PEOs & PSOs</a></li>
+          <li><a href="faculty.html" class="block px-4 py-2 hover:bg-green-50">Faculty</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Laboratory</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Photo Gallery</a></li>
+        </ul>
+      </div>
+
+      <a href="anounce.html" class="hover:text-green-700">Announcement</a>
+      <a href="#" class="hover:text-green-700">Academics</a>
+
+      <!-- Student Corner Dropdown -->
+      <div class="relative group">
+        <button class="flex items-center gap-1 hover:text-green-700">
+          Student Corner
+          <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+        </button>
+        <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-56 z-50">
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Academic Calendar</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Time Table</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Examination Section</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Online Fees Payment</a></li>
+          <li><a href="#" class="block px-4 py-2 hover:bg-green-50">Useful Links</a></li>
+        </ul>
+      </div>
+
+      <a href="#" class="hover:text-green-700">Departmental Activities</a>
+    </nav>
+  </div>
+
+  <!-- Mobile Nav (All Links Expanded) -->
+  <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-white shadow text-green-800 font-semibold">
+    <a href="#" class="block py-2 border-b">Home</a>
+
+    <!-- About Institute -->
+    <button onclick="toggleSubmenu('institute-sub')" class="w-full text-left py-2 border-b">About Institute <i class="fas fa-chevron-down text-green-600 text-sm"></i></button> 
+    <div id="institute-sub" class="hidden pl-4">
+      <a href="#" class="block py-1">› Discover Institute</a>
+      <a href="#" class="block py-1">› Principal's Message</a>
+      <a href="#" class="block py-1">› Vision and Mission</a>
+    </div>
+
+    <!-- About Department -->
+    <button onclick="toggleSubmenu('dept-sub')" class="w-full text-left py-2 border-b">About Department <i class="fas fa-chevron-down text-green-600 text-sm"></i></button>
+    <div id="dept-sub" class="hidden pl-4">
+      <a href="#" class="block py-1">› Discover Department</a>
+      <a href="#" class="block py-1">› From HoD’s Desk</a>
+      <a href="#" class="block py-1">› Dept. Vision & Mission</a>
+      <a href="#" class="block py-1">› Dept. PEOs & PSOs</a>
+      <a href="faculty.html" class="block py-1">› Faculty</a>
+      <a href="#" class="block py-1">› Laboratory</a>
+      <a href="#" class="block py-1">› Photo Gallery</a>
+    </div>
+
+    <a href="anounce.html" class="block py-2 border-b">Announcement</a>
+    <a href="#" class="block py-2 border-b">Academics</a>
+
+    <!-- Student Corner -->
+    <button onclick="toggleSubmenu('student-sub')" class="w-full text-left py-2 border-b">Student Corner <i class="fas fa-chevron-down text-green-600 text-sm"></i></button>
+    <div id="student-sub" class="hidden pl-4">
+      <a href="#" class="block py-1">› Academic Calendar</a>
+      <a href="#" class="block py-1">› Time Table</a>
+      <a href="#" class="block py-1">› Examination Section</a>
+      <a href="#" class="block py-1">› Online Fees Payment</a>
+      <a href="#" class="block py-1">› Useful Links</a>
+    </div>
+
+    <a href="#" class="block py-2">Departmental Activities</a>
+  </div>
+
+</header>
+
+
+<div class="main-container">
+  <div class="container">
+    <header>
+      <h1 class="heading-pill">Program Outcomes</h1>
+      <p class="subtitle">Our commitment to academic excellence and student success</p>
+    </header>
+
+    <div class="outcomes-container">
+      <!-- PEOs Card -->
+      <div class="outcome-card peos-card">
+        <div class="card-header">
+          <div class="icon-wrapper">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div>
+            <h2 class="card-title">PEOs</h2>
+            <p class="card-subtitle">Program Educational Objectives</p>
+          </div>
+        </div>
+        <p>What our graduates achieve within 3-5 years after completion:</p>
+        <ul class="outcome-list">
+          <li class="outcome-item">
+            <strong>Industry Leadership:</strong> Excel in technical careers with innovative problem-solving skills
+          </li>
+          <li class="outcome-item">
+            <strong>Professional Growth:</strong> Advance to leadership roles through continuous learning
+          </li>
+          <li class="outcome-item">
+            <strong>Social Impact:</strong> Contribute to society through ethical engineering solutions
+          </li>
+          <li class="outcome-item">
+            <strong>Global Competence:</strong> Demonstrate adaptability in multicultural environments
+          </li>
+        </ul>
+      </div>
+
+      <!-- PSOs Card -->
+      <div class="outcome-card psos-card">
+        <div class="card-header">
+          <div class="icon-wrapper">
+            <i class="fas fa-check-double"></i>
+          </div>
+          <div>
+            <h2 class="card-title">PSOs</h2>
+            <p class="card-subtitle">Program Specific Outcomes</p>
+          </div>
+        </div>
+        <p>What students demonstrate by graduation:</p>
+        <ul class="outcome-list">
+          <li class="outcome-item">
+            <strong>Technical Mastery:</strong> Apply domain knowledge to solve complex engineering challenges
+          </li>
+          <li class="outcome-item">
+            <strong>Modern Tools:</strong> Utilize cutting-edge technologies and software effectively
+          </li>
+          <li class="outcome-item">
+            <strong>Teamwork:</strong> Collaborate in multidisciplinary projects successfully
+          </li>
+          <li class="outcome-item">
+            <strong>Communication:</strong> Present technical concepts clearly to diverse audiences
+          </li>
+          <li class="outcome-item">
+            <strong>Ethics:</strong> Demonstrate professional responsibility in engineering practice
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+  <!-- footer -->
+  <footer class="relative bg-[#0B3C38] text-white pt-12 pb-6 overflow-hidden">
+    <!-- Background Triangle Lines -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ffffff11" />
+            <stop offset="100%" stop-color="#ffffff05" />
+          </linearGradient>
+        </defs>
+        <path d="M0,100 L50,0 L100,100" stroke="url(#lineGradient)" stroke-width="0.5" fill="none" />
+        <path d="M25,100 L60,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+        <path d="M10,100 L70,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Logo + Tagline -->
+      <div>
+        <div class="flex items-center gap-2">
+          <img src="img/BPTI.jpg" alt="Logo" class="h-6">
+          <span class="font-semibold text-xl">INFORMATION TECHNOLOGY</span>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-gray-300">
+          Empowering students with industry-ready IT skills and modern tools to build future-ready professionals.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex space-x-4 mt-6 text-white text-lg">
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-x"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-facebook"></i></a>
+        </div>
+
+        <!-- Back to Top -->
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+          class="mt-6 px-4 py-2 border border-white hover:bg-white hover:text-black transition rounded flex items-center gap-2">
+          <i class="ri-arrow-up-line"></i> BACK TO TOP
+        </button>
+      </div>
+
+      <!-- Site Map -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Site Map</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i class="ri-home-3-line text-white"></i> <a href="index.html">Homepage</a></li>
+          <li class="flex items-center gap-2"><i class="ri-notification-2-line text-white"></i> <a href="anounce.html">Announcement</a></li>
+          <li class="flex items-center gap-2"><i class="ri-building-line text-white"></i> <a href="#">About Department</a></li>
+          <li class="flex items-center gap-2"><i class="ri-newspaper-line text-white"></i> <a href="#">Academics</a></li>
+          <li class="flex items-center gap-2"><i class="ri-briefcase-line text-white"></i> <a href="#">Student Corner</a></li>
+          <li class="flex items-center gap-2"><i class="ri-contacts-book-line text-white"></i> <a href="#">Departmental Activities</a></li>
+          <li class="flex items-center gap-2"><i class="ri-key-line text-white"></i> <a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Legal</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i class="ri-lock-line text-white"></i> <a href="#">Privacy Policy</a></li>
+          <li class="flex items-center gap-2"><i class="ri-file-list-2-line text-white"></i> <a href="terms.html">Terms of Services</a></li>
+          <li class="flex items-center gap-2"><i class="ri-user-3-line text-white"></i> <a href="#">Student Guidelines</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="relative z-10 bg-[#D8953A] text-center text-xs text-black font-medium py-2 mt-10">
+      Copyright © 2025 Department of Information Technology, SIR BPTI. All Rights Reserved.
+    </div>
+  </footer>
+
+</body>
+</html>

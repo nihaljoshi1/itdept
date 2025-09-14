@@ -1,0 +1,1567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination Portal - IT Department</title>
+    <!-- Using PostCSS processed CSS -->
+    <link href="dist/output.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom styles that will work with PostCSS */
+        :root {
+            --primary: #1e40af;
+            --secondary: #3b82f6;
+            --accent: #60a5fa;
+            --light: #f0f7ff;
+            --dark: #1e293b;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        .login-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+        
+        .login-form {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            overflow: hidden;
+        }
+        
+        .login-tabs {
+            display: flex;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .login-tab {
+            flex: 1;
+            padding: 16px;
+            text-align: center;
+            background: #f9fafb;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .login-tab.active {
+            background: white;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+        
+        .login-content {
+            padding: 24px;
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #374151;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-hover:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px -10px rgba(37, 99, 235, 0.6);
+        }
+        
+        .header {
+            background-color: white;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            width: 100%;
+        }
+        
+        .header-container {
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+        }
+        
+        .header-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 9999px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            margin-right: 0.75rem;
+        }
+        
+        .logo-text {
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .logo-subtext {
+            font-size: 0.75rem;
+            color: var(--secondary);
+        }
+        
+        .header-user {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .user-info {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            background-color: var(--light);
+            padding-left: 1rem;
+            padding-right: 1rem;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-radius: 9999px;
+        }
+        
+        @media (min-width: 768px) {
+            .user-info {
+                display: flex;
+            }
+        }
+        
+        .user-avatar {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 9999px;
+            background-color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.875rem;
+        }
+        
+        .user-semester {
+            font-size: 0.75rem;
+            background-color: var(--secondary);
+            color: white;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            border-radius: 9999px;
+        }
+        
+        .header-button {
+            background-color: var(--light);
+            padding: 0.5rem;
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .header-button:hover {
+            background-color: #dbeafe;
+        }
+        
+        .notification-icon {
+            color: var(--secondary);
+            position: relative;
+        }
+        
+        .notification-pulse::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            width: 12px;
+            height: 12px;
+            background-color: var(--danger);
+            border-radius: 50%;
+            animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+        }
+        
+        @keyframes ping {
+            75%, 100% { transform: scale(2); opacity: 0; }
+        }
+        
+        .container {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .container {
+                max-width: 640px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .container {
+                max-width: 768px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 1024px;
+            }
+        }
+        
+        @media (min-width: 1280px) {
+            .container {
+                max-width: 1280px;
+            }
+        }
+        
+        .hero-pattern {
+            background-image: radial-gradient(var(--secondary) 0.5px, transparent 0.5px), radial-gradient(var(--secondary) 0.5px, var(--light) 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .exam-card {
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .upcoming {
+            border-left: 4px solid var(--success);
+        }
+        
+        .completed {
+            border-left: 4px solid #6b7280;
+        }
+        
+        .grade-A { background-color: var(--success); }
+        .grade-B { background-color: var(--secondary); }
+        .grade-C { background-color: var(--warning); }
+        .grade-D { background-color: var(--danger); }
+        .grade-F { background-color: #7c3aed; }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .admin-panel {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            border: 1px solid #e2e8f0;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        .flex { display: flex; }
+        .grid { display: grid; }
+        .block { display: block; }
+        
+        .items-center { align-items: center; }
+        .justify-center { justify-content: center; }
+        .justify-between { justify-content: space-between; }
+        
+        .w-full { width: 100%; }
+        .h-full { height: 100%; }
+        .w-12 { width: 3rem; }
+        .h-12 { height: 3rem; }
+        .w-8 { width: 2rem; }
+        .h-8 { height: 2rem; }
+        
+        .p-2 { padding: 0.5rem; }
+        .p-3 { padding: 0.75rem; }
+        .p-4 { padding: 1rem; }
+        .p-6 { padding: 1.5rem; }
+        .p-8 { padding: 2rem; }
+        
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        .py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+        .py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+        
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mt-12 { margin-top: 3rem; }
+        
+        .gap-2 { gap: 0.5rem; }
+        .gap-4 { gap: 1rem; }
+        .gap-6 { gap: 1.5rem; }
+        .gap-8 { gap: 2rem; }
+        
+        .rounded { border-radius: 0.25rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-2xl { border-radius: 1rem; }
+        .rounded-full { border-radius: 9999px; }
+        
+        .shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+        .shadow-md { box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        .shadow-xl { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); }
+        
+        .text-xs { font-size: 0.75rem; }
+        .text-sm { font-size: 0.875rem; }
+        .text-base { font-size: 1rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-4xl { font-size: 2.25rem; }
+        
+        .font-medium { font-weight: 500; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        
+        .text-center { text-align: center; }
+        .text-left { text-align: left; }
+        .text-right { text-align: right; }
+        
+        .relative { position: relative; }
+        .absolute { position: absolute; }
+        .sticky { position: sticky; }
+        .top-0 { top: 0; }
+        .bottom-0 { bottom: 0; }
+        .left-0 { left: 0; }
+        .right-0 { right: 0; }
+        .inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+        
+        .overflow-hidden { overflow: hidden; }
+        .overflow-auto { overflow: auto; }
+        .overflow-x-auto { overflow-x: auto; }
+        .overflow-y-auto { overflow-y: auto; }
+        
+        .z-10 { z-index: 10; }
+        .z-50 { z-index: 50; }
+        
+        .border { border-width: 1px; }
+        .border-b { border-bottom-width: 1px; }
+        .border-t { border-top-width: 1px; }
+        .border-b-2 { border-bottom-width: 2px; }
+        
+        .border-transparent { border-color: transparent; }
+        .border-gray-200 { border-color: #e5e7eb; }
+        .border-gray-300 { border-color: #d1d5db; }
+        .border-gray-700 { border-color: #374151; }
+        
+        .bg-white { background-color: white; }
+        .bg-gray-50 { background-color: #f9fafb; }
+        .bg-gray-100 { background-color: #f3f4f6; }
+        .bg-gray-200 { background-color: #e5e7eb; }
+        .bg-blue-50 { background-color: #eff6ff; }
+        .bg-blue-100 { background-color: #dbeafe; }
+        .bg-blue-200 { background-color: #bfdbfe; }
+        .bg-blue-500 { background-color: #3b82f6; }
+        .bg-blue-600 { background-color: #2563eb; }
+        .bg-green-100 { background-color: #dcfce7; }
+        .bg-green-500 { background-color: #22c55e; }
+        .bg-green-600 { background-color: #16a34a; }
+        .bg-red-100 { background-color: #fee2e2; }
+        .bg-red-500 { background-color: #ef4444; }
+        .bg-red-600 { background-color: #dc2626; }
+        .bg-yellow-50 { background-color: #fefce8; }
+        .bg-yellow-100 { background-color: #fef3c7; }
+        .bg-purple-100 { background-color: #f3e8ff; }
+        
+        .text-gray-500 { color: #6b7280; }
+        .text-gray-600 { color: #4b5563; }
+        .text-gray-700 { color: #374151; }
+        .text-blue-200 { color: #bfdbfe; }
+        .text-blue-300 { color: #93c5fd; }
+        .text-blue-600 { color: #2563eb; }
+        .text-blue-700 { color: #1d4ed8; }
+        .text-blue-800 { color: #1e40af; }
+        .text-green-600 { color: #16a34a; }
+        .text-red-600 { color: #dc2626; }
+        .text-red-800 { color: #991b1b; }
+        .text-yellow-700 { color: #a16207; }
+        
+        .hover\:bg-blue-50:hover { background-color: #eff6ff; }
+        .hover\:bg-blue-100:hover { background-color: #dbeafe; }
+        .hover\:bg-gray-50:hover { background-color: #f9fafb; }
+        
+        .hover\:text-white:hover { color: white; }
+        .hover\:text-blue-800:hover { color: #1e40af; }
+        
+        .transition-colors { transition-property: background-color, border-color, color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        .transition-all { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        
+        @media (min-width: 768px) {
+            .md\:flex { display: flex; }
+            .md\:hidden { display: none; }
+            .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .md\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .md\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .md\:text-xl { font-size: 1.25rem; }
+            .md\:text-4xl { font-size: 2.25rem; }
+            .md\:text-5xl { font-size: 3rem; }
+        }
+        
+        @media (min-width: 1024px) {
+            .lg\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+        }
+    </style>
+</head>
+<body>
+
+
+    
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-container">
+        <div class="login-form">
+            <div class="login-tabs">
+                <div class="login-tab active" data-type="student">Student Login</div>
+                <div class="login-tab" data-type="admin">Admin Login</div>
+            </div>
+            
+            <div class="login-content">
+                <!-- Student Login -->
+                <form id="studentLoginForm" class="login-form-content">
+                    <div class="form-group">
+                        <label for="studentId">Student ID</label>
+                        <input type="text" id="studentId" placeholder="Enter your student ID" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="studentPassword">Password</label>
+                        <input type="password" id="studentPassword" placeholder="Enter your password" required>
+                    </div>
+                    
+                    <button type="submit" class="w-full py-2 px-4 rounded-lg font-medium hover:bg-secondary transition-colors btn-hover" style="background-color: #1e40af; color: var(--light);">
+                        Login as Student
+                    </button>
+                </form>
+                
+                <!-- Admin Login -->
+                <form id="adminLoginForm" class="login-form-content hidden">
+                    <div class="form-group">
+                        <label for="adminUsername">Username</label>
+                        <input type="text" id="adminUsername" placeholder="Admin username" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="adminPassword">Password</label>
+                        <input type="password" id="adminPassword" placeholder="Admin password" required>
+                    </div>
+                    
+                    <button type="submit" class="w-full py-2 px-4 rounded-lg font-medium hover:bg-secondary transition-colors btn-hover" style="background-color: #1e40af; color: var(--light);">
+                        Login as Admin
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Portal Content (Initially Hidden) -->
+    <div id="portalContent" class="hidden">
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-container">
+                <div class="header-logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div>
+                        <h1 class="logo-text">SIR BPTI - IT Department</h1>
+                        <p class="logo-subtext">Examination Portal</p>
+                    </div>
+                </div>
+                
+                <div class="header-user">
+                    <div class="user-info">
+                        <div class="user-avatar" id="userAvatar">JS</div>
+                        <span class="text-dark text-sm" id="userName">John Smith</span>
+                        <span class="user-semester" id="userSemester">Sem 1</span>
+                    </div>
+                     <a href="index.html" class="header-button">
+                        <i class="fa-solid fa-house-chimney notification-icon"></i>
+                     </a>
+                    <button class="header-button" id="notificationsBtn">
+                        <i class="fas fa-bell notification-icon notification-pulse"></i>
+                    </button>
+                    <button class="header-button" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt notification-icon"></i>
+                    </button>
+
+                </div>
+            </div>
+        </header>
+        
+
+        <!-- Main Content -->
+        <main class="container mx-auto px-4 py-8">
+            <!-- Hero Section -->
+            <section class="hero-pattern rounded-2xl shadow-xl p-8 mb-8 text-white relative overflow-hidden" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);">
+                <div class="absolute inset-0 bg-white opacity-10"></div>
+                <div class="absolute -right-10 -top-10 w-40 h-40 bg-white opacity-10 rounded-full"></div>
+                <div class="absolute -left-10 -bottom-10 w-60 h-60 bg-white opacity-10 rounded-full"></div>
+                
+                <div class="max-w-4xl relative z-10">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-4">Examination Section</h1>
+                    <p class="text-lg md:text-xl mb-6">Stay updated with exam schedules, results, and important notices from the IT Department, SIR BPTI.</p>
+                    
+                    <div class="flex flex-wrap gap-4">
+                        <button class="btn-hover bg-white font-medium py-3 px-6 rounded-lg shadow-md flex items-center justify-center gap-2" style="color: #1e293b;">
+                            <i class="far fa-calendar-alt"></i> View Timetable
+                        </button>
+                        <button class="btn-hover bg-white text-primary font-medium py-3 px-6 rounded-lg shadow-md flex items-center justify-center gap-2" style="color: #1e293b;">
+                            <i class="far fa-chart-bar"></i> Check Results
+                        </button>
+                        <button class="btn-hover bg-white text-primary font-medium py-3 px-6 rounded-lg shadow-md flex items-center justify-center gap-2" style="color: #1e293b;">
+                            <i class="far fa-bell"></i> Download Notices
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white p-4 rounded-xl shadow-md text-center card-hover">
+                    <div class="text-2xl font-bold text-primary" id="activeSemesters">6</div>
+                    <div class="text-sm text-gray-600">Active Semesters</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-md text-center card-hover">
+                    <div class="text-2xl font-bold text-primary" id="upcomingExams">3</div>
+                    <div class="text-sm text-gray-600">Upcoming Exams</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-md text-center card-hover">
+                    <div class="text-2xl font-bold text-primary" id="newNotices">5</div>
+                    <div class="text-sm text-gray-600">New Notices</div>
+                </div>
+                <div class="bg-white p-4 rounded-xl shadow-md text-center card-hover">
+                    <div class="text-2xl font-bold text-primary" id="resultsPublished">12</div>
+                    <div class="text-sm text-gray-600">Result Published</div>
+                </div>
+            </div>
+
+            <!-- Performance Overview -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover col-span-2">
+                    <h3 class="text-xl font-bold text-dark mb-4">Academic Performance</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-light rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold text-primary" id="currentSPI">8.72</div>
+                            <div class="text-sm text-gray-600">Current SPI</div>
+                        </div>
+                        <div class="bg-light rounded-lg p-4 text-center">
+                            <div class="text-3xl font-bold text-secondary" id="currentCPI">8.45</div>
+                            <div class="text-sm text-gray-600">Overall CPI</div>
+                        </div>
+                    </div>
+                    <div class="mt-6">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-sm font-medium">Semester Progress</span>
+                            <span class="text-sm font-medium" id="semProgressText">65%</span>
+                        </div>
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full" id="semProgressBar" style="width: 65%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-md p-6 card-hover">
+                    <h3 class="text-xl font-bold text-dark mb-4">Attendance</h3>
+                    <div class="flex justify-center mb-4">
+                        <svg class="w-32 h-32" viewBox="0 0 128 128">
+                            <circle class="text-gray-200" stroke-width="8" stroke="currentColor" fill="transparent" r="56" cx="64" cy="64"/>
+                            <circle class="text-blue-600" stroke-width="8" stroke-dasharray="352" stroke-dashoffset="52.8" stroke-linecap="round" stroke="currentColor" fill="transparent" r="56" cx="64" cy="64" transform="rotate(-90 64 64)"/>
+                        </svg>
+                        <div class="absolute flex flex-col items-center justify-center w-32 h-32">
+                            <span class="text-2xl font-bold" id="attendancePercent">85%</span>
+                            <span class="text-xs text-gray-600">Attendance</span>
+                        </div>
+                    </div>
+                    <p class="text-center text-sm text-gray-600">Good attendance! Keep it up.</p>
+                </div>
+            </div>
+
+            <!-- Main Tabs -->
+            <div class="bg-white rounded-xl shadow-md mb-8 overflow-hidden">
+                <div class="flex flex-wrap border-b">
+                    <button class="tab-btn py-4 px-6 font-medium text-gray-600 border-b-2 border-transparent hover:border-primary hover:text-primary transition-all" data-tab="exams">
+                        <i class="fas fa-book-open mr-2"></i> Exam Schedule
+                    </button>
+                    <button class="tab-btn py-4 px-6 font-medium text-gray-600 border-b-2 border-transparent hover:border-primary hover:text-primary transition-all" data-tab="results">
+                        <i class="fas fa-chart-line mr-2"></i> Results
+                    </button>
+                    <button class="tab-btn py-4 px-6 font-medium text-gray-600 border-b-2 border-transparent hover:border-primary hover:text-primary transition-all" data-tab="notices">
+                        <i class="fas fa-sticky-note mr-2"></i> Notices
+                    </button>
+                    
+                    <!-- Admin Panel Tab (Only visible to admins) -->
+                    <button id="adminTabBtn" class="tab-btn py-4 px-6 font-medium text-gray-600 border-b-2 border-transparent hover:border-primary hover:text-primary transition-all hidden" data-tab="admin">
+                        <i class="fas fa-cog mr-2"></i> Admin Panel
+                    </button>
+                </div>
+
+                <!-- Exam Schedule Tab -->
+                <div id="exams" class="tab-content p-6 active">
+                    <div class="flex flex-wrap gap-2 mb-6" id="semesterTabsContainer">
+                        <!-- Semester tabs will be generated here -->
+                    </div>
+                    
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="exam-container">
+                        <!-- Exam cards will be generated here -->
+                    </div>
+                </div>
+
+                <!-- Results Tab -->
+                <div id="results" class="tab-content p-6">
+                    <div id="resultsContent">
+                        <!-- Results content will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Notices Tab -->
+                <div id="notices" class="tab-content p-6">
+                    <div id="noticesContent">
+                        <!-- Notices content will be loaded here -->
+                    </div>
+                </div>
+
+                <!-- Admin Panel Tab -->
+                <div id="admin" class="tab-content p-6">
+                    <div class="admin-panel">
+                        <h3 class="text-xl font-bold text-dark mb-4">Student Management</h3>
+                        
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <h4 class="font-medium mb-3">Add New Student</h4>
+                                <form id="addStudentForm" class="space-y-3">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                                        <input type="text" id="newStudentName" class="w-full px-3 py-2 border border-gray-300 rounded-md" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Student ID</label>
+                                        <input type="text" id="newStudentId" class="w-full px-3 py-2 border border-gray-300 rounded-md" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Semester</label>
+                                        <select id="newStudentSemester" class="w-full px-3 py-2 border border-gray-300 rounded-md" required>
+                                            <option value="1">Semester 1</option>
+                                            <option value="2">Semester 2</option>
+                                            <option value="3">Semester 3</option>
+                                            <option value="4">Semester 4</option>
+                                            <option value="5">Semester 5</option>
+                                            <option value="6">Semester 6</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                                        <input type="password" id="newStudentPassword" class="w-full px-3 py-2 border border-gray-300 rounded-md" required>
+                                    </div>
+                                    <button type="submit" class="w-full bg-primary text-white py-2 px-4 rounded-md font-medium hover:bg-secondary transition-colors btn-hover">
+                                        Add Student
+                                    </button>
+                                </form>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-medium mb-3">Current Students</h4>
+                                <div class="bg-white rounded-lg shadow-sm p-4 max-h-64 overflow-y-auto">
+                                    <table class="w-full text-sm">
+                                        <thead>
+                                            <tr class="border-b">
+                                                <th class="text-left py-2">ID</th>
+                                                <th class="text-left py-2">Name</th>
+                                                <th class="text-left py-2">Semester</th>
+                                                <th class="text-left py-2">Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="studentsList">
+                                            <!-- Students will be listed here -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <h4 class="font-medium mb-3">Promote Students to Next Semester</h4>
+                            <button id="promoteStudentsBtn" class="bg-green-600 text-white py-2 px-4 rounded-md font-medium hover:bg-green-700 transition-colors btn-hover">
+                                Promote All Eligible Students
+                            </button>
+                            <p class="text-sm text-gray-600 mt-2">This will advance students to the next semester if they have no backlogs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+      <!-- footer -->
+  <footer class="relative bg-[#0B3C38] text-white pt-12 pb-6 overflow-hidden">
+    <!-- Background Triangle Lines -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ffffff11" />
+            <stop offset="100%" stop-color="#ffffff05" />
+          </linearGradient>
+        </defs>
+        <path d="M0,100 L50,0 L100,100" stroke="url(#lineGradient)" stroke-width="0.5" fill="none" />
+        <path d="M25,100 L60,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+        <path d="M10,100 L70,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Logo + Tagline -->
+      <div>
+        <div class="flex items-center gap-2">
+          <img src="img/BPTI.jpg" alt="Logo" class="h-6">
+          <span class="font-semibold text-xl">INFORMATION TECHNOLOGY</span>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-gray-300">
+          Empowering students with industry-ready IT skills and modern tools to build future-ready professionals.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex space-x-4 mt-6 text-white text-lg">
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-x"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-facebook"></i></a>
+        </div>
+
+        <!-- Back to Top -->
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+          class="mt-6 px-4 py-2 border border-white hover:bg-white hover:text-black transition rounded flex items-center gap-2">
+          <i class="ri-arrow-up-line"></i> BACK TO TOP
+        </button>
+      </div>
+
+      <!-- Site Map -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Site Map</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i class="ri-home-3-line text-white"></i> <a href="index.html">Homepage</a></li>
+          <li class="flex items-center gap-2"><i class="ri-notification-2-line text-white"></i> <a href="anounce.html">Announcement</a></li>
+          <li class="flex items-center gap-2"><i class="ri-building-line text-white"></i> <a href="#">About Department</a></li>
+          <li class="flex items-center gap-2"><i class="ri-newspaper-line text-white"></i> <a href="#">Academics</a></li>
+          <li class="flex items-center gap-2"><i class="ri-briefcase-line text-white"></i> <a href="#">Student Corner</a></li>
+          <li class="flex items-center gap-2"><i class="ri-contacts-book-line text-white"></i> <a href="#">Departmental Activities</a></li>
+          <li class="flex items-center gap-2"><i class="ri-key-line text-white"></i> <a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Legal</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i class="ri-lock-line text-white"></i> <a href="#">Privacy Policy</a></li>
+          <li class="flex items-center gap-2"><i class="ri-file-list-2-line text-white"></i> <a href="terms.html">Terms of Services</a></li>
+          <li class="flex items-center gap-2"><i class="ri-user-3-line text-white"></i> <a href="#">Student Guidelines</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="relative z-10 bg-[#D8953A] text-center text-xs text-black font-medium py-2 mt-10">
+      Copyright © 2025 Department of Information Technology, SIR BPTI. All Rights Reserved.
+    </div>
+  </footer>
+
+
+    <script>
+        // Application State
+        const state = {
+            currentUser: null,
+            isAdmin: false,
+            students: [
+                { 
+                    id: "IT2023001", 
+                    name: "Rahul Sharma", 
+                    password: "password1", 
+                    semester: 1, 
+                    backlogs: 0, 
+                    attendance: 85,
+                    spi: 8.72,
+                    cpi: 8.45,
+                    results: {
+                        1: [
+                            { subject: "Programming Fundamentals", code: "IT101", grade: "A", marks: 92, credits: 4 },
+                            { subject: "Mathematics for IT", code: "IT102", grade: "B+", marks: 85, credits: 4 },
+                            { subject: "Digital Logic Design", code: "IT103", grade: "A", marks: 89, credits: 3 }
+                        ]
+                    } 
+                },
+                { 
+                    id: "IT2023002", 
+                    name: "Priya Patel", 
+                    password: "password2", 
+                    semester: 2, 
+                    backlogs: 2, 
+                    attendance: 78,
+                    spi: 7.56,
+                    cpi: 7.80,
+                    results: {
+                        1: [
+                            { subject: "Programming Fundamentals", code: "IT101", grade: "B", marks: 78, credits: 4 },
+                            { subject: "Mathematics for IT", code: "IT102", grade: "C", marks: 68, credits: 4 },
+                            { subject: "Digital Logic Design", code: "IT103", grade: "B+", marks: 82, credits: 3 }
+                        ],
+                        2: [
+                            { subject: "Data Structures", code: "IT201", grade: "A", marks: 91, credits: 4 },
+                            { subject: "Database Systems", code: "IT202", grade: "F", marks: 42, credits: 4 },
+                            { subject: "Computer Networks", code: "IT203", grade: "F", marks: 38, credits: 3 }
+                        ]
+                    } 
+                },
+                { 
+                    id: "IT2023003", 
+                    name: "Amit Kumar", 
+                    password: "password3", 
+                    semester: 3, 
+                    backlogs: 0, 
+                    attendance: 92,
+                    spi: 9.12,
+                    cpi: 8.95,
+                    results: {} 
+                }
+            ],
+            admins: [
+                { username: "admin", password: "admin123", name: "System Administrator" },
+                { username: "hod_it", password: "hod123", name: "HOD IT Department" }
+            ],
+            examData: [
+                { id: 1, semester: 1, title: "Programming Fundamentals", code: "IT101", date: "Dec 15, 2023", time: "9:00 AM - 12:00 PM", status: "upcoming", type: "Theory", room: "Lab A-101" },
+                { id: 2, semester: 1, title: "Mathematics for IT", code: "IT102", date: "Dec 10, 2023", time: "2:00 PM - 5:00 PM", status: "ongoing", type: "Theory", room: "Room B-205" },
+                { id: 3, semester: 1, title: "Digital Logic Design", code: "IT103", date: "Nov 28, 2023", time: "9:00 AM - 12:00 PM", status: "completed", type: "Theory", room: "Room C-301" },
+                { id: 4, semester: 2, title: "Data Structures", code: "IT201", date: "Dec 18, 2023", time: "9:00 AM - 12:00 PM", status: "upcoming", type: "Theory", room: "Lab A-102" },
+                { id: 5, semester: 2, title: "Database Systems", code: "IT202", date: "Dec 12, 2023", time: "2:00 PM - 5:00 PM", status: "ongoing", type: "Theory", room: "Room B-210" },
+                { id: 6, semester: 2, title: "Computer Networks", code: "IT203", date: "Nov 30, 2023", time: "9:00 AM - 12:00 PM", status: "completed", type: "Theory", room: "Room C-305" },
+                { id: 7, semester: 3, title: "Algorithm Design", code: "IT301", date: "Dec 20, 2023", time: "9:00 AM - 12:00 PM", status: "upcoming", type: "Theory", room: "Lab A-201" },
+                { id: 8, semester: 3, title: "Web Technologies", code: "IT302", date: "Dec 14, 2023", time: "2:00 PM - 5:00 PM", status: "ongoing", type: "Practical", room: "Lab B-102" },
+                { id: 9, semester: 3, title: "Software Engineering", code: "IT303", date: "Dec 5, 2023", time: "9:00 AM - 12:00 PM", status: "completed", type: "Theory", room: "Room D-101" },
+                { id: 10, semester: 4, title: "Machine Learning", code: "IT401", date: "Dec 22, 2023", time: "9:00 AM - 12:00 PM", status: "upcoming", type: "Theory", room: "Lab A-301" },
+                { id: 11, semester: 4, title: "Cloud Computing", code: "IT402", date: "Dec 16, 2023", time: "2:00 PM - 5:00 PM", status: "ongoing", type: "Theory", room: "Room E-205" },
+                { id: 12, semester: 4, title: "Cyber Security", code: "IT403", date: "Dec 8, 2023", time: "9:00 AM - 12:00 PM", status: "completed", type: "Theory", room: "Room F-105" },
+                { id: 13, semester: 5, title: "AI & Expert Systems", code: "IT501", date: "Dec 24, 2023", time: "9:00 AM - 12:00 PM", status: "upcoming", type: "Theory", room: "Lab C-101" },
+                { id: 14, semester: 5, title: "IoT Fundamentals", code: "IT502", date: "Dec 18, 2023", time: "2:00 PM - 5:00 PM", status: "ongoing", type: "Practical", room: "Lab D-102" },
+                { id: 15, semester: 5, title: "Big Data Analytics", code: "IT503", date: "Dec 10, 2023", time: "9:00 AM - 12:00 PM", status: "completed", type: "Theory", room: "Room G-201" },
+                { id: 16, semester: 6, title: "Project Management", code: "IT601", date: "Dec 26, 2023", time: "9:00 AM - 12:00 PM", status: "upcoming", type: "Theory", room: "Lab E-101" },
+                { id: 17, semester: 6, title: "DevOps Practices", code: "IT602", date: "Dec 20, 2023", time: "2:00 PM - 5:00 PM", status: "ongoing", type: "Practical", room: "Lab F-102" },
+                { id: 18, semester: 6, title: "Project Work", code: "IT603", date: "Dec 12, 2023", time: "9:00 AM - 12:00 PM", status: "completed", type: "Practical", room: "Project Lab" }
+            ],
+            notices: [
+                { id: 1, title: "Exam Postponement", content: "The Data Structures exam scheduled for December 12 has been postponed to December 15 due to unavoidable circumstances.", date: "Dec 5, 2023", type: "urgent", semester: 2 },
+                { id: 2, title: "Practical Exam Schedule", content: "The practical examination schedule for Semester 5 has been published. Please check your time slots.", date: "Dec 3, 2023", type: "info", semester: 5 },
+                { id: 3, title: "End Semester Time Table", content: "Time table for End Semester Exams has been published. Download from the resources section.", date: "Dec 1, 2023", type: "info", semester: "all" },
+                { id: 4, title: "Fee Submission Deadline", content: "Last date for fee submission is December 10. Late submissions will attract a penalty.", date: "Nov 28, 2023", type: "reminder", semester: "all" },
+                { id: 5, title: "Library Hours Extended", content: "Library will remain open till 10 PM during examination days.", date: "Nov 25, 2023", type: "info", semester: "all" },
+                { id: 6, title: "Semester 1 Orientation", content: "Orientation program for Semester 1 students will be held on December 15.", date: "Nov 20, 2023", type: "info", semester: 1 },
+                { id: 7, title: "Project Submission Deadline", content: "Last date for project submission for Semester 6 students is December 20.", date: "Nov 18, 2023", type: "reminder", semester: 6 }
+            ]
+        };
+
+        // DOM Elements
+        const loginScreen = document.getElementById('loginScreen');
+        const portalContent = document.getElementById('portalContent');
+        const studentLoginForm = document.getElementById('studentLoginForm');
+        const adminLoginForm = document.getElementById('adminLoginForm');
+        const loginTabs = document.querySelectorAll('.login-tab');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const adminTabBtn = document.getElementById('adminTabBtn');
+        const examContainer = document.getElementById('exam-container');
+        const resultsContent = document.getElementById('resultsContent');
+        const noticesContent = document.getElementById('noticesContent');
+        const userName = document.getElementById('userName');
+        const userAvatar = document.getElementById('userAvatar');
+        const userSemester = document.getElementById('userSemester');
+        const addStudentForm = document.getElementById('addStudentForm');
+        const studentsList = document.getElementById('studentsList');
+        const promoteStudentsBtn = document.getElementById('promoteStudentsBtn');
+        const semesterTabsContainer = document.getElementById('semesterTabsContainer');
+        const currentSPI = document.getElementById('currentSPI');
+        const currentCPI = document.getElementById('currentCPI');
+        const semProgressText = document.getElementById('semProgressText');
+        const semProgressBar = document.getElementById('semProgressBar');
+        const attendancePercent = document.getElementById('attendancePercent');
+
+        // Initialize the application
+        function initApp() {
+            // Load student data from localStorage if available
+            const savedStudents = localStorage.getItem('examPortalStudents');
+            if (savedStudents) {
+                state.students = JSON.parse(savedStudents);
+            }
+            
+            // Load admin data from localStorage if available
+            const savedAdmins = localStorage.getItem('examPortalAdmins');
+            if (savedAdmins) {
+                state.admins = JSON.parse(savedAdmins);
+            }
+            
+            // Set up event listeners
+            setupEventListeners();
+            
+            // Check if user is already logged in
+            const savedUser = localStorage.getItem('examPortalUser');
+            if (savedUser) {
+                const userData = JSON.parse(savedUser);
+                state.currentUser = userData;
+                state.isAdmin = userData.isAdmin || false;
+                showPortal();
+            }
+        }
+
+        // Set up event listeners
+        function setupEventListeners() {
+            // Login tab switching
+            loginTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const loginType = tab.getAttribute('data-type');
+                    
+                    // Update active tab
+                    loginTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    // Show appropriate form
+                    document.querySelectorAll('.login-form-content').forEach(form => {
+                        form.classList.add('hidden');
+                    });
+                    
+                    if (loginType === 'student') {
+                        studentLoginForm.classList.remove('hidden');
+                    } else {
+                        adminLoginForm.classList.remove('hidden');
+                    }
+                });
+            });
+            
+            // Student login form submission
+            studentLoginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const studentId = document.getElementById('studentId').value;
+                const password = document.getElementById('studentPassword').value;
+                
+                // Find student
+                const student = state.students.find(s => s.id === studentId && s.password === password);
+                
+                if (student) {
+                    // Check if student has too many backlogs
+                    if (student.backlogs >= 5) {
+                        alert('Access denied. You have 5 or more backlogs. Please contact administration.');
+                        return;
+                    }
+                    
+                    state.currentUser = { ...student, isAdmin: false };
+                    state.isAdmin = false;
+                    
+                    // Save to localStorage
+                    localStorage.setItem('examPortalUser', JSON.stringify(state.currentUser));
+                    
+                    showPortal();
+                } else {
+                    alert('Invalid student ID or password');
+                }
+            });
+            
+            // Admin login form submission
+            adminLoginForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const username = document.getElementById('adminUsername').value;
+                const password = document.getElementById('adminPassword').value;
+                
+                // Find admin
+                const admin = state.admins.find(a => a.username === username && a.password === password);
+                
+                if (admin) {
+                    state.currentUser = { ...admin, isAdmin: true };
+                    state.isAdmin = true;
+                    
+                    // Save to localStorage
+                    localStorage.setItem('examPortalUser', JSON.stringify(state.currentUser));
+                    
+                    showPortal();
+                } else {
+                    alert('Invalid admin credentials');
+                }
+            });
+            
+            // Logout button
+            logoutBtn.addEventListener('click', () => {
+                localStorage.removeItem('examPortalUser');
+                state.currentUser = null;
+                state.isAdmin = false;
+                hidePortal();
+            });
+            
+            // Tab functionality
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+                    
+                    // Deactivate all tabs
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('border-primary', 'text-primary');
+                        btn.classList.add('border-transparent', 'text-gray-600');
+                    });
+                    
+                    // Activate clicked tab
+                    button.classList.add('border-primary', 'text-primary');
+                    button.classList.remove('border-transparent', 'text-gray-600');
+                    
+                    // Hide all tab contents
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                    });
+                    
+                    // Show selected tab content
+                    document.getElementById(tabId).classList.add('active');
+                    
+                    // Load content based on tab
+                    if (tabId === 'exams') {
+                        renderExams();
+                    } else if (tabId === 'results') {
+                        renderResults();
+                    } else if (tabId === 'notices') {
+                        renderNotices();
+                    } else if (tabId === 'admin') {
+                        renderStudentsList();
+                    }
+                });
+            });
+            
+            // Add student form
+            addStudentForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('newStudentName').value;
+                const id = document.getElementById('newStudentId').value;
+                const semester = parseInt(document.getElementById('newStudentSemester').value);
+                const password = document.getElementById('newStudentPassword').value;
+                
+                // Check if student ID already exists
+                if (state.students.some(s => s.id === id)) {
+                    alert('Student ID already exists');
+                    return;
+                }
+                
+                // Add new student
+                state.students.push({
+                    id,
+                    name,
+                    password,
+                    semester,
+                    backlogs: 0,
+                    attendance: 85,
+                    spi: 0,
+                    cpi: 0,
+                    results: {}
+                });
+                
+                // Save to localStorage
+                localStorage.setItem('examPortalStudents', JSON.stringify(state.students));
+                
+                // Reset form
+                addStudentForm.reset();
+                
+                // Update students list
+                renderStudentsList();
+                
+                alert('Student added successfully');
+            });
+            
+            // Promote students button
+            promoteStudentsBtn.addEventListener('click', () => {
+                let promotedCount = 0;
+                
+                state.students.forEach(student => {
+                    // Only promote if no backlogs and not in final semester
+                    if (student.backlogs === 0 && student.semester < 6) {
+                        student.semester++;
+                        promotedCount++;
+                    }
+                });
+                
+                // Save to localStorage
+                localStorage.setItem('examPortalStudents', JSON.stringify(state.students));
+                
+                // Update students list
+                renderStudentsList();
+                
+                alert(`Promoted ${promotedCount} students to next semester`);
+            });
+        }
+
+        // Show portal content
+        function showPortal() {
+            loginScreen.classList.add('hidden');
+            portalContent.classList.remove('hidden');
+            
+            // Update user info
+            userName.textContent = state.currentUser.name;
+            userAvatar.textContent = state.currentUser.name.split(' ').map(n => n[0]).join('');
+            
+            if (!state.isAdmin) {
+                userSemester.textContent = `Sem ${state.currentUser.semester}`;
+                userSemester.classList.remove('hidden');
+                
+                // Update performance metrics
+                currentSPI.textContent = state.currentUser.spi;
+                currentCPI.textContent = state.currentUser.cpi;
+                
+                // Set attendance
+                attendancePercent.textContent = `${state.currentUser.attendance}%`;
+                
+                // Set semester progress (random for demo)
+                const progress = Math.floor(Math.random() * 40) + 60; // 60-100%
+                semProgressText.textContent = `${progress}%`;
+                semProgressBar.style.width = `${progress}%`;
+            } else {
+                userSemester.classList.add('hidden');
+            }
+            
+            // Show/hide admin tab based on user type
+            if (state.isAdmin) {
+                adminTabBtn.classList.remove('hidden');
+            } else {
+                adminTabBtn.classList.add('hidden');
+            }
+            
+            // Render initial content
+            renderSemesterTabs();
+            renderExams();
+            updateDashboardStats();
+        }
+
+        // Hide portal content
+        function hidePortal() {
+            portalContent.classList.add('hidden');
+            loginScreen.classList.remove('hidden');
+        }
+
+        // Render semester tabs based on current user
+        function renderSemesterTabs() {
+            semesterTabsContainer.innerHTML = '';
+            
+            if (state.isAdmin) {
+                // Admin sees all semester tabs
+                semesterTabsContainer.innerHTML = `
+                    <button class="semester-tab active py-2 px-4 rounded-lg font-medium" data-semester="all">All Semesters</button>
+                    <button class="semester-tab py-2 px-4 rounded-lg font-medium" data-semester="1">Semester 1</button>
+                    <button class="semester-tab py-2 px-4 rounded-lg font-medium" data-semester="2">Semester 2</button>
+                    <button class="semester-tab py-2 px-4 rounded-lg font-medium" data-semester="3">Semester 3</button>
+                    <button class="semester-tab py-2 px-4 rounded-lg font-medium" data-semester="4">Semester 4</button>
+                    <button class="semester-tab py-2 px-4 rounded-lg font-medium" data-semester="5">Semester 5</button>
+                    <button class="semester-tab py-2 px-4 rounded-lg font-medium" data-semester="6">Semester 6</button>
+                `;
+            } else {
+                // Student sees only their semester tab and "All" tab
+                semesterTabsContainer.innerHTML = `
+                    <button class="semester-tab active py-2 px-4 rounded-lg font-medium" data-semester="all">All Semesters</button>
+                    <button class="semester-tab py-2 px-4 rounded-lg font-medium" data-semester="${state.currentUser.semester}">Semester ${state.currentUser.semester}</button>
+                `;
+            }
+            
+            // Add event listeners to semester tabs
+            document.querySelectorAll('.semester-tab').forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Update active tab
+                    document.querySelectorAll('.semester-tab').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Render exams for selected semester
+                    const semester = this.getAttribute('data-semester');
+                    renderExams(semester);
+                });
+            });
+        }
+
+        // Update dashboard statistics
+        function updateDashboardStats() {
+            document.getElementById('activeSemesters').textContent = '6';
+            
+            // Calculate upcoming exams based on current user's semester
+            if (state.currentUser && !state.isAdmin) {
+                const userSemester = state.currentUser.semester;
+                const upcomingExams = state.examData.filter(exam => 
+                    exam.semester === userSemester && exam.status === 'upcoming'
+                ).length;
+                document.getElementById('upcomingExams').textContent = upcomingExams;
+                
+                // Notices for student's semester
+                const relevantNotices = state.notices.filter(notice => 
+                    notice.semester === "all" || notice.semester === userSemester
+                ).length;
+                document.getElementById('newNotices').textContent = relevantNotices;
+            } else {
+                document.getElementById('upcomingExams').textContent = state.examData.filter(exam => exam.status === 'upcoming').length;
+                document.getElementById('newNotices').textContent = state.notices.length;
+            }
+            
+            document.getElementById('resultsPublished').textContent = '12';
+        }
+
+        // Render exams based on selected semester
+        function renderExams(semester = 'all') {
+            examContainer.innerHTML = '';
+            
+            let filteredExams = state.examData;
+            
+            // If user is student, only show exams for their semester by default
+            if (state.currentUser && !state.isAdmin && semester === 'all') {
+                filteredExams = filteredExams.filter(exam => exam.semester === state.currentUser.semester);
+            } else if (semester !== 'all') {
+                filteredExams = filteredExams.filter(exam => exam.semester == semester);
+            }
+            
+            if (filteredExams.length === 0) {
+                examContainer.innerHTML = `
+                    <div class="col-span-3 text-center py-8 text-gray-500">
+                        <i class="fas fa-calendar-times text-4xl mb-4"></i>
+                        <p>No exams scheduled for this semester yet.</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            filteredExams.forEach(exam => {
+                const statusClass = exam.status === 'ongoing' ? 'bg-blue-100 text-blue-800' : 
+                                  exam.status === 'upcoming' ? 'bg-green-100 text-green-800' : 
+                                  'bg-gray-100 text-gray-800';
+                
+                const borderClass = exam.status === 'ongoing' ? '' : 
+                                  exam.status === 'upcoming' ? 'upcoming' : 
+                                  'completed';
+                
+                const icon = exam.type === 'Practical' ? 'fa-laptop-code' : 'fa-book';
+                
+                examContainer.innerHTML += `
+                    <div class="bg-white rounded-lg shadow-md p-5 exam-card ${borderClass} card-hover">
+                        <div class="flex justify-between items-start mb-4">
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold ${statusClass}">${exam.status.charAt(0).toUpperCase() + exam.status.slice(1)}</span>
+                            <span class="bg-blue-50 text-blue-700 text-xs font-medium px-2 py-1 rounded">Semester ${exam.semester}</span>
+                        </div>
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fas ${icon}"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg">${exam.title}</h3>
+                                <p class="text-gray-600 text-sm">${exam.code} • ${exam.type}</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center border-t border-gray-100 pt-4">
+                            <div>
+                                <p class="text-sm font-medium text-gray-700">${exam.date}</p>
+                                <p class="text-xs text-gray-500">${exam.time} • ${exam.room}</p>
+                            </div>
+                            <button class="bg-blue-50 hover:bg-blue-100 text-blue-600 text-xs font-medium py-2 px-3 rounded-lg transition-colors">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Render results
+        function renderResults() {
+            if (state.isAdmin) {
+                resultsContent.innerHTML = `
+                    <div class="text-center py-8 text-gray-500">
+                        <i class="fas fa-chart-line text-4xl mb-4"></i>
+                        <p>Admin view of all student results</p>
+                    </div>
+                `;
+            } else {
+                const student = state.currentUser;
+                let resultsHTML = `
+                    <div class="mb-6">
+                        <h3 class="text-xl font-bold text-dark mb-4">Academic Performance</h3>
+                        <div class="bg-light rounded-xl p-6">
+                            <div class="flex justify-between items-center mb-6">
+                                <div>
+                                    <h4 class="font-semibold">Semester ${student.semester} Results</h4>
+                                    <p class="text-sm text-gray-600">Published on: December 15, 2023</p>
+                                </div>
+                                <div class="text-right">
+                                    <div class="text-3xl font-bold text-primary">${student.spi}</div>
+                                    <div class="text-sm text-gray-600">SPI</div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-2 gap-4 mb-6">
+                                <div class="bg-white p-4 rounded-lg shadow-sm">
+                                    <div class="text-sm text-gray-600">Overall CPI</div>
+                                    <div class="text-xl font-bold text-primary">${student.cpi}</div>
+                                </div>
+                                <div class="bg-white p-4 rounded-lg shadow-sm">
+                                    <div class="text-sm text-gray-600">Backlogs</div>
+                                    <div class="text-xl font-bold ${student.backlogs > 0 ? 'text-red-600' : 'text-green-600'}">${student.backlogs}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                // Show semester results if available
+                if (student.results[student.semester]) {
+                    resultsHTML += `
+                        <h3 class="text-xl font-bold text-dark mb-4">Subject-wise Grades - Semester ${student.semester}</h3>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left text-gray-600">
+                                <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                                    <tr>
+                                        <th class="px-4 py-3">Subject Code</th>
+                                        <th class="px-4 py-3">Subject Name</th>
+                                        <th class="px-4 py-3">Credits</th>
+                                        <th class="px-4 py-3">Grade</th>
+                                        <th class="px-4 py-3">Marks</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                    `;
+                    
+                    student.results[student.semester].forEach(subject => {
+                        resultsHTML += `
+                            <tr class="bg-white border-b hover:bg-gray-50">
+                                <td class="px-4 py-3 font-medium">${subject.code}</td>
+                                <td class="px-4 py-3">${subject.subject}</td>
+                                <td class="px-4 py-3">${subject.credits}</td>
+                                <td class="px-4 py-3"><span class="grade-${subject.grade} text-white px-2 py-1 rounded-full text-xs">${subject.grade}</span></td>
+                                <td class="px-4 py-3">${subject.marks}</td>
+                            </tr>
+                        `;
+                    });
+                    
+                    resultsHTML += `
+                                </tbody>
+                            </table>
+                        </div>
+                    `;
+                } else {
+                    resultsHTML += `
+                        <div class="text-center py-8 text-gray-500">
+                            <i class="fas fa-info-circle text-3xl mb-4"></i>
+                            <p>No results available for current semester yet.</p>
+                        </div>
+                    `;
+                }
+                
+                resultsContent.innerHTML = resultsHTML;
+            }
+        }
+
+        // Render notices
+        function renderNotices() {
+            let filteredNotices = state.notices;
+            
+            // If user is student, filter notices for their semester
+            if (state.currentUser && !state.isAdmin) {
+                const userSemester = state.currentUser.semester;
+                filteredNotices = state.notices.filter(notice => 
+                    notice.semester === "all" || notice.semester === userSemester
+                );
+            }
+            
+            let noticesHTML = `
+                <h3 class="text-xl font-bold text-dark mb-4">Important Notices</h3>
+                
+                <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i class="fas fa-exclamation-circle text-yellow-400"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-yellow-700">
+                                <strong>Exam Form Deadline</strong> - Last date to submit exam forms is December 10, 2023. Late submissions will not be accepted.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+            `;
+            
+            filteredNotices.forEach(notice => {
+                const iconColor = notice.type === 'urgent' ? 'red' : (notice.type === 'info' ? 'blue' : 'yellow');
+                
+                noticesHTML += `
+                    <div class="bg-white border border-gray-200 rounded-xl p-5 card-hover">
+                        <div class="flex items-start mb-4">
+                            <div class="w-12 h-12 rounded-full bg-${iconColor}-100 flex items-center justify-center text-${iconColor}-600 mr-4">
+                                <i class="fas fa-${notice.type === 'urgent' ? 'exclamation-triangle' : 'info-circle'}"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">${notice.title}</h4>
+                                <p class="text-xs text-gray-500">Posted: ${notice.date}</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-4">${notice.content}</p>
+                        <button class="text-primary text-sm font-medium flex items-center">
+                            <i class="fas fa-download mr-2"></i> Download Notice
+                        </button>
+                    </div>
+                `;
+            });
+            
+            noticesHTML += `
+                </div>
+                
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h4 class="font-bold text-dark mb-4">Recent Notices</h4>
+                    <div class="h-40 overflow-hidden relative">
+                        <div class="space-y-3">
+            `;
+            
+            filteredNotices.forEach(notice => {
+                const badgeColor = notice.type === 'urgent' ? 'red' : (notice.type === 'info' ? 'blue' : 'green');
+                
+                noticesHTML += `
+                    <div class="flex items-center py-3 border-b border-gray-200">
+                        <div class="bg-${badgeColor}-500 text-white text-xs font-medium px-2 py-1 rounded">${notice.type.charAt(0).toUpperCase() + notice.type.slice(1)}</div>
+                        <span class="ml-3 text-sm">${notice.title}</span>
+                        <span class="ml-auto text-xs text-gray-500">${notice.date}</span>
+                    </div>
+                `;
+            });
+            
+            noticesHTML += `
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            noticesContent.innerHTML = noticesHTML;
+        }
+
+        // Render students list for admin
+        function renderStudentsList() {
+            studentsList.innerHTML = '';
+            
+            state.students.forEach(student => {
+                const row = document.createElement('tr');
+                row.className = 'border-b hover:bg-gray-50';
+                row.innerHTML = `
+                    <td class="py-2">${student.id}</td>
+                    <td class="py-2">${student.name}</td>
+                    <td class="py-2">Semester ${student.semester}</td>
+                    <td class="py-2">
+                        <button class="text-red-600 hover:text-red-800 delete-student" data-id="${student.id}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </td>
+                `;
+                
+                studentsList.appendChild(row);
+            });
+            
+            // Add event listeners to delete buttons
+            document.querySelectorAll('.delete-student').forEach(button => {
+                button.addEventListener('click', () => {
+                    const studentId = button.getAttribute('data-id');
+                    
+                    // Confirm deletion
+                    if (confirm('Are you sure you want to delete this student?')) {
+                        // Remove student
+                        state.students = state.students.filter(s => s.id !== studentId);
+                        
+                        // Save to localStorage
+                        localStorage.setItem('examPortalStudents', JSON.stringify(state.students));
+                        
+                        // Update list
+                        renderStudentsList();
+                    }
+                });
+            });
+        }
+
+        // Initialize the application when the DOM is loaded
+        document.addEventListener('DOMContentLoaded', initApp);
+    </script>
+</body>
+</html>

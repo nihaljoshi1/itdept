@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>News And Events - IT DEPARTMENT | SIR BHAVSINHJI POLYTECHNIC INSTITUTE, BHAVNAGAR</title>
+  <link rel="website icon" href="img/BPTI.jpg">
+  <link href="./dist/output.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+  <!-- Top Info Section -->
+  <a href="index.html">
+    <div class="bg-white text-center py-6 shadow-sm border-b border-teal-300">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center sm:justify-start sm:space-x-6">
+        <!-- Logo -->
+        <img src="./img/BPTI.jpg" alt="Logo" class="w-20 h-20 rounded-full border border-green-500 mb-3 sm:mb-0" />
+
+        <!-- Department Text -->
+        <div class="text-center sm:text-left">
+          <h1 class="text-xl sm:text-2xl font-bold text-green-800 tracking-wide uppercase leading-tight">
+            Information Technology Department
+          </h1>
+          <p class="text-sm sm:text-base text-green-700 mt-1 font-medium">
+            Sir Bhavsinhji Polytechnic Institute, Bhavnagar
+          </p>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Navbar -->
+  <header class="bg-teal-100 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+      <!-- Semester Dropdown -->
+      <div class="flex items-center space-x-4">
+        <div class="relative group">
+          <button class="flex items-center gap-2 border border-green-600 text-green-800 px-4 py-2 rounded-md hover:bg-green-50">
+            Select Semester
+            <i class="fas fa-chevron-down text-green-600 text-sm"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border w-40 rounded shadow-md z-50">
+            <li><a href="semester/1st.html" class="block px-4 py-2 hover:bg-green-50">First</a></li>
+            <li><a href="semester/2nd.html" class="block px-4 py-2 hover:bg-green-50">Second</a></li>
+            <li><a href="semester/3rd.html" class="block px-4 py-2 hover:bg-green-50">Third</a></li>
+            <li><a href="semester/4th.html" class="block px-4 py-2 hover:bg-green-50">Fourth</a></li>
+            <li><a href="semester/5th.html" class="block px-4 py-2 hover:bg-green-50">Fifth</a></li>
+            <li><a href="semester/6th.html" class="block px-4 py-2 hover:bg-green-50">Sixth</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hamburger (Mobile) -->
+      <div class="md:hidden">
+        <button onclick="toggleMenu()" class="text-green-700 focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 text-green-900 font-semibold">
+        <a href="index.html" class="hover:text-green-700">Home</a>
+
+        <!-- About Institute Dropdown -->
+        <div class="relative group">
+          <a href="discover_institute.html" class="flex items-center gap-1 hover:text-green-700 cursor-pointer">
+            About Our Institute
+          </a>
+        </div>
+
+        <!-- About Department Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-green-700">
+            Know the Department
+            <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-64 z-50">
+            <li><a href="itdepartment.html" class="block px-4 py-2 hover:bg-green-50">About Department </a></li>
+            <li><a href="PEO&PSO.html" class="block px-4 py-2 hover:bg-green-50">Dept. PEOs & PSOs</a></li>
+            <li><a href="faculty.html" class="block px-4 py-2 hover:bg-green-50">Faculty</a></li>
+            <li><a href="lab.html" class="block px-4 py-2 hover:bg-green-50">Laboratory</a></li>
+          </ul>
+        </div>
+
+        <a href="anounce.html" class="hover:text-green-700">Announcement</a>
+
+        <!-- Student Corner Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-green-700">
+            Student Corner
+            <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-56 z-50">
+            <li><a href="examination_section.html" class="block px-4 py-2 hover:bg-green-50">Examination Section</a></li>
+            <li><a href="https://www.eduqfix.com/PayDirect/#/student" class="block px-4 py-2 hover:bg-green-50">Online Fees Payment</a></li>
+          </ul>
+        </div>
+
+        <a href="addmission.html" class="hover:text-green-700">Addmission</a>
+        <a href="contact.html" class="hover:text-green-700">Contact Us</a>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav (All Links Expanded) -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-white shadow text-green-800 font-semibold">
+      <a href="#" class="block py-2 border-b">Home</a>
+
+      <!-- About Institute -->
+      <a href="discover_institute.html" class="block py-2 border-b">About Our Institute</a>
+
+      <!-- About Department -->
+      <button onclick="toggleSubmenu('dept-sub')" class="w-full text-left py-2 border-b">Know the Department <i class="fas fa-chevron-down text-green-600 text-sm"></i></button>
+      <div id="dept-sub" class="hidden pl-4">
+        <a href="itdepartment.html" class="block py-1">›About Department</a>
+        <a href="PEO&PSO.html" class="block py-1">› Dept. PEOs & PSOs</a>
+        <a href="faculty.html" class="block py-1">› Faculty</a>
+        <a href="lab.html" class="block py-1">› Laboratory</a>
+      </div>
+
+      <a href="anounce.html" class="block py-2 border-b">Announcement</a>
+
+      <!-- Student Corner -->
+      <button onclick="toggleSubmenu('student-sub')" class="w-full text-left py-2 border-b">Student Corner <i class="fas fa-chevron-down text-green-600 text-sm"></i></button>
+      <div id="student-sub" class="hidden pl-4">
+        <a href="examination_section.html" class="block py-1">› Examination Section</a>
+        <a href="https://www.eduqfix.com/PayDirect/#/student" class="block py-1">› Online Fees Payment</a>
+      </div>
+
+      <a href="addmission.html" class="block py-2">Addmission</a>
+      <a href="contact.html" class="block py-2">Contact Us</a>
+    </div>
+
+  </header>
+
+
+  
+<section class="w-full h-[80vh] relative bg-cover bg-center" style="background-image: url('img/event.png');">
+  <div class="absolute top-1/2 -translate-y-1/2 left-6 sm:left-10 md:left-16 max-w-xl text-white">
+
+    <!-- Animated Heading Word-by-Word -->
+    <div class="flex gap-2 text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight">
+      <span data-aos="fade-up" data-aos-delay="0">BPTI</span>
+      <span data-aos="fade-up" data-aos-delay="200" class="text-yellow-400">News</span>
+      <span data-aos="fade-up" data-aos-delay="400" class="text-yellow-400">& Events</span>
+    </div>
+
+    <!-- Subheading -->
+    <p class="text-base sm:text-lg md:text-xl mt-4 font-medium text-white/90" data-aos="fade-up" data-aos-delay="600">
+      Stay updated with the latest announcements and activities at BPTI.
+    </p>
+
+    <!-- CTA Button -->
+    <a href="#current-event"
+       class="mt-6 inline-block px-6 py-2.5 bg-yellow-400 text-green-900 font-semibold rounded-full shadow-md hover:bg-yellow-300 transition duration-300"
+       data-aos="zoom-in" data-aos-delay="800">
+      View Current Event
+    </a>
+
+  </div>
+</section>
+
+<!-- 🔹 3. Current Event Section Heading -->
+<div class="w-full py-6 bg-white text-center">
+  <div class="inline-block bg-gradient-to-r from-orange-500 via-yellow-400 to-orange-500 px-6 py-2 rounded-full shadow-md" data-aos="fade-up">
+    <h2 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white tracking-wide uppercase">
+      🔥 Current Highlighted Event
+    </h2>
+  </div>
+
+  <p class="mt-3 text-gray-600 text-sm md:text-base font-medium" data-aos="fade-up" data-aos-delay="200">
+    Check out the biggest live event happening at BPTI!
+  </p>
+</div>
+
+
+<section class="relative w-full py-32 overflow-hidden bg-gradient-to-br from-red-600 via-orange-500 to-yellow-400">
+  <!-- FIRE ANIMATION BACKGROUND -->
+  <div class="absolute inset-0 overflow-hidden -z-10">
+    <!-- Blazing Fire Particles -->
+    <div class="fire-particles"></div>
+    <!-- Glowing Embers -->
+    <div class="absolute bottom-0 left-1/2 w-96 h-96 bg-red-500/20 rounded-full filter blur-[100px] animate-pulse"></div>
+  </div>
+
+  <!-- EXPLOSIVE CONTENT -->
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="relative group" data-aos="fade-up">
+      <!-- FLAMING CARD GLOW -->
+      <div class="absolute -inset-3 bg-gradient-to-r from-red-500 to-yellow-400 rounded-3xl opacity-0 group-hover:opacity-40 blur-xl transition-all duration-500"></div>
+      
+      <!-- MOLTEN LAVA CARD -->
+      <div class="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 backdrop-blur-lg rounded-3xl border border-orange-500/30 overflow-hidden p-12 shadow-[0_0_40px_rgba(255,100,0,0.3)] transform transition-all duration-700 hover:scale-[1.02]">
+        <!-- BLAZING EVENT TAG -->
+        <div class="inline-block mb-8 animate-fire-glow">
+          <span class="inline-block bg-gradient-to-r from-red-600 to-orange-500 text-white font-black text-sm px-6 py-3 rounded-full uppercase tracking-widest border border-orange-300/50 shadow-lg">
+            🔥 THE BIGGEST EVENT OF 2025
+          </span>
+        </div>
+
+        <!-- EXPLOSIVE HEADLINE -->
+        <h2 class="text-5xl md:text-7xl font-extrabold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-yellow-200 to-orange-300 font-['Bebas_Neue'] leading-tight drop-shadow-lg">
+          BPTI <span class="text-yellow-400">TECH</span>INFERNO
+        </h2>
+
+        <!-- VOLCANIC DATE DISPLAY -->
+        <div class="flex items-center gap-4 mb-8">
+          <div class="p-2 bg-orange-500/20 rounded-full">
+            <svg class="w-8 h-8 text-yellow-300 animate-pulse" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2z"></path>
+            </svg>
+          </div>
+          <p class="text-2xl font-bold text-yellow-200">
+            AUGUST 15-17, 2025 • 24/7 NON-STOP
+          </p>
+        </div>
+
+        <!-- LAVA FLOW DESCRIPTION -->
+        <p class="text-xl text-orange-100/90 mb-10 max-w-3xl leading-relaxed font-medium">
+          Experience Gujarat's most explosive tech convergence! 72 hours of hackathons, 
+          robot battles, AI expos, and celebrity tech showdowns. Fueled by adrenaline and 
+          powered by innovation.
+        </p>
+
+        <!-- ERUPTING CTA BUTTON -->
+        <a href="#register" class="relative inline-flex items-center px-10 py-5 bg-gradient-to-r from-red-600 to-orange-500 text-white font-black rounded-full hover:from-red-500 hover:to-orange-400 transition-all duration-300 group shadow-lg hover:shadow-xl overflow-hidden">
+          <span class="relative z-10 flex items-center">
+            <span class="mr-4 text-lg tracking-widest">IGNITE YOUR PASSION</span>
+            <svg class="w-6 h-6 transition-transform duration-300 group-hover:translate-x-2 group-hover:scale-1.2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </span>
+          <span class="absolute inset-0 bg-gradient-to-r from-yellow-400 to-red-500 opacity-0 group-hover:opacity-100 transition-all duration-500"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- FIRE ANIMATION STYLES -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+    
+    /* FIRE PARTICLE ANIMATION */
+    .fire-particles {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(255,100,0,0.8) 0px, transparent 2px),
+        radial-gradient(circle at 80% 70%, rgba(255,200,0,0.6) 0px, transparent 3px),
+        radial-gradient(circle at 40% 20%, rgba(255,50,0,0.7) 0px, transparent 2px);
+      background-size: 200px 200px;
+      animation: fire-move 20s linear infinite;
+    }
+    
+    @keyframes fire-move {
+      0% { background-position: 0 0; }
+      100% { background-position: 200px 200px; }
+    }
+    
+    /* FLAMING TEXT GLOW */
+    @keyframes fire-glow {
+      0%, 100% { filter: drop-shadow(0 0 5px rgba(255,100,0,0.7)); }
+      50% { filter: drop-shadow(0 0 15px rgba(255,200,0,0.9)); }
+    }
+    
+    .animate-fire-glow {
+      animation: fire-glow 2s ease-in-out infinite;
+    }
+  </style>
+</section>
+
+<section class="relative py-20 overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800">
+  <!-- Futuristic Background Elements -->
+  <div class="absolute inset-0 -z-10">
+    <!-- Grid Mesh Pattern -->
+    <div class="absolute inset-0 opacity-20 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==')]"></div>
+    
+    <!-- Floating Orbs -->
+    <div class="absolute top-20 left-10 w-64 h-64 bg-blue-500/10 rounded-full blur-[80px] animate-float-slow"></div>
+    <div class="absolute bottom-10 right-20 w-72 h-72 bg-purple-500/10 rounded-full blur-[90px] animate-float-reverse"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Animated Section Heading -->
+   <!-- Animated Section Heading with BG -->
+<div class="text-center mb-16" data-aos="fade-down">
+  <div class="inline-block bg-gradient-to-r from-cyan-400 to-blue-500 px-6 py-3 rounded-full shadow-xl backdrop-blur-sm">
+    <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-wide uppercase">
+      ✨ News & Event Highlights
+    </h2>
+  </div>
+  <p class="text-lg text-gray-300 mt-4 max-w-2xl mx-auto">
+    Stay updated with recent happenings, announcements, and upcoming events at BPTI.
+  </p>
+</div>
+
+
+    <!-- Holographic Cards Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Card 1 - Tech Event -->
+      <div class="relative group" data-aos="fade-up">
+        <div class="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-md transition-all duration-500"></div>
+        <div class="relative h-full bg-gray-800/50 backdrop-blur-md rounded-2xl overflow-hidden border border-gray-700/50 hover:border-cyan-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
+          <div class="relative overflow-hidden h-60">
+            <img src="img/Screenshot 2025-07-24 185224.png" alt="Tech Event" 
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
+            <span class="absolute top-4 right-4 text-xs bg-yellow-400/90 text-gray-900 font-bold px-3 py-1 rounded-full shadow-md">
+              📅 July 28, 2025
+            </span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-cyan-300 transition-colors">TechInferno Launch</h3>
+            <p class="text-gray-300 mb-4">
+              Witness the ultimate student-led innovation fest with 10+ events and workshops.
+            </p>
+            <a href="#" class="inline-flex items-center text-cyan-400 font-medium group-hover:text-cyan-300 transition-colors">
+              Read More
+              <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 - News -->
+      <div class="relative group" data-aos="fade-up" data-aos-delay="100">
+        <div class="absolute -inset-1 bg-gradient-to-r from-green-400 to-emerald-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-md transition-all duration-500"></div>
+        <div class="relative h-full bg-gray-800/50 backdrop-blur-md rounded-2xl overflow-hidden border border-gray-700/50 hover:border-emerald-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-emerald-500/10">
+          <div class="relative overflow-hidden h-60">
+            <img src="img/a.jpg" alt="Robotics Lab" 
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
+            <span class="absolute top-4 right-4 text-xs bg-green-400/90 text-gray-900 font-bold px-3 py-1 rounded-full shadow-md">
+              📰 Latest News
+            </span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-emerald-300 transition-colors">New Robotics Lab</h3>
+            <p class="text-gray-300 mb-4">
+              BPTI unveils its cutting-edge robotics lab to empower students in automation.
+            </p>
+            <a href="#" class="inline-flex items-center text-emerald-400 font-medium group-hover:text-emerald-300 transition-colors">
+              Read More
+              <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 - Hackathon -->
+      <div class="relative group" data-aos="fade-up" data-aos-delay="200">
+        <div class="absolute -inset-1 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-2xl opacity-0 group-hover:opacity-30 blur-md transition-all duration-500"></div>
+        <div class="relative h-full bg-gray-800/50 backdrop-blur-md rounded-2xl overflow-hidden border border-gray-700/50 hover:border-blue-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-blue-500/10">
+          <div class="relative overflow-hidden h-60">
+            <img src="img/x.jpg" alt="Hackathon" 
+                 class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
+            <span class="absolute top-4 right-4 text-xs bg-blue-400/90 text-gray-900 font-bold px-3 py-1 rounded-full shadow-md">
+              📅 Aug 10, 2025
+            </span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-blue-300 transition-colors">Hackathon 2.0</h3>
+            <p class="text-gray-300 mb-4">
+              A 24-hour coding showdown returns this August. Team up and win exciting prizes!
+            </p>
+            <a href="#" class="inline-flex items-center text-blue-400 font-medium group-hover:text-blue-300 transition-colors">
+              Read More
+              <svg class="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+
+  <style>
+    /* Custom Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    @keyframes float-reverse {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(15px); }
+    }
+    @keyframes float-light {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-8px) rotate(5deg); }
+    }
+    
+    .animate-float-slow {
+      animation: float 8s ease-in-out infinite;
+    }
+    .animate-float-reverse {
+      animation: float-reverse 10s ease-in-out infinite;
+    }
+    .animate-float-light {
+      animation: float-light 3s ease-in-out infinite;
+    }
+  </style>
+
+  <!-- 🔹 5. Load More Button -->
+<div class="text-center mt-12" data-aos="fade-up">
+  <button id="loadMoreBtn"
+    class="inline-flex items-center gap-2 px-6 py-3 text-white font-semibold bg-gradient-to-r from-green-500 to-lime-500 hover:from-lime-600 hover:to-green-600 rounded-full shadow-lg transition-all duration-300">
+    <svg class="w-5 h-5 animate-spin hidden" id="loaderIcon" fill="none" stroke="currentColor" stroke-width="2"
+      viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M12 4v2m0 12v2m8-8h2M4 12H2m15.364-6.364l1.414 1.414M6.222 17.778l-1.414 1.414m0-11.314L6.222 6.222M17.778 17.778l1.414-1.414" />
+    </svg>
+    <span id="btnText">Load More</span>
+  </button>
+</div>
+<script>
+  const loadMoreBtn = document.getElementById('loadMoreBtn');
+  const loaderIcon = document.getElementById('loaderIcon');
+  const btnText = document.getElementById('btnText');
+  const hiddenCards = document.querySelectorAll('.event-card.hidden');
+
+  let currentIndex = 0;
+  const batchSize = 3; // Show 3 more on each click
+
+  loadMoreBtn.addEventListener('click', () => {
+    // Animate loading
+    loaderIcon.classList.remove('hidden');
+    btnText.textContent = 'Loading...';
+
+    setTimeout(() => {
+      for (let i = currentIndex; i < currentIndex + batchSize; i++) {
+        if (hiddenCards[i]) {
+          hiddenCards[i].classList.remove('hidden');
+          hiddenCards[i].classList.add('animate-fade-in');
+        }
+      }
+
+      currentIndex += batchSize;
+      loaderIcon.classList.add('hidden');
+      btnText.textContent = 'Load More';
+
+      if (currentIndex >= hiddenCards.length) {
+        loadMoreBtn.classList.add('opacity-50', 'cursor-not-allowed');
+        btnText.textContent = 'No More Events';
+        loadMoreBtn.disabled = true;
+      }
+    }, 600);
+  });
+</script>
+
+</section>
+
+<section class="py-20 bg-gray-900 text-white" id="past-events">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- Section Heading -->
+    <div class="text-center mb-10" data-aos="fade-up">
+      <div class="inline-block bg-gradient-to-r from-slate-700 to-slate-500 px-6 py-2 rounded-full shadow-sm backdrop-blur">
+        <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-wide uppercase">
+          🕘 Past Events Archive
+        </h2>
+      </div>
+      <p class="mt-3 text-gray-300 text-sm md:text-base font-medium max-w-xl mx-auto">
+        Explore our past events and filter by year or keyword to revisit highlights.
+      </p>
+    </div>
+
+    <!-- 🔍 Filter UI -->
+    <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10" data-aos="fade-up" data-aos-delay="100">
+      <!-- Year Selector -->
+      <select id="yearFilter" class="bg-gray-800 text-white px-4 py-2 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-500">
+        <option value="all">All Years</option>
+        <option value="2025">2025</option>
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+      </select>
+
+      <!-- Keyword Search -->
+      <input type="text" id="searchInput" placeholder="Search by keyword..." class="bg-gray-800 text-white px-4 py-2 rounded-lg border border-gray-600 focus:outline-none focus:ring-2 focus:ring-cyan-500 w-72">
+    </div>
+
+    <!-- 🧩 Past Events Cards Grid -->
+    <div id="pastEventsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Example Past Event Card -->
+      <div class="relative group past-event" data-year="2024" data-title="Cybersecurity Workshop">
+        <div class="absolute -inset-1 bg-gradient-to-r from-slate-500 to-slate-700 rounded-2xl opacity-0 group-hover:opacity-30 blur-md transition-all duration-500"></div>
+        <div class="relative h-full bg-gray-800/50 backdrop-blur-md rounded-2xl overflow-hidden border border-gray-700/50 hover:border-slate-400/30 transition-all duration-300 hover:shadow-lg hover:shadow-slate-500/10">
+          <div class="relative overflow-hidden h-60">
+            <img src="img/c.jpg" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" alt="Past Event">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-transparent to-transparent"></div>
+            <span class="absolute top-4 right-4 text-xs bg-slate-400/90 text-gray-900 font-bold px-3 py-1 rounded-full shadow-md">
+              📅 March 15, 2024
+            </span>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2 group-hover:text-slate-300 transition-colors">Cybersecurity Workshop</h3>
+            <p class="text-gray-400 text-sm">
+              A one-day session on ethical hacking and digital defense hosted at BPTI.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more past-event cards below with different years and titles -->
+    </div>
+  </div>
+
+  <script>
+  const yearFilter = document.getElementById("yearFilter");
+  const searchInput = document.getElementById("searchInput");
+  const pastEvents = document.querySelectorAll(".past-event");
+
+  function filterEvents() {
+    const selectedYear = yearFilter.value;
+    const keyword = searchInput.value.toLowerCase();
+
+    pastEvents.forEach(card => {
+      const cardYear = card.getAttribute("data-year");
+      const title = card.getAttribute("data-title").toLowerCase();
+
+      const matchYear = selectedYear === "all" || cardYear === selectedYear;
+      const matchKeyword = keyword === "" || title.includes(keyword);
+
+      if (matchYear && matchKeyword) {
+        card.classList.remove("hidden");
+      } else {
+        card.classList.add("hidden");
+      }
+    });
+  }
+
+  yearFilter.addEventListener("change", filterEvents);
+  searchInput.addEventListener("input", filterEvents);
+</script>
+
+</section>
+
+
+  <!-- footer -->
+  <footer class="relative bg-[#0B3C38] text-white pt-12 pb-6 overflow-hidden">
+    <!-- Background Triangle Lines -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ffffff11" />
+            <stop offset="100%" stop-color="#ffffff05" />
+          </linearGradient>
+        </defs>
+        <path d="M0,100 L50,0 L100,100" stroke="url(#lineGradient)" stroke-width="0.5" fill="none" />
+        <path d="M25,100 L60,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+        <path d="M10,100 L70,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Logo + Tagline -->
+      <div>
+        <div class="flex items-center gap-2">
+          <img src="img/BPTI.jpg" alt="Logo" class="h-6">
+          <span class="font-semibold text-xl">INFORMATION TECHNOLOGY</span>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-gray-300">
+          Empowering students with industry-ready IT skills and modern tools to build future-ready professionals.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex space-x-4 mt-6 text-white text-lg">
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-x"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-facebook"></i></a>
+        </div>
+
+        <!-- Back to Top -->
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+          class="mt-6 px-4 py-2 border border-white hover:bg-white hover:text-black transition rounded flex items-center gap-2">
+          <i class="ri-arrow-up-line"></i> BACK TO TOP
+        </button>
+      </div>
+
+      <!-- Site Map -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Site Map</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i class="ri-home-3-line text-white"></i> <a href="index.html">Homepage</a></li>
+          <li class="flex items-center gap-2"><i class="ri-notification-2-line text-white"></i> <a href="anounce.html">Announcement</a></li>
+          <li class="flex items-center gap-2"><i class="ri-building-line text-white"></i> <a href="#">About Department</a></li>
+          <li class="flex items-center gap-2"><i class="ri-newspaper-line text-white"></i> <a href="#">Academics</a></li>
+          <li class="flex items-center gap-2"><i class="ri-briefcase-line text-white"></i> <a href="#">Student Corner</a></li>
+          <li class="flex items-center gap-2"><i class="ri-contacts-book-line text-white"></i> <a href="#">Departmental Activities</a></li>
+          <li class="flex items-center gap-2"><i class="ri-key-line text-white"></i> <a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Legal</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i class="ri-lock-line text-white"></i> <a href="#">Privacy Policy</a></li>
+          <li class="flex items-center gap-2"><i class="ri-file-list-2-line text-white"></i> <a href="terms.html">Terms of Services</a></li>
+          <li class="flex items-center gap-2"><i class="ri-user-3-line text-white"></i> <a href="#">Student Guidelines</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="relative z-10 bg-[#D8953A] text-center text-xs text-black font-medium py-2 mt-10">
+      Copyright © 2025 Department of Information Technology, SIR BPTI. All Rights Reserved.
+    </div>
+  </footer>
+</body>
+</html>

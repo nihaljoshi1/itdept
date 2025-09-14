@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IT DEPARTMENT LABS | SIR BHAVSINHJI POLYTECHNIC INSTITUTE</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&display=swap" rel="stylesheet">
+  <link href="./dist/output.css" rel="stylesheet">
+  <style>
+     body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+    .bg-dots::before {
+      content: '';
+      position: absolute;
+      top: 20%;
+      left: 5%;
+      width: 150px;
+      height: 150px;
+      background-image: radial-gradient(#b1b1b1 2px, transparent 2px);
+      background-size: 10px 10px;
+      z-index: 0;
+      opacity: 0.3;
+    }
+
+    .zigzag {
+      width: 50px;
+      height: 20px;
+      background: repeating-linear-gradient(
+        135deg,
+        #4f46e5,
+        #4f46e5 5px,
+        transparent 5px,
+        transparent 10px
+      );
+    }
+  </style>
+</head>
+<body>
+
+    <!-- Top Info Section -->
+  <a href="index.html">
+    <div class="bg-white text-center py-6 shadow-sm border-b border-teal-300">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center sm:justify-start sm:space-x-6">
+        <!-- Logo -->
+        <img src="./img/BPTI.jpg" alt="Logo" class="w-20 h-20 rounded-full border border-green-500 mb-3 sm:mb-0" />
+
+        <!-- Department Text -->
+        <div class="text-center sm:text-left">
+          <h1 class="text-xl sm:text-2xl font-bold text-green-800 tracking-wide uppercase leading-tight">
+            Information Technology Department
+          </h1>
+          <p class="text-sm sm:text-base text-green-700 mt-1 font-medium">
+            Sir Bhavsinhji Polytechnic Institute, Bhavnagar
+          </p>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Navbar -->
+  <header class="bg-teal-100 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+      <!-- Semester Dropdown -->
+      <div class="flex items-center space-x-4">
+        <div class="relative group">
+          <button class="flex items-center gap-2 border border-green-600 text-green-800 px-4 py-2 rounded-md hover:bg-green-50">
+            Select Semester
+            <i class="fas fa-chevron-down text-green-600 text-sm"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border w-40 rounded shadow-md z-50">
+            <li><a href="semester/1st.html" class="block px-4 py-2 hover:bg-green-50">First</a></li>
+            <li><a href="semester/2nd.html" class="block px-4 py-2 hover:bg-green-50">Second</a></li>
+            <li><a href="semester/3rd.html" class="block px-4 py-2 hover:bg-green-50">Third</a></li>
+            <li><a href="semester/4th.html" class="block px-4 py-2 hover:bg-green-50">Fourth</a></li>
+            <li><a href="semester/5th.html" class="block px-4 py-2 hover:bg-green-50">Fifth</a></li>
+            <li><a href="semester/6th.html" class="block px-4 py-2 hover:bg-green-50">Sixth</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hamburger (Mobile) -->
+      <div class="md:hidden">
+        <button onclick="toggleMenu()" class="text-green-700 focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 text-green-900 font-semibold">
+        <a href="index.html" class="hover:text-green-700">Home</a>
+
+        <!-- About Institute Dropdown -->
+        <div class="relative group">
+          <a href="discover_institute.html" class="flex items-center gap-1 hover:text-green-700 cursor-pointer">
+            About Our Institute
+          </a>
+        </div>
+
+        <!-- About Department Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-green-700">
+            Know the Department
+            <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-64 z-50">
+            <li><a href="itdepartment.html" class="block px-4 py-2 hover:bg-green-50">About Department </a></li>
+            <li><a href="PEO&PSO.html" class="block px-4 py-2 hover:bg-green-50">Dept. PEOs & PSOs</a></li>
+            <li><a href="faculty.html" class="block px-4 py-2 hover:bg-green-50">Faculty</a></li>
+            <li><a href="lab.html" class="block px-4 py-2 hover:bg-green-50">Laboratory</a></li>
+          </ul>
+        </div>
+
+        <a href="anounce.html" class="hover:text-green-700">Announcement</a>
+
+        <!-- Student Corner Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-green-700">
+            Student Corner
+            <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-56 z-50">
+            <li><a href="examination_section.html" class="block px-4 py-2 hover:bg-green-50">Examination Section</a></li>
+            <li><a href="https://www.eduqfix.com/PayDirect/#/student" class="block px-4 py-2 hover:bg-green-50">Online Fees Payment</a></li>
+          </ul>
+        </div>
+
+        <a href="addmission.html" class="hover:text-green-700">Addmission</a>
+        <a href="contact.html" class="hover:text-green-700">Contact Us</a>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav (All Links Expanded) -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-white shadow text-green-800 font-semibold">
+      <a href="#" class="block py-2 border-b">Home</a>
+
+      <!-- About Institute -->
+      <a href="discover_institute.html" class="block py-2 border-b">About Our Institute</a>
+
+      <!-- About Department -->
+      <button onclick="toggleSubmenu('dept-sub')" class="w-full text-left py-2 border-b">Know the Department <i class="fas fa-chevron-down text-green-600 text-sm"></i></button>
+      <div id="dept-sub" class="hidden pl-4">
+        <a href="itdepartment.html" class="block py-1">›About Department</a>
+        <a href="PEO&PSO.html" class="block py-1">› Dept. PEOs & PSOs</a>
+        <a href="faculty.html" class="block py-1">› Faculty</a>
+        <a href="lab.html" class="block py-1">› Laboratory</a>
+      </div>
+
+      <a href="anounce.html" class="block py-2 border-b">Announcement</a>
+
+      <!-- Student Corner -->
+      <button onclick="toggleSubmenu('student-sub')" class="w-full text-left py-2 border-b">Student Corner <i class="fas fa-chevron-down text-green-600 text-sm"></i></button>
+      <div id="student-sub" class="hidden pl-4">
+        <a href="examination_section.html" class="block py-1">› Examination Section</a>
+        <a href="https://www.eduqfix.com/PayDirect/#/student" class="block py-1">› Online Fees Payment</a>
+      </div>
+
+      <a href="addmission.html" class="block py-2">Addmission</a>
+      <a href="contact.html" class="block py-2">Contact Us</a>
+    </div>
+
+  </header>
+
+  <!-- Hero Section -->
+<section class="relative overflow-hidden bg-gradient-to-br from-yellow-50 via-white to-indigo-50 z-10">
+
+  <!-- 🔹 Large Curved Background Shape -->
+  <div class="absolute top-0 left-0 w-full h-full">
+    <svg class="absolute top-0 left-0 w-full h-full opacity-10" viewBox="0 0 1440 320">
+      <path fill="url(#grad1)" fill-opacity="1" d="M0,160L40,149.3C80,139,160,117,240,133.3C320,149,400,203,480,197.3C560,192,640,128,720,128C800,128,880,192,960,208C1040,224,1120,192,1200,165.3C1280,139,1360,117,1400,106.7L1440,96V0H0Z"></path>
+      <defs>
+        <linearGradient id="grad1" x1="0" x2="1" y1="0" y2="1">
+          <stop offset="0%" stop-color="#facc15"/>
+          <stop offset="100%" stop-color="#4f46e5"/>
+        </linearGradient>
+      </defs>
+    </svg>
+  </div>
+
+  <!-- 🔹 Floating Blobs -->
+  <div class="absolute top-[-150px] left-[-150px] w-[32rem] h-[32rem] bg-gradient-to-br from-yellow-300 via-orange-400 to-pink-400 opacity-30 rounded-full blur-3xl animate-float-slow"></div>
+  <div class="absolute bottom-[-180px] right-[-150px] w-[36rem] h-[36rem] bg-gradient-to-tr from-indigo-400 via-blue-400 to-cyan-300 opacity-30 rounded-full blur-3xl animate-float-slow delay-1500"></div>
+  
+  <!-- 🔹 Spotlight Effect -->
+  <div class="absolute inset-0 bg-gradient-radial from-white/40 via-transparent to-transparent"></div>
+
+  <!-- 🔹 Content Wrapper -->
+  <div class="max-w-7xl mx-auto grid md:grid-cols-2 grid-cols-1 items-center px-6 md:px-12 py-32 gap-12 relative z-10">
+    
+    <!-- Left Content -->
+    <div class="space-y-8 relative z-20" data-aos="fade-up" data-aos-delay="200">
+      
+      <!-- Logo Tag -->
+      <div class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="300">
+        <img src="img/BPTI.jpg" alt="Logo" class="w-16 h-16 rounded-full border-4 border-green-400 shadow-lg" />
+        <h4 class="text-lg font-bold text-indigo-700 uppercase tracking-widest">
+          Sir BPTI
+        </h4>
+      </div>
+
+      <!-- Heading -->
+      <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tight text-gray-900">
+        Future-Ready<br />
+        <span class="text-indigo-800 drop-shadow-md">IT Department</span><br />
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-yellow-400 to-pink-500 animate-gradient">
+          Laboratories
+        </span>
+      </h1>
+
+      <!-- Badge -->
+      <div class="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-400 px-6 py-2 rounded-full shadow-lg text-gray-900 font-semibold hover:scale-105 transition duration-300" data-aos="zoom-in" data-aos-delay="400">
+        🚀 Admissions Now Open!
+      </div>
+
+      <!-- Sub Text -->
+      <p class="text-lg text-gray-700 italic max-w-xl" data-aos="fade-up" data-aos-delay="500">
+        "Empowering Students Through Practical Exploration."
+      </p>
+
+      <!-- CTA -->
+      <div class="flex items-center gap-4 flex-wrap pt-4" data-aos="fade-up" data-aos-delay="600">
+        <a href="#" class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-bold px-8 py-3 rounded-full shadow-xl hover:scale-110 hover:shadow-2xl transition duration-300 ease-in-out">
+          ENROLL NOW
+        </a>
+        <div class="text-gray-700 font-semibold flex flex-col sm:flex-row gap-2 sm:gap-6">
+          <span>📞 1234-567-890-00</span>
+          <span>🌐 www.BPTI.com</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Image -->
+    <div class="relative flex justify-center items-center" data-aos="zoom-in" data-aos-delay="700">
+      <!-- Gradient Frame Layers -->
+      <div class="absolute -top-10 -left-10 w-full max-w-md h-full bg-gradient-to-br from-yellow-400 to-orange-500 rounded-3xl -rotate-6 shadow-xl"></div>
+      <div class="absolute -bottom-10 -right-10 w-full max-w-md h-full bg-gradient-to-tr from-indigo-900 via-blue-700 to-indigo-600 rounded-3xl rotate-6 shadow-xl"></div>
+      
+      <!-- Glassmorphism Card -->
+      <div class="relative rounded-2xl overflow-hidden shadow-2xl w-full max-w-md backdrop-blur-lg bg-white/10 border border-white/20">
+        <img src="img/hero-main.png" alt="Students" class="w-full h-auto object-cover relative z-10" />
+      </div>
+    </div>
+  </div>
+
+  <!-- Small Floating Shapes -->
+  <div class="absolute top-16 right-1/3 w-24 h-24 bg-gradient-to-tr from-yellow-300 to-pink-300 opacity-40 rounded-full blur-2xl animate-bounce"></div>
+  <div class="absolute bottom-24 left-1/4 w-32 h-32 bg-gradient-to-bl from-indigo-400 to-cyan-400 opacity-40 rounded-full blur-2xl animate-bounce delay-200"></div>
+</section>
+
+<!-- Tailwind Custom Animations -->
+<style>
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(3deg); }
+}
+.animate-float-slow { animation: float-slow 8s ease-in-out infinite; }
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 6s ease infinite;
+}
+</style>
+
+    <div class="absolute top-0 left-0 w-64 h-64 bg-[#38bdf8] opacity-10 rounded-full filter blur-[100px]"></div>
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-[#7dd3fc] opacity-15 rounded-full filter blur-[100px]"></div>
+    <div class="shape-1 absolute top-1/4 left-1/4 w-48 h-48 bg-[#0ea5e9] opacity-10 rotate-45"></div>
+    <div class="shape-2 absolute bottom-1/3 right-1/3 w-56 h-56 bg-[#0284c7] opacity-10 -rotate-12"></div>
+  </div>
+
+  <!-- Section Title -->
+  <div class="relative z-10 text-center mb-20" data-aos="fade-down">
+    <span class="inline-block mb-5 px-6 py-2 bg-white text-[#075985] text-lg font-bold rounded-full shadow-md">
+      🚀 INNOVATIVE LEARNING SPACES
+    </span>
+    <h2 class="text-5xl md:text-6xl font-extrabold text-[#075985] leading-tight mb-6">
+      <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#0ea5e9] to-[#0c4a6e]">State-of-the-Art</span><br>
+      Laboratory Facilities
+    </h2>
+    <p class="text-lg text-[#334155] max-w-3xl mx-auto">
+      Our cutting-edge labs bridge the gap between theory and practice with industry-standard equipment and technology.
+    </p>
+  </div>
+
+  <!-- Lab Cards - Out of the Box Design -->
+  <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+    <!-- Computer Lab - Floating Glass Card -->
+    <div class="glass-card group relative bg-white/90 backdrop-blur-md p-8 rounded-3xl shadow-2xl border-2 border-white hover:border-[#0ea5e9] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="50">
+      <div class="absolute -inset-1 bg-gradient-to-r from-[#0ea5e9] to-[#7dd3fc] opacity-0 group-hover:opacity-20 rounded-3xl transition-opacity duration-500"></div>
+      <div class="relative z-10">
+        <div class="icon-box w-20 h-20 mb-6 bg-gradient-to-br from-[#0ea5e9] to-[#38bdf8] rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-y-180 transition-all duration-700">
+          <span class="text-3xl">💻</span>
+        </div>
+        <h3 class="text-2xl font-bold text-[#075985] mb-4 group-hover:text-[#0c4a6e] transition-colors duration-300">Advanced Computer Lab</h3>
+        <p class="text-[#475569] mb-6 text-lg leading-relaxed">
+          High-performance workstations with dual monitors, AI development kits, VR setups, and cloud computing access.
+        </p>
+        <div class="flex justify-between items-center">
+          <div class="capacity-badge px-4 py-2 bg-[#e0f2fe] text-[#075985] font-bold rounded-full">
+            🔥 40 Seats
+          </div>
+          <button class="explore-btn text-white bg-[#0ea5e9] hover:bg-[#0c4a6e] px-5 py-2 rounded-full font-bold flex items-center transition-all duration-300">
+            Explore <span class="ml-2 group-hover:rotate-90 transition-transform duration-300">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Physics Lab - 3D Tilt Card -->
+    <div class="tilt-card group relative bg-gradient-to-br from-[#fef9c3] to-[#fef08a] p-8 rounded-3xl shadow-2xl border-2 border-[#fef08a] hover:border-[#f59e0b] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="100">
+      <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10"></div>
+      <div class="relative z-10">
+        <div class="icon-box w-20 h-20 mb-6 bg-gradient-to-br from-[#f59e0b] to-[#fbbf24] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-125 transition-all duration-500">
+          <span class="text-3xl">⚛️</span>
+        </div>
+        <h3 class="text-2xl font-bold text-[#92400e] mb-4 group-hover:text-[#78350f] transition-colors duration-300">Quantum Physics Lab</h3>
+        <p class="text-[#854d0e] mb-6 text-lg leading-relaxed">
+          Precision instruments for quantum mechanics, optics, thermodynamics, and electromagnetic field experiments.
+        </p>
+        <div class="flex justify-between items-center">
+          <div class="capacity-badge px-4 py-2 bg-[#fef3c7] text-[#92400e] font-bold rounded-full">
+            ⚡ 18 Stations
+          </div>
+          <button class="explore-btn text-white bg-[#f59e0b] hover:bg-[#b45309] px-5 py-2 rounded-full font-bold flex items-center transition-all duration-300">
+            Explore <span class="ml-2 group-hover:rotate-90 transition-transform duration-300">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Electrical Lab - Neon Glow Card -->
+    <div class="neon-card group relative bg-gradient-to-br from-[#ecfdf5] to-[#d1fae5] p-8 rounded-3xl shadow-2xl border-2 border-[#d1fae5] hover:border-[#10b981] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="150">
+      <div class="circuit-pattern absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+      <div class="relative z-10">
+        <div class="icon-box w-20 h-20 mb-6 bg-gradient-to-br from-[#10b981] to-[#34d399] rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-[360deg] transition-transform duration-1000">
+          <span class="text-3xl">🔌</span>
+        </div>
+        <h3 class="text-2xl font-bold text-[#065f46] mb-4 group-hover:text-[#064e3b] transition-colors duration-300">Smart Electrical Lab</h3>
+        <p class="text-[#047857] mb-6 text-lg leading-relaxed">
+          IoT-enabled workstations with PLC systems, smart grid technology, and renewable energy integration setups.
+        </p>
+        <div class="flex justify-between items-center">
+          <div class="capacity-badge px-4 py-2 bg-[#d1fae5] text-[#065f46] font-bold rounded-full">
+            ⚡ 12 Workbenches
+          </div>
+          <button class="explore-btn text-white bg-[#10b981] hover:bg-[#065f46] px-5 py-2 rounded-full font-bold flex items-center transition-all duration-300">
+            Explore <span class="ml-2 group-hover:rotate-90 transition-transform duration-300">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mechanical Lab - Industrial Card -->
+    <div class="industrial-card group relative bg-gradient-to-br from-[#fee2e2] to-[#fecaca] p-8 rounded-3xl shadow-2xl border-2 border-[#fecaca] hover:border-[#ef4444] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="200">
+      <div class="gear-pattern absolute inset-0 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+      <div class="relative z-10">
+        <div class="icon-box w-20 h-20 mb-6 bg-gradient-to-br from-[#ef4444] to-[#f87171] rounded-xl flex items-center justify-center shadow-lg group-hover:animate-spin-slow">
+          <span class="text-3xl">⚙️</span>
+        </div>
+        <h3 class="text-2xl font-bold text-[#991b1b] mb-4 group-hover:text-[#7f1d1d] transition-colors duration-300">Robotics & Mechanical Lab</h3>
+        <p class="text-[#b91c1c] mb-6 text-lg leading-relaxed">
+          CNC machines, 3D printers, robotic arms, and material testing equipment for hands-on engineering.
+        </p>
+        <div class="flex justify-between items-center">
+          <div class="capacity-badge px-4 py-2 bg-[#fee2e2] text-[#991b1b] font-bold rounded-full">
+            🏭 10 Stations
+          </div>
+          <button class="explore-btn text-white bg-[#ef4444] hover:bg-[#991b1b] px-5 py-2 rounded-full font-bold flex items-center transition-all duration-300">
+            Explore <span class="ml-2 group-hover:rotate-90 transition-transform duration-300">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chemistry Lab - Science Card -->
+    <div class="science-card group relative bg-gradient-to-br from-[#f5f3ff] to-[#ede9fe] p-8 rounded-3xl shadow-2xl border-2 border-[#ede9fe] hover:border-[#8b5cf6] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="250">
+      <div class="bubble-overlay absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+      <div class="relative z-10">
+        <div class="icon-box w-20 h-20 mb-6 bg-gradient-to-br from-[#8b5cf6] to-[#a78bfa] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500">
+          <span class="text-3xl">🧪</span>
+        </div>
+        <h3 class="text-2xl font-bold text-[#6d28d9] mb-4 group-hover:text-[#5b21b6] transition-colors duration-300">Advanced Chemistry Lab</h3>
+        <p class="text-[#7c3aed] mb-6 text-lg leading-relaxed">
+          Fume hoods, spectroscopy equipment, and molecular modeling software for cutting-edge chemical research.
+        </p>
+        <div class="flex justify-between items-center">
+          <div class="capacity-badge px-4 py-2 bg-[#ede9fe] text-[#6d28d9] font-bold rounded-full">
+            ⚗️ 24 Stations
+          </div>
+          <button class="explore-btn text-white bg-[#8b5cf6] hover:bg-[#6d28d9] px-5 py-2 rounded-full font-bold flex items-center transition-all duration-300">
+            Explore <span class="ml-2 group-hover:rotate-90 transition-transform duration-300">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Workshop - Construction Card -->
+    <div class="construction-card group relative bg-gradient-to-br from-[#ffedd5] to-[#fed7aa] p-8 rounded-3xl shadow-2xl border-2 border-[#fed7aa] hover:border-[#f97316] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="300">
+      <div class="grid-overlay absolute inset-0 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+      <div class="relative z-10">
+        <div class="icon-box w-20 h-20 mb-6 bg-gradient-to-br from-[#f97316] to-[#fb923c] rounded-xl flex items-center justify-center shadow-lg group-hover:animate-bounce">
+          <span class="text-3xl">🛠️</span>
+        </div>
+        <h3 class="text-2xl font-bold text-[#9a3412] mb-4 group-hover:text-[#7c2d12] transition-colors duration-300">Innovation Workshop</h3>
+        <p class="text-[#c2410c] mb-6 text-lg leading-relaxed">
+          Maker space with laser cutters, woodworking tools, welding stations, and prototyping equipment.
+        </p>
+        <div class="flex justify-between items-center">
+          <div class="capacity-badge px-4 py-2 bg-[#ffedd5] text-[#9a3412] font-bold rounded-full">
+            � 6 Zones
+          </div>
+          <button class="explore-btn text-white bg-[#f97316] hover:bg-[#9a3412] px-5 py-2 rounded-full font-bold flex items-center transition-all duration-300">
+            Explore <span class="ml-2 group-hover:rotate-90 transition-transform duration-300">→</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mega CTA Button -->
+  <div class="relative z-10 mt-20 text-center" data-aos="fade-up" data-aos-delay="350">
+    <a href="/labs" class="mega-cta inline-flex items-center px-10 py-5 bg-gradient-to-r from-[#0ea5e9] to-[#0c4a6e] text-white text-xl font-extrabold rounded-2xl shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 group">
+      <span class="mr-3 group-hover:mr-4 transition-all duration-300">🔍 SCHEDULE A LAB TOUR</span>
+      <svg class="w-6 h-6 group-hover:rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </a>
+  </div>
+
+  <!-- AOS Animation Initialization -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out-quad',
+      once: true
+    });
+  </script>
+
+  <!-- Custom Animation Styles -->
+  <style>
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+    
+    .animate-spin-slow {
+      animation: spin-slow 3s linear infinite;
+    }
+    
+    .animate-bounce {
+      animation: bounce 1.5s infinite;
+    }
+    
+    .glass-card:hover {
+      box-shadow: 0 10px 50px rgba(14, 165, 233, 0.3);
+      transform: translateY(-10px);
+    }
+    
+    .tilt-card:hover {
+      transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateY(-10px);
+      box-shadow: 0 15px 50px rgba(245, 158, 11, 0.3);
+    }
+    
+    .neon-card:hover {
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+      transform: translateY(-10px);
+    }
+    
+    .industrial-card:hover {
+      box-shadow: 0 10px 50px rgba(239, 68, 68, 0.3);
+      transform: translateY(-10px);
+    }
+    
+    .science-card:hover {
+      box-shadow: 0 10px 50px rgba(139, 92, 246, 0.3);
+      transform: translateY(-10px);
+    }
+    
+    .construction-card:hover {
+      box-shadow: 0 10px 50px rgba(249, 115, 22, 0.3);
+      transform: translateY(-10px);
+    }
+    
+    .circuit-pattern {
+      background-image: 
+        linear-gradient(90deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+    
+    .gear-pattern {
+      background-image: radial-gradient(circle, rgba(239, 68, 68, 0.1) 1px, transparent 1px);
+      background-size: 25px 25px;
+    }
+    
+    .bubble-overlay {
+      background-image: radial-gradient(circle, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    
+    .grid-overlay {
+      background-image: 
+        linear-gradient(90deg, rgba(249, 115, 22, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(249, 115, 22, 0.1) 1px, transparent 1px);
+      background-size: 25px 25px;
+    }
+    
+    .mega-cta:hover {
+      box-shadow: 0 15px 60px rgba(14, 165, 233, 0.4);
+    }
+    
+    .shape-1, .shape-2 {
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+  </style>
+</section>
+
+<!-- Lab Facilities Section -->
+<section class="relative py-24 px-6 md:px-16 bg-gradient-to-br from-[#f8fafc] via-[#f1f5f9] to-[#e2e8f0] overflow-hidden font-['Poppins']" id="lab-facilities">
+
+  <!-- Dynamic background elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-0 left-0 w-72 h-72 bg-[#7dd3fc] opacity-20 rounded-full filter blur-[100px] animate-pulse"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-[#bae6fd] opacity-15 rounded-full filter blur-[100px] animate-pulse"></div>
+    <div class="floating-shape-1 absolute top-1/4 left-1/4 w-48 h-48 bg-[#0ea5e9] opacity-10 rotate-45"></div>
+    <div class="floating-shape-2 absolute bottom-1/3 right-1/3 w-56 h-56 bg-[#0284c7] opacity-10 -rotate-12"></div>
+  </div>
+
+  <!-- Section Title -->
+  <div class="relative z-10 text-center mb-20" data-aos="fade-down">
+    <span class="inline-block mb-5 px-6 py-2 bg-white text-[#075985] text-lg font-bold rounded-full shadow-md border border-[#bae6fd]">
+      🏆 PREMIUM FACILITIES
+    </span>
+    <h2 class="text-5xl md:text-6xl font-extrabold text-[#075985] leading-tight mb-6">
+      <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#0ea5e9] to-[#0c4a6e]">World-Class</span><br>
+      Lab Infrastructure
+    </h2>
+    <p class="text-lg text-[#334155] max-w-3xl mx-auto">
+      Our cutting-edge facilities are designed to provide students with industry-standard tools and environment for optimal learning.
+    </p>
+  </div>
+
+  <!-- Facilities Grid -->
+  <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+    <!-- Facility Card 1 - Floating Glass Card -->
+    <div class="facility-card group relative bg-white/95 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border-2 border-white hover:border-[#0ea5e9] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="50">
+      <div class="absolute -inset-1 bg-gradient-to-r from-[#0ea5e9] to-[#7dd3fc] opacity-0 group-hover:opacity-20 rounded-3xl transition-opacity duration-500"></div>
+      <div class="relative z-10">
+        <div class="icon-container w-20 h-20 mb-6 mx-auto bg-gradient-to-br from-[#0ea5e9] to-[#38bdf8] rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-y-180 transition-all duration-700">
+          <img src="https://img.icons8.com/color/96/computer.png" alt="High-End PCs" class="w-16 h-16">
+        </div>
+        <h3 class="text-2xl font-bold text-[#075985] mb-4 text-center group-hover:text-[#0c4a6e] transition-colors duration-300">High-End PCs</h3>
+        <p class="text-[#475569] mb-6 text-lg leading-relaxed text-center">
+          All labs are equipped with i5/i7 12th Gen PCs, 16GB RAM, SSDs, dual monitors, and 24x7 uptime.
+        </p>
+        <div class="spec-badge px-4 py-2 bg-[#e0f2fe] text-[#075985] font-bold rounded-full text-center mx-auto w-max">
+          ⚡ 200+ Workstations
+        </div>
+      </div>
+    </div>
+
+    <!-- Facility Card 2 - Tilt Card -->
+    <div class="facility-card group relative bg-gradient-to-br from-[#fef9c3] to-[#fef08a] p-8 rounded-3xl shadow-2xl border-2 border-[#fef08a] hover:border-[#f59e0b] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="100">
+      <div class="relative z-10">
+        <div class="icon-container w-20 h-20 mb-6 mx-auto bg-gradient-to-br from-[#f59e0b] to-[#fbbf24] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-125 transition-all duration-500">
+          <img src="https://img.icons8.com/color/96/source-code.png" alt="Software Tools" class="w-16 h-16">
+        </div>
+        <h3 class="text-2xl font-bold text-[#92400e] mb-4 text-center group-hover:text-[#78350f] transition-colors duration-300">Licensed Software</h3>
+        <p class="text-[#854d0e] mb-6 text-lg leading-relaxed text-center">
+          Industry-standard software like MATLAB, VS Code, AutoCAD, Blender, Android Studio, and Python.
+        </p>
+        <div class="spec-badge px-4 py-2 bg-[#fef3c7] text-[#92400e] font-bold rounded-full text-center mx-auto w-max">
+          🖥️ 50+ Applications
+        </div>
+      </div>
+    </div>
+
+    <!-- Facility Card 3 - Neon Card -->
+    <div class="facility-card group relative bg-gradient-to-br from-[#ecfdf5] to-[#d1fae5] p-8 rounded-3xl shadow-2xl border-2 border-[#d1fae5] hover:border-[#10b981] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="150">
+      <div class="circuit-pattern absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+      <div class="relative z-10">
+        <div class="icon-container w-20 h-20 mb-6 mx-auto bg-gradient-to-br from-[#10b981] to-[#34d399] rounded-xl flex items-center justify-center shadow-lg group-hover:rotate-[360deg] transition-transform duration-1000">
+          <img src="https://img.icons8.com/color/96/wifi.png" alt="WiFi" class="w-16 h-16">
+        </div>
+        <h3 class="text-2xl font-bold text-[#065f46] mb-4 text-center group-hover:text-[#064e3b] transition-colors duration-300">WiFi Campus</h3>
+        <p class="text-[#047857] mb-6 text-lg leading-relaxed text-center">
+          Entire lab zone is WiFi enabled with firewall protection and 100 Mbps speed for students & staff.
+        </p>
+        <div class="spec-badge px-4 py-2 bg-[#d1fae5] text-[#065f46] font-bold rounded-full text-center mx-auto w-max">
+          🌐 Seamless Coverage
+        </div>
+      </div>
+    </div>
+
+    <!-- Facility Card 4 - Glass Card -->
+    <div class="facility-card group relative bg-white/95 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border-2 border-white hover:border-[#8b5cf6] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="200">
+      <div class="absolute -inset-1 bg-gradient-to-r from-[#8b5cf6] to-[#a78bfa] opacity-0 group-hover:opacity-20 rounded-3xl transition-opacity duration-500"></div>
+      <div class="relative z-10">
+        <div class="icon-container w-20 h-20 mb-6 mx-auto bg-gradient-to-br from-[#8b5cf6] to-[#a78bfa] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500">
+          <img src="https://cdn-icons-png.flaticon.com/512/3382/3382959.png" alt="Projector" class="w-16 h-16">
+        </div>
+        <h3 class="text-2xl font-bold text-[#6d28d9] mb-4 text-center group-hover:text-[#5b21b6] transition-colors duration-300">Smart Projectors</h3>
+        <p class="text-[#7c3aed] mb-6 text-lg leading-relaxed text-center">
+          All labs are fitted with interactive projectors, smart displays, and HDMI mirroring for teaching.
+        </p>
+        <div class="spec-badge px-4 py-2 bg-[#ede9fe] text-[#6d28d9] font-bold rounded-full text-center mx-auto w-max">
+          📽️ 4K Resolution
+        </div>
+      </div>
+    </div>
+
+    <!-- Facility Card 5 - Industrial Card -->
+    <div class="facility-card group relative bg-gradient-to-br from-[#fee2e2] to-[#fecaca] p-8 rounded-3xl shadow-2xl border-2 border-[#fecaca] hover:border-[#ef4444] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="250">
+      <div class="gear-pattern absolute inset-0 opacity-0 group-hover:opacity-15 transition-opacity duration-500"></div>
+      <div class="relative z-10">
+        <div class="icon-container w-20 h-20 mb-6 mx-auto bg-gradient-to-br from-[#ef4444] to-[#f87171] rounded-xl flex items-center justify-center shadow-lg group-hover:animate-spin-slow">
+          <img src="https://img.icons8.com/color/96/air-conditioner.png" alt="Air Conditioning" class="w-16 h-16">
+        </div>
+        <h3 class="text-2xl font-bold text-[#991b1b] mb-4 text-center group-hover:text-[#7f1d1d] transition-colors duration-300">Air Conditioned Labs</h3>
+        <p class="text-[#b91c1c] mb-6 text-lg leading-relaxed text-center">
+          Comfortable, climate-controlled labs ensure students can focus better during long practicals.
+        </p>
+        <div class="spec-badge px-4 py-2 bg-[#fee2e2] text-[#991b1b] font-bold rounded-full text-center mx-auto w-max">
+          ❄️ 24°C Optimal
+        </div>
+      </div>
+    </div>
+
+    <!-- Facility Card 6 - Science Card -->
+    <div class="facility-card group relative bg-gradient-to-br from-[#f5f3ff] to-[#ede9fe] p-8 rounded-3xl shadow-2xl border-2 border-[#ede9fe] hover:border-[#8b5cf6] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="300">
+      <div class="bubble-overlay absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+      <div class="relative z-10">
+        <div class="icon-container w-20 h-20 mb-6 mx-auto bg-gradient-to-br from-[#8b5cf6] to-[#a78bfa] rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:-translate-y-2 transition-all duration-500">
+          <img src="https://cdn-icons-png.flaticon.com/512/10682/10682263.png" alt="CCTV Security" class="w-16 h-16">
+        </div>
+        <h3 class="text-2xl font-bold text-[#6d28d9] mb-4 text-center group-hover:text-[#5b21b6] transition-colors duration-300">CCTV Security</h3>
+        <p class="text-[#7c3aed] mb-6 text-lg leading-relaxed text-center">
+          Every lab is under 24x7 surveillance with entry log system to ensure security and transparency.
+        </p>
+        <div class="spec-badge px-4 py-2 bg-[#ede9fe] text-[#6d28d9] font-bold rounded-full text-center mx-auto w-max">
+          🔒 100% Coverage
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mega CTA Button -->
+  <div class="relative z-10 mt-20 text-center" data-aos="fade-up" data-aos-delay="350">
+    <a href="/labs" class="mega-cta inline-flex items-center px-10 py-5 bg-gradient-to-r from-[#0ea5e9] to-[#0c4a6e] text-white text-xl font-extrabold rounded-2xl shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300 group">
+      <span class="mr-3 group-hover:mr-4 transition-all duration-300">📅 BOOK A LAB SESSION</span>
+      <svg class="w-6 h-6 group-hover:rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </a>
+  </div>
+
+  <!-- AOS Animation Initialization -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out-quad',
+      once: true
+    });
+  </script>
+
+  <!-- Custom Animation Styles -->
+  <style>
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    
+    @keyframes float-shape {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    
+    .animate-spin-slow {
+      animation: spin-slow 3s linear infinite;
+    }
+    
+    .floating-shape-1 {
+      animation: float-shape 8s infinite ease-in-out;
+    }
+    
+    .floating-shape-2 {
+      animation: float-shape 10s infinite ease-in-out 2s;
+    }
+    
+    .facility-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .glass-card:hover {
+      box-shadow: 0 10px 50px rgba(14, 165, 233, 0.3);
+    }
+    
+    .tilt-card:hover {
+      transform: perspective(1000px) rotateX(5deg) rotateY(5deg) translateY(-10px);
+      box-shadow: 0 15px 50px rgba(245, 158, 11, 0.3);
+    }
+    
+    .neon-card:hover {
+      box-shadow: 0 0 30px rgba(16, 185, 129, 0.5);
+    }
+    
+    .industrial-card:hover {
+      box-shadow: 0 10px 50px rgba(239, 68, 68, 0.3);
+    }
+    
+    .science-card:hover {
+      box-shadow: 0 10px 50px rgba(139, 92, 246, 0.3);
+    }
+    
+    .circuit-pattern {
+      background-image: 
+        linear-gradient(90deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+    
+    .gear-pattern {
+      background-image: radial-gradient(circle, rgba(239, 68, 68, 0.1) 1px, transparent 1px);
+      background-size: 25px 25px;
+    }
+    
+    .bubble-overlay {
+      background-image: radial-gradient(circle, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    
+    .mega-cta:hover {
+      box-shadow: 0 15px 60px rgba(14, 165, 233, 0.4);
+    }
+    
+    .spec-badge {
+      transition: all 0.3s ease;
+    }
+    
+    .facility-card:hover .spec-badge {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</section>
+
+<section class="bg-gradient-to-br from-blue-50 via-white to-purple-50 py-16 px-4 sm:px-10" id="faculty-lab">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-14">
+      <h2 class="text-4xl sm:text-5xl font-extrabold bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-transparent bg-clip-text mb-3">
+        👨‍🏫 Our Faculty & Lab Timings
+      </h2>
+      <p class="text-gray-700 text-lg max-w-2xl mx-auto">
+        Meet our experienced faculty members and explore our structured lab schedule
+      </p>
+    </div>
+
+    Faculty Cards
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-16">
+      <!-- Faculty Card  -->
+       <div class="bg-white shadow-xl rounded-3xl overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu-1wNDUR7Iqe11HjaaKuAUKwTyZ26WChfUjN2elwg1TC-y3BsPYdxdYSPw-C--FkZ6f4&usqp=CAU" alt="Faculty 1" class="w-full h-60 object-cover" />
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-extrabold text-gray-800">Mr. Rakesh Patel</h3> -->
+          <p class="text-indigo-500 font-semibold">Senior Faculty - Python</p>
+        </div>
+      </div>
+
+      <!-- Faculty card -->
+      <div class="bg-white shadow-xl rounded-3xl overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu-1wNDUR7Iqe11HjaaKuAUKwTyZ26WChfUjN2elwg1TC-y3BsPYdxdYSPw-C--FkZ6f4&usqp=CAU" alt="Faculty 2" class="w-full h-60 object-cover" />
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-extrabold text-gray-800">Ms. Neha Joshi</h3>
+          <p class="text-purple-500 font-semibold">Java | SQL Instructor</p>
+        </div>
+      </div>
+
+      <!-- Faculty Card -->
+      <div class="bg-white shadow-xl rounded-3xl overflow-hidden transform hover:-translate-y-2 transition duration-300">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRu-1wNDUR7Iqe11HjaaKuAUKwTyZ26WChfUjN2elwg1TC-y3BsPYdxdYSPw-C--FkZ6f4&usqp=CAU" alt="Faculty 3" class="w-full h-60 object-cover" />
+        <div class="p-6 text-center">
+          <h3 class="text-xl font-extrabold text-gray-800">Mr. Kunal Mehta</h3>
+          <p class="text-pink-500 font-semibold">PHP | DM | CWS Mentor</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lab Timings Table -->
+    <div class="overflow-x-auto">
+      <table class="min-w-full table-auto shadow-lg rounded-2xl overflow-hidden bg-white">
+        <thead class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white text-left">
+          <tr>
+            <th class="py-3 px-6 text-lg font-semibold">Subject</th>
+            <th class="py-3 px-6 text-lg font-semibold">Day</th>
+            <th class="py-3 px-6 text-lg font-semibold">Time</th>
+            <th class="py-3 px-6 text-lg font-semibold">Lab No.</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-800">
+          <tr class="hover:bg-blue-50">
+            <td class="py-4 px-6 font-medium">Python</td>
+            <td class="py-4 px-6">Monday</td>
+            <td class="py-4 px-6">9:00 AM - 11:00 AM</td>
+            <td class="py-4 px-6">Lab 01</td>
+          </tr>
+          <tr class="hover:bg-purple-50">
+            <td class="py-4 px-6 font-medium">Java</td>
+            <td class="py-4 px-6">Tuesday</td>
+            <td class="py-4 px-6">11:00 AM - 1:00 PM</td>
+            <td class="py-4 px-6">Lab 02</td>
+          </tr>
+          <tr class="hover:bg-pink-50">
+            <td class="py-4 px-6 font-medium">SQL</td>
+            <td class="py-4 px-6">Wednesday</td>
+            <td class="py-4 px-6">2:00 PM - 4:00 PM</td>
+            <td class="py-4 px-6">Lab 03</td>
+          </tr>
+          <tr class="hover:bg-green-50">
+            <td class="py-4 px-6 font-medium">PHP</td>
+            <td class="py-4 px-6">Thursday</td>
+            <td class="py-4 px-6">9:00 AM - 11:00 AM</td>
+            <td class="py-4 px-6">Lab 04</td>
+          </tr>
+          <tr class="hover:bg-yellow-50">
+            <td class="py-4 px-6 font-medium">CWS</td>
+            <td class="py-4 px-6">Friday</td>
+            <td class="py-4 px-6">11:00 AM - 1:00 PM</td>
+            <td class="py-4 px-6">Lab 05</td>
+          </tr>
+          <tr class="hover:bg-indigo-50">
+            <td class="py-4 px-6 font-medium">DM</td>
+            <td class="py-4 px-6">Saturday</td>
+            <td class="py-4 px-6">1:00 PM - 3:00 PM</td>
+            <td class="py-4 px-6">Lab 06</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<section class="relative py-28 px-6 md:px-16 bg-gradient-to-br from-[#f0f9ff] via-[#e0f2fe] to-[#bae6fd] overflow-hidden font-['Manrope']">
+
+  <!-- Animated Floating Elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="floating-orb orb-1 absolute top-20 left-10 w-32 h-32 bg-[#0ea5e9] opacity-10 rounded-full blur-[80px]"></div>
+    <div class="floating-orb orb-2 absolute bottom-20 right-10 w-40 h-40 bg-[#7dd3fc] opacity-15 rounded-full blur-[100px]"></div>
+    <div class="floating-shape shape-1 absolute top-1/3 left-1/4 w-24 h-24 bg-[#0ea5e9] opacity-10 rotate-45"></div>
+    <div class="floating-shape shape-2 absolute bottom-1/4 right-1/3 w-28 h-28 bg-[#0284c7] opacity-10 -rotate-12"></div>
+    <div class="floating-particle particle-1 absolute top-1/2 left-1/3 w-6 h-6 bg-[#0ea5e9] rounded-full opacity-20"></div>
+  </div>
+
+  <!-- Grand Title Section -->
+  <div class="relative z-10 text-center mb-20" data-aos="fade-down">
+    <span class="crown-badge inline-block mb-6 px-8 py-3 bg-white text-[#075985] text-xl font-bold rounded-full shadow-lg border-2 border-[#bae6fd]">
+      👑 PREMIUM SHOWCASE
+    </span>
+    <h1 class="text-5xl md:text-7xl font-extrabold text-[#075985] leading-tight mb-6">
+      <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#0ea5e9] to-[#0c4a6e]">Award-Winning</span><br>
+      <span class="text-[#0c4a6e]">Hexapod Robot</span>
+    </h1>
+    <p class="text-2xl text-[#334155] max-w-4xl mx-auto font-medium">
+      Celebrating our <span class="font-bold text-[#0c4a6e]">ROBOFEST 4.0 Championship</span> achievement with this groundbreaking innovation in robotics
+    </p>
+  </div>
+
+  <!-- Grand Showcase Card - Hexapod Robot -->
+  <div class="relative z-10 max-w-6xl mx-auto">
+    <div class="grand-card group relative bg-white/95 backdrop-blur-sm rounded-[3rem] shadow-[0_30px_60px_-15px_rgba(14,165,233,0.3)] border-4 border-white hover:border-[#0ea5e9] transition-all duration-700 overflow-hidden"
+         data-aos="zoom-in" data-aos-delay="200">
+      
+      <!-- Glow Effect -->
+      <div class="absolute -inset-2 bg-gradient-to-r from-[#0ea5e9] to-[#7dd3fc] opacity-0 group-hover:opacity-20 rounded-[3rem] transition-opacity duration-500"></div>
+      
+      <!-- Hero Image with Parallax Effect -->
+      <div class="parallax-container h-96 md:h-[500px] overflow-hidden">
+        <img src="https://blog.arduino.cc/wp-content/uploads/2023/04/Hexapod1.jpg" 
+             alt="Hexapod Robot" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000">
+      </div>
+      
+      <!-- Content Area -->
+      <div class="p-10 md:p-16">
+        <div class="flex flex-col md:flex-row items-start gap-10">
+          
+          <!-- Icon & Title -->
+          <div class="icon-box w-24 h-24 bg-gradient-to-br from-[#0ea5e9] to-[#38bdf8] rounded-2xl flex items-center justify-center shadow-xl group-hover:rotate-y-180 transition-all duration-1000">
+            <span class="text-4xl">🤖</span>
+          </div>
+          
+          <!-- Main Content -->
+          <div class="flex-1">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#075985] mb-6 group-hover:text-[#0c4a6e] transition-colors duration-500">
+              Autonomous Hexapod Robot
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <!-- Description -->
+              <div>
+                <p class="text-xl text-[#475569] mb-6 leading-relaxed">
+                  A revolutionary six-legged walking robot designed by our brilliant students, capable of navigating complex terrains with unprecedented stability and agility.
+                </p>
+                <div class="tech-badges flex flex-wrap gap-3 mb-8">
+                  <span class="px-4 py-2 bg-[#e0f2fe] text-[#075985] font-bold rounded-full">🤖 AI-Powered</span>
+                  <span class="px-4 py-2 bg-[#e0f2fe] text-[#075985] font-bold rounded-full">🦿 6-DOF Legs</span>
+                  <span class="px-4 py-2 bg-[#e0f2fe] text-[#075985] font-bold rounded-full">🧭 Autonomous</span>
+                </div>
+              </div>
+              
+              <!-- Achievements -->
+              <div class="achievements">
+                <h3 class="text-2xl font-bold text-[#075985] mb-4">🏆 Major Achievements</h3>
+                <ul class="space-y-3">
+                  <li class="flex items-start">
+                    <span class="trophy-icon mr-3 text-yellow-500">🏅</span>
+                    <span class="text-lg text-[#475569]">1st Place - ROBOFEST 4.0 International</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="trophy-icon mr-3 text-yellow-500">⭐</span>
+                    <span class="text-lg text-[#475569]">Featured in IEEE Robotics Magazine</span>
+                  </li>
+                  <li class="flex items-start">
+                    <span class="trophy-icon mr-3 text-yellow-500">🔬</span>
+                    <span class="text-lg text-[#475569]">Patent Pending Technology</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            
+            <!-- Grand CTA -->
+            <div class="mt-12 flex flex-col sm:flex-row gap-4">
+              <button class="grand-cta px-8 py-4 bg-gradient-to-r from-[#0ea5e9] to-[#0c4a6e] text-white text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center">
+                <span class="mr-3">📽️ Watch Demo Video</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                </svg>
+              </button>
+              <button class="grand-cta-outline px-8 py-4 bg-white border-2 border-[#0ea5e9] text-[#0c4a6e] text-lg font-bold rounded-xl shadow-lg hover:shadow-xl hover:scale-[1.02] transition-all duration-300 flex items-center justify-center">
+                <span class="mr-3">📖 Read Case Study</span>
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Floating Award Ribbon -->
+      <div class="absolute -top-10 -right-10 w-48 h-48 overflow-hidden">
+        <div class="ribbon absolute top-0 right-0 w-64 h-12 bg-[#f59e0b] transform rotate-45 translate-x-16 translate-y-8 flex items-center justify-center shadow-lg">
+          <span class="text-white font-bold text-sm">🏆 BEST INNOVATION 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AOS Animation Initialization -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out-quad',
+      once: true
+    });
+  </script>
+
+  <!-- Custom Animation Styles -->
+  <style>
+    /* Floating Animations */
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.1; transform: scale(1); }
+      50% { opacity: 0.2; transform: scale(1.1); }
+    }
+    
+    @keyframes particle-float {
+      0%, 100% { transform: translate(0, 0); }
+      25% { transform: translate(10px, -15px); }
+      50% { transform: translate(-5px, 10px); }
+      75% { transform: translate(15px, 5px); }
+    }
+    
+    .floating-orb {
+      animation: pulse 8s infinite ease-in-out;
+    }
+    .orb-2 {
+      animation-delay: 2s;
+    }
+    
+    .floating-shape {
+      animation: float 12s infinite ease-in-out;
+    }
+    .shape-2 {
+      animation-delay: 3s;
+    }
+    
+    .floating-particle {
+      animation: particle-float 15s infinite ease-in-out;
+    }
+    
+    /* Grand Card Effects */
+    .grand-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 40px 80px -20px rgba(14, 165, 233, 0.4);
+    }
+    
+    .icon-box {
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .grand-card:hover .icon-box {
+      transform: rotateY(180deg) scale(1.1);
+    }
+    
+    .tech-badges span {
+      transition: all 0.3s ease;
+    }
+    
+    .grand-card:hover .tech-badges span {
+      transform: translateY(-3px);
+      box-shadow: 0 5px 15px rgba(14, 165, 233, 0.2);
+    }
+    
+    .trophy-icon {
+      transition: all 0.3s ease;
+    }
+    
+    .grand-card:hover .trophy-icon {
+      transform: scale(1.2);
+    }
+    
+    .grand-cta {
+      transition: all 0.3s ease, box-shadow 0.5s ease;
+    }
+    
+    .grand-cta:hover {
+      box-shadow: 0 10px 30px rgba(14, 165, 233, 0.5);
+    }
+    
+    .grand-cta-outline:hover {
+      box-shadow: 0 10px 30px rgba(14, 165, 233, 0.2);
+    }
+    
+    .ribbon {
+      z-index: 10;
+    }
+    
+    .crown-badge {
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .crown-badge::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(
+        to bottom right,
+        transparent 45%,
+        rgba(255, 215, 0, 0.3) 50%,
+        transparent 55%
+      );
+      transform: rotate(30deg);
+      animation: shine 3s infinite;
+    }
+    
+    @keyframes shine {
+      0% { transform: translateX(-100%) rotate(30deg); }
+      100% { transform: translateX(100%) rotate(30deg); }
+    }
+  </style>
+</section>
+
+<section class="relative overflow-hidden py-28 px-6 md:px-16 bg-gradient-to-br from-[#f0f9ff] via-[#f7fbff] to-[#e6f4ff] font-['Inter']">
+
+  <!-- Dynamic Background Elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="floating-orb orb-1 absolute top-0 left-0 w-80 h-80 bg-[#7dd3fc] opacity-10 rounded-full blur-[100px] animate-pulse"></div>
+    <div class="floating-orb orb-2 absolute bottom-0 right-0 w-96 h-96 bg-[#bae6fd] opacity-15 rounded-full blur-[120px] animate-pulse"></div>
+    <div class="floating-shape shape-1 absolute top-1/4 left-1/4 w-48 h-48 bg-[#0ea5e9] opacity-10 rotate-45"></div>
+    <div class="floating-shape shape-2 absolute bottom-1/3 right-1/3 w-56 h-56 bg-[#0284c7] opacity-10 -rotate-12"></div>
+  </div>
+
+  <!-- Section Header -->
+  <div class="relative z-10 max-w-7xl mx-auto text-center mb-20" data-aos="fade-down">
+    <span class="inline-block mb-5 px-6 py-2 bg-white text-[#075985] text-lg font-bold rounded-full shadow-md border border-[#bae6fd]">
+      🏛️ DEPARTMENT LABS
+    </span>
+    <h2 class="text-4xl md:text-6xl font-extrabold text-[#075985] leading-tight mb-6">
+      <span class="bg-clip-text text-transparent bg-gradient-to-r from-[#0ea5e9] to-[#0c4a6e]">Advanced</span> Laboratory Facilities
+    </h2>
+    <p class="text-xl text-[#334155] max-w-3xl mx-auto">
+      State-of-the-art labs equipped with cutting-edge technology for hands-on learning and research
+    </p>
+  </div>
+
+  <!-- Labs Grid -->
+  <div class="relative z-10 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+    <!-- AI & ML Lab Card -->
+    <div class="lab-card group relative bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl border-2 border-white hover:border-[#0ea5e9] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="50">
+      <div class="absolute -inset-1 bg-gradient-to-r from-[#0ea5e9] to-[#7dd3fc] opacity-0 group-hover:opacity-20 rounded-3xl transition-opacity duration-500"></div>
+      
+      <!-- Lab Image -->
+      <div class="h-64 md:h-80 overflow-hidden">
+        <img src="https://dgu.ac/images/labs/ML_Lab_2024.jpg" alt="AI & ML Lab" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+      </div>
+      
+      <!-- Lab Details -->
+      <div class="p-8">
+        <div class="flex flex-col md:flex-row gap-6">
+          <!-- Lab Badge -->
+          <div class="lab-badge w-20 h-20 bg-gradient-to-br from-[#0ea5e9] to-[#38bdf8] rounded-xl flex items-center justify-center shadow-lg shrink-0">
+            <span class="text-3xl">🧠</span>
+          </div>
+          
+          <!-- Lab Info -->
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center gap-3 mb-3">
+              <span class="px-3 py-1 bg-[#e0f2fe] text-[#075985] font-bold rounded-full text-sm">Lab #301</span>
+              <span class="px-3 py-1 bg-[#e0f2fe] text-[#075985] font-bold rounded-full text-sm">Floor 3</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-[#075985] mb-2">AI & Machine Learning Lab</h3>
+            <p class="text-[#475569] mb-4">Advanced computing lab for artificial intelligence, deep learning, and data science research</p>
+            
+            <div class="lab-meta grid grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-sm font-semibold text-[#0c4a6e] uppercase tracking-wider mb-1">Subjects</h4>
+                <p class="text-[#475569]">ML, AI, Data Mining</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-[#0c4a6e] uppercase tracking-wider mb-1">Coordinator</h4>
+                <p class="text-[#475569]">Dr. Ananya Sharma</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-[#0c4a6e] uppercase tracking-wider mb-1">Capacity</h4>
+                <p class="text-[#475569]">30 Students</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-[#0c4a6e] uppercase tracking-wider mb-1">Equipment</h4>
+                <p class="text-[#475569]">GPU Workstations</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- IoT & Embedded Lab Card -->
+    <div class="lab-card group relative bg-gradient-to-br from-[#ecfdf5] to-[#d1fae5] rounded-3xl shadow-2xl border-2 border-[#d1fae5] hover:border-[#10b981] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="100">
+      <div class="circuit-pattern absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+      
+      <!-- Lab Image -->
+      <div class="h-64 md:h-80 overflow-hidden">
+        <img src="https://dgu.ac/images/labs/SAS_Lab_DGU_Dehradun_2024.jpg" alt="IoT Lab" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+      </div>
+      
+      <!-- Lab Details -->
+      <div class="p-8">
+        <div class="flex flex-col md:flex-row gap-6">
+          <!-- Lab Badge -->
+          <div class="lab-badge w-20 h-20 bg-gradient-to-br from-[#10b981] to-[#34d399] rounded-xl flex items-center justify-center shadow-lg shrink-0">
+            <span class="text-3xl">🌐</span>
+          </div>
+          
+          <!-- Lab Info -->
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center gap-3 mb-3">
+              <span class="px-3 py-1 bg-[#d1fae5] text-[#065f46] font-bold rounded-full text-sm">Lab #205</span>
+              <span class="px-3 py-1 bg-[#d1fae5] text-[#065f46] font-bold rounded-full text-sm">Floor 2</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-[#065f46] mb-2">IoT & Embedded Systems Lab</h3>
+            <p class="text-[#047857] mb-4">Hands-on lab for Internet of Things, sensor networks, and embedded programming</p>
+            
+            <div class="lab-meta grid grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-sm font-semibold text-[#064e3b] uppercase tracking-wider mb-1">Subjects</h4>
+                <p class="text-[#047857]">IoT, Embedded Systems</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-[#064e3b] uppercase tracking-wider mb-1">Coordinator</h4>
+                <p class="text-[#047857]">Prof. Rajesh Patel</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-[#064e3b] uppercase tracking-wider mb-1">Capacity</h4>
+                <p class="text-[#047857]">25 Students</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-[#064e3b] uppercase tracking-wider mb-1">Equipment</h4>
+                <p class="text-[#047857]">Raspberry Pi Kits</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Networking Lab Card -->
+    <div class="lab-card group relative bg-gradient-to-br from-[#fef9c3] to-[#fef08a] rounded-3xl shadow-2xl border-2 border-[#fef08a] hover:border-[#f59e0b] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="150">
+      
+      <!-- Lab Image -->
+      <div class="h-64 md:h-80 overflow-hidden">
+        <img src="https://davmodelskp.org/File/8879/CRW_Com.%20Lab.jpg" alt="Networking Lab" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+      </div>
+      
+      <!-- Lab Details -->
+      <div class="p-8">
+        <div class="flex flex-col md:flex-row gap-6">
+          <!-- Lab Badge -->
+          <div class="lab-badge w-20 h-20 bg-gradient-to-br from-[#f59e0b] to-[#fbbf24] rounded-xl flex items-center justify-center shadow-lg shrink-0">
+            <span class="text-3xl">🖥️</span>
+          </div>
+          
+          <!-- Lab Info -->
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center gap-3 mb-3">
+              <span class="px-3 py-1 bg-[#fef3c7] text-[#92400e] font-bold rounded-full text-sm">Lab #104</span>
+              <span class="px-3 py-1 bg-[#fef3c7] text-[#92400e] font-bold rounded-full text-sm">Floor 1</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-[#92400e] mb-2">Networking & Security Lab</h3>
+            <p class="text-[#854d0e] mb-4">Advanced lab for network configuration, cybersecurity, and server administration</p>
+            
+            <div class="lab-meta grid grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-sm font-semibold text-[#78350f] uppercase tracking-wider mb-1">Subjects</h4>
+                <p class="text-[#854d0e]">Networking, Cybersecurity</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-[#78350f] uppercase tracking-wider mb-1">Coordinator</h4>
+                <p class="text-[#854d0e]">Dr. Priya Singh</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-[#78350f] uppercase tracking-wider mb-1">Capacity</h4>
+                <p class="text-[#854d0e]">28 Students</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-[#78350f] uppercase tracking-wider mb-1">Equipment</h4>
+                <p class="text-[#854d0e]">Cisco Routers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Robotics Lab Card -->
+    <div class="lab-card group relative bg-gradient-to-br from-[#f5f3ff] to-[#ede9fe] rounded-3xl shadow-2xl border-2 border-[#ede9fe] hover:border-[#8b5cf6] transition-all duration-500 overflow-hidden"
+         data-aos="fade-up" data-aos-delay="200">
+      <div class="bubble-overlay absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+      
+      <!-- Lab Image -->
+      <div class="h-64 md:h-80 overflow-hidden">
+        <img src="https://www.hvl.no//globalassets/hvl-internett/bilde/forsking/hvl-robotics/forde_012.jpg" alt="Robotics Lab" 
+             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+      </div>
+      
+      <!-- Lab Details -->
+      <div class="p-8">
+        <div class="flex flex-col md:flex-row gap-6">
+          <!-- Lab Badge -->
+          <div class="lab-badge w-20 h-20 bg-gradient-to-br from-[#8b5cf6] to-[#a78bfa] rounded-xl flex items-center justify-center shadow-lg shrink-0">
+            <span class="text-3xl">🤖</span>
+          </div>
+          
+          <!-- Lab Info -->
+          <div class="flex-1">
+            <div class="flex flex-wrap items-center gap-3 mb-3">
+              <span class="px-3 py-1 bg-[#ede9fe] text-[#6d28d9] font-bold rounded-full text-sm">Lab #302</span>
+              <span class="px-3 py-1 bg-[#ede9fe] text-[#6d28d9] font-bold rounded-full text-sm">Floor 3</span>
+            </div>
+            
+            <h3 class="text-2xl font-bold text-[#6d28d9] mb-2">Robotics & Automation Lab</h3>
+            <p class="text-[#7c3aed] mb-4">Cutting-edge facility for robotics programming, automation, and industrial control systems</p>
+            
+            <div class="lab-meta grid grid-cols-2 gap-4">
+              <div>
+                <h4 class="text-sm font-semibold text-[#5b21b6] uppercase tracking-wider mb-1">Subjects</h4>
+                <p class="text-[#7c3aed]">Robotics, Automation</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-[#5b21b6] uppercase tracking-wider mb-1">Coordinator</h4>
+                <p class="text-[#7c3aed]">Prof. Amit Desai</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-[#5b21b6] uppercase tracking-wider mb-1">Capacity</h4>
+                <p class="text-[#7c3aed]">20 Students</p>
+              </div>
+              <div>
+                <h4 class="text-sm font-semibold text-[#5b21b6] uppercase tracking-wider mb-1">Equipment</h4>
+                <p class="text-[#7c3aed]">Robotic Arms</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- View All Button -->
+  <div class="relative z-10 mt-16 text-center" data-aos="fade-up" data-aos-delay="250">
+    <a href="/labs" class="inline-flex items-center px-8 py-4 bg-gradient-to-r from-[#0ea5e9] to-[#0c4a6e] text-white text-lg font-bold rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 group">
+      <span class="mr-2 group-hover:mr-3 transition-all duration-300">🔍 Explore All Labs</span>
+      <svg class="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </a>
+  </div>
+
+  <!-- AOS Animation Initialization -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out-quad',
+      once: true
+    });
+  </script>
+
+  <!-- Custom Animation Styles -->
+  <style>
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.1; transform: scale(1); }
+      50% { opacity: 0.2; transform: scale(1.1); }
+    }
+    
+    .floating-orb {
+      animation: pulse 8s infinite ease-in-out;
+    }
+    .orb-2 {
+      animation-delay: 2s;
+    }
+    
+    .floating-shape {
+      animation: float 12s infinite ease-in-out;
+    }
+    .shape-2 {
+      animation-delay: 3s;
+    }
+    
+    .lab-card:hover {
+      transform: translateY(-10px);
+    }
+    
+    .lab-card:nth-child(1):hover {
+      box-shadow: 0 20px 50px rgba(14, 165, 233, 0.3);
+    }
+    
+    .lab-card:nth-child(2):hover {
+      box-shadow: 0 20px 50px rgba(16, 185, 129, 0.3);
+    }
+    
+    .lab-card:nth-child(3):hover {
+      box-shadow: 0 20px 50px rgba(245, 158, 11, 0.3);
+    }
+    
+    .lab-card:nth-child(4):hover {
+      box-shadow: 0 20px 50px rgba(139, 92, 246, 0.3);
+    }
+    
+    .circuit-pattern {
+      background-image: 
+        linear-gradient(90deg, rgba(16, 185, 129, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(16, 185, 129, 0.1) 1px, transparent 1px);
+      background-size: 30px 30px;
+    }
+    
+    .bubble-overlay {
+      background-image: radial-gradient(circle, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+    
+    .lab-badge {
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+    
+    .lab-card:hover .lab-badge {
+      transform: scale(1.1) rotate(10deg);
+    }
+  </style>
+</section>
+
+  <!-- footer -->
+  <footer class="relative bg-[#0B3C38] text-white pt-12 pb-6 overflow-hidden">
+    <!-- Background Triangle Lines -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ffffff11" />
+            <stop offset="100%" stop-color="#ffffff05" />
+          </linearGradient>
+        </defs>
+        <path d="M0,100 L50,0 L100,100" stroke="url(#lineGradient)" stroke-width="0.5" fill="none" />
+        <path d="M25,100 L60,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+        <path d="M10,100 L70,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Logo + Tagline -->
+      <div>
+        <div class="flex items-center gap-2">
+          <img src="img/BPTI.jpg" alt="Logo" class="h-6">
+          <span class="font-semibold text-xl">INFORMATION TECHNOLOGY</span>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-gray-300">
+          Empowering students with industry-ready IT skills and modern tools to build future-ready professionals.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex space-x-4 mt-6 text-white text-lg">
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-x"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-facebook"></i></a>
+        </div>
+
+        <!-- Back to Top -->
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+          class="mt-6 px-4 py-2 border border-white hover:bg-white hover:text-black transition rounded flex items-center gap-2">
+          <i class="ri-arrow-up-line"></i> BACK TO TOP
+        </button>
+      </div>
+
+      <!-- Site Map -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Site Map</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i class="ri-home-3-line text-white"></i> <a href="index.html">Homepage</a></li>
+          <li class="flex items-center gap-2"><i class="ri-notification-2-line text-white"></i> <a href="anounce.html">Announcement</a></li>
+          <li class="flex items-center gap-2"><i class="ri-building-line text-white"></i> <a href="#">About Department</a></li>
+          <li class="flex items-center gap-2"><i class="ri-newspaper-line text-white"></i> <a href="#">Academics</a></li>
+          <li class="flex items-center gap-2"><i class="ri-briefcase-line text-white"></i> <a href="#">Student Corner</a></li>
+          <li class="flex items-center gap-2"><i class="ri-contacts-book-line text-white"></i> <a href="#">Departmental Activities</a></li>
+          <li class="flex items-center gap-2"><i class="ri-key-line text-white"></i> <a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Legal</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i class="ri-lock-line text-white"></i> <a href="#">Privacy Policy</a></li>
+          <li class="flex items-center gap-2"><i class="ri-file-list-2-line text-white"></i> <a href="terms.html">Terms of Services</a></li>
+          <li class="flex items-center gap-2"><i class="ri-user-3-line text-white"></i> <a href="#">Student Guidelines</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="relative z-10 bg-[#D8953A] text-center text-xs text-black font-medium py-2 mt-10">
+      Copyright © 2025 Department of Information Technology, SIR BPTI. All Rights Reserved.
+    </div>
+  </footer>
+
+
+
+
+
+</body>
+</html>

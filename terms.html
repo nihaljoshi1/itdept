@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms & Conditions - IT DEPARTMENT | SIR BHAVSINHJI POLYTECHNIC INSTITUTE </title>
+  <link href="./dist/output.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-lime-50 via-emerald-50 to-teal-100 text-gray-800 font-sans">
+
+  <!-- Top Info Section -->
+  <a href="index.html">
+    <div class="bg-white text-center py-6 shadow-sm border-b border-teal-300">
+      <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center sm:justify-start sm:space-x-6">
+        <!-- Logo -->
+        <img src="./img/BPTI.jpg" alt="Logo" class="w-20 h-20 rounded-full border border-green-500 mb-3 sm:mb-0" />
+
+        <!-- Department Text -->
+        <div class="text-center sm:text-left">
+          <h1 class="text-xl sm:text-2xl font-bold text-green-800 tracking-wide uppercase leading-tight">
+            Information Technology Department
+          </h1>
+          <p class="text-sm sm:text-base text-green-700 mt-1 font-medium">
+            Sir Bhavsinhji Polytechnic Institute, Bhavnagar
+          </p>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  <!-- Navbar -->
+  <header class="bg-teal-100 shadow-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-20">
+      <!-- Semester Dropdown -->
+      <div class="flex items-center space-x-4">
+        <div class="relative group">
+          <button class="flex items-center gap-2 border border-green-600 text-green-800 px-4 py-2 rounded-md hover:bg-green-50">
+            Select Semester
+            <i class="fas fa-chevron-down text-green-600 text-sm"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border w-40 rounded shadow-md z-50">
+            <li><a href="semester/1st.html" class="block px-4 py-2 hover:bg-green-50">First</a></li>
+            <li><a href="semester/2nd.html" class="block px-4 py-2 hover:bg-green-50">Second</a></li>
+            <li><a href="semester/3rd.html" class="block px-4 py-2 hover:bg-green-50">Third</a></li>
+            <li><a href="semester/4th.html" class="block px-4 py-2 hover:bg-green-50">Fourth</a></li>
+            <li><a href="semester/5th.html" class="block px-4 py-2 hover:bg-green-50">Fifth</a></li>
+            <li><a href="semester/6th.html" class="block px-4 py-2 hover:bg-green-50">Sixth</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Hamburger (Mobile) -->
+      <div class="md:hidden">
+        <button onclick="toggleMenu()" class="text-green-700 focus:outline-none">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden md:flex space-x-6 text-green-900 font-semibold">
+        <a href="index.html" class="hover:text-green-700">Home</a>
+
+        <!-- About Institute Dropdown -->
+        <div class="relative group">
+          <a href="discover_institute.html" class="flex items-center gap-1 hover:text-green-700 cursor-pointer">
+            About Our Institute
+          </a>
+        </div>
+
+        <!-- About Department Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-green-700">
+            Know the Department
+            <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-64 z-50">
+            <li><a href="itdepartment.html" class="block px-4 py-2 hover:bg-green-50">About Department </a></li>
+            <li><a href="PEO&PSO.html" class="block px-4 py-2 hover:bg-green-50">Dept. PEOs & PSOs</a></li>
+            <li><a href="faculty.html" class="block px-4 py-2 hover:bg-green-50">Faculty</a></li>
+            <li><a href="lab.html" class="block px-4 py-2 hover:bg-green-50">Laboratory</a></li>
+          </ul>
+        </div>
+
+        <a href="anounce.html" class="hover:text-green-700">Announcement</a>
+
+        <!-- Student Corner Dropdown -->
+        <div class="relative group">
+          <button class="flex items-center gap-1 hover:text-green-700">
+            Student Corner
+            <i class="fas fa-chevron-down text-green-600 text-xs"></i>
+          </button>
+          <ul class="absolute top-full left-0 hidden group-hover:block bg-white text-green-800 border mt-0 rounded shadow-md w-56 z-50">
+            <li><a href="examination_section.html" class="block px-4 py-2 hover:bg-green-50">Examination Section</a></li>
+            <li><a href="https://www.eduqfix.com/PayDirect/#/student" class="block px-4 py-2 hover:bg-green-50">Online Fees Payment</a></li>
+          </ul>
+        </div>
+
+        <a href="addmission.html" class="hover:text-green-700">Addmission</a>
+        <a href="contact.html" class="hover:text-green-700">Contact Us</a>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav (All Links Expanded) -->
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 bg-white shadow text-green-800 font-semibold">
+      <a href="#" class="block py-2 border-b">Home</a>
+
+      <!-- About Institute -->
+      <a href="discover_institute.html" class="block py-2 border-b">About Our Institute</a>
+
+      <!-- About Department -->
+      <button onclick="toggleSubmenu('dept-sub')" class="w-full text-left py-2 border-b">Know the Department <i class="fas fa-chevron-down text-green-600 text-sm"></i></button>
+      <div id="dept-sub" class="hidden pl-4">
+        <a href="itdepartment.html" class="block py-1">›About Department</a>
+        <a href="PEO&PSO.html" class="block py-1">› Dept. PEOs & PSOs</a>
+        <a href="faculty.html" class="block py-1">› Faculty</a>
+        <a href="lab.html" class="block py-1">› Laboratory</a>
+      </div>
+
+      <a href="anounce.html" class="block py-2 border-b">Announcement</a>
+
+      <!-- Student Corner -->
+      <button onclick="toggleSubmenu('student-sub')" class="w-full text-left py-2 border-b">Student Corner <i class="fas fa-chevron-down text-green-600 text-sm"></i></button>
+      <div id="student-sub" class="hidden pl-4">
+        <a href="examination_section.html" class="block py-1">› Examination Section</a>
+        <a href="https://www.eduqfix.com/PayDirect/#/student" class="block py-1">› Online Fees Payment</a>
+      </div>
+
+      <a href="addmission.html" class="block py-2">Addmission</a>
+      <a href="contact.html" class="block py-2">Contact Us</a>
+    </div>
+
+  </header>
+    <!-- Header -->
+    <div class="bg-gradient-to-r from-emerald-900 via-green-700 to-teal-600 text-white py-10 text-center shadow-lg" style="padding-top: -5px;">
+      <h1 class="text-4xl lg:text-5xl font-extrabold tracking-wide">Terms and Conditions</h1>
+      <p class="text-emerald-200 text-sm mt-2">INFORMATION TECHNOLOGY DEPARTMENT - SIR BHAVSINHJI POLYTECHNIC INSTITUTE</p>
+    </div>
+
+    <!-- Main container -->
+    <div class="flex flex-col lg:flex-row max-w-7xl mx-auto p-6 gap-6">
+
+      <!-- Sidebar -->
+      <aside class="bg-white rounded-xl p-6 shadow-lg w-full lg:w-1/4">
+        <h2 class="text-xl font-semibold text-emerald-700 mb-4">Terms & Policies</h2>
+        <ul class="space-y-3">
+          <li class="bg-emerald-400 text-white px-4 py-2 rounded-lg hover:bg-emerald-500 cursor-pointer transition-all">Introduction</li>
+          <li class="bg-white text-emerald-700 px-4 py-2 rounded-lg cursor-pointer transition-all" style="border: 1px solid #047857;">Code of Conduct</li>
+          <li class="bg-white text-emerald-700 px-4 py-2 rounded-lg cursor-pointer transition-all" style="border: 1px solid #047857;">Privacy Policy</li>
+          <li class="bg-white text-emerald-700 px-4 py-2 rounded-lg cursor-pointer transition-all" style="border: 1px solid #047857;">Copyright</li>
+          <li class="bg-white text-emerald-700 px-4 py-2 rounded-lg cursor-pointer transition-all" style="border: 1px solid #047857;">External Links & Affiliations</li>
+          <li class="bg-white text-emerald-700 px-4 py-2 rounded-lg cursor-pointer transition-all" style="border: 1px solid #047857;">Changes to Terms</li>
+          
+        </ul>
+      </aside>
+
+      <!-- Content -->
+      <main class="flex-1 space-y-6">
+        <section class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition-all">
+          <h2 class="text-2xl text-emerald-700 font-bold mb-4">Introduction</h2>
+          <p>Welcome to the official website of the <b> Information Technology Department, Sir Bhavsinhji Polytechnic Institute, Bhavnagar.</b> By accessing this site, you agree to be bound by the following terms and conditions. If you do not accept these terms, please do not continue using this website.</p>
+          <p class="mt-3">This site is maintained to provide academic, departmental, and student-related information specifically for the <b> Diploma in Information Technology.</b></p>
+        </section>
+
+        <section class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition-all">
+          <h2 class="text-2xl text-emerald-700 font-bold mb-4">Code of Conduct</h2>
+          <p>Users must behave ethically and respectfully while using this website. The following activities are strictly prohibited:
+            <ul>
+              <li style="list-style: disc;" class="ml-6">Harassment or misuse of information</li>
+              <li style="list-style: disc;" class="ml-6">Uploading or distributing inappropriate content</li>
+              <li style="list-style: disc;" class="ml-6">Attempting to breach site security</li>
+              <li style="list-style: disc;" class="ml-6">Misrepresenting the department or institute</li>
+            </ul>
+          </p>
+        </section>
+
+        <section class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition-all">
+          <h2 class="text-2xl text-emerald-700 font-bold mb-4">Privacy Policy</h2>
+          <p>We respect your privacy. Any data collected (e.g., through forms) is used strictly for academic and departmental communication purposes and is not shared with third parties.</p>
+          <p class="mt-3">We follow <b> GTU</b> and <b>ACPDC</b> guidelines for student and visitor privacy.</p>
+        </section>
+
+        <section class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition-all">
+          <h2 class="text-2xl text-emerald-700 font-bold mb-4">Copyright</h2>
+          <p>All website content — including text, documents, code, icons, media, and design — is the intellectual property of the <br> <b> IT DEPARTMENT, SIR BPTI.</b></p>
+          <p class="mt-3"><b>📌 Reusing, copying, or distributing any content </b> without prior permission is strictly prohibited.</p>
+        </section>
+
+        <section class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition-all">
+          <h2 class="text-2xl text-emerald-700 font-bold mb-4">External Links & Affiliations</h2>
+          <p>The website may contain links to external portals (e.g., <b> ACPDC, GTU </b>). We are not responsible for the content or policies of those websites. Users are advised to read their terms separately.</p>
+          
+        </section>
+
+        <section class="bg-white rounded-2xl shadow-md p-8 hover:shadow-xl transition-all">
+          <h2 class="text-2xl text-emerald-700 font-bold mb-4">Changes to Terms</h2>
+            <p>These terms may be updated periodically. Continued use of the website implies acceptance of any future revisions.</p>
+        </section>
+      </main>
+    </div>
+
+  <!-- footer -->
+  <footer class="relative bg-[#0B3C38] text-white pt-12 pb-6 overflow-hidden">
+    <!-- Background Triangle Lines -->
+    <div class="absolute inset-0 z-0 pointer-events-none">
+      <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#ffffff11" />
+            <stop offset="100%" stop-color="#ffffff05" />
+          </linearGradient>
+        </defs>
+        <path d="M0,100 L50,0 L100,100" stroke="url(#lineGradient)" stroke-width="0.5" fill="none" />
+        <path d="M25,100 L60,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+        <path d="M10,100 L70,0" stroke="url(#lineGradient)" stroke-width="0.4" fill="none" />
+      </svg>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+      <!-- Logo + Tagline -->
+      <div>
+        <div class="flex items-center gap-2">
+          <img src="img/BPTI.jpg" alt="Logo" class="h-6">
+          <span class="font-semibold text-xl">INFORMATION TECHNOLOGY</span>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-gray-300">
+          Empowering students with industry-ready IT skills and modern tools to build future-ready professionals.
+        </p>
+
+        <!-- Social Icons -->
+        <div class="flex space-x-4 mt-6 text-white text-lg">
+          <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-x"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="LinkedIn"><i class="fab fa-facebook"></i></a>
+        </div>
+
+        <!-- Back to Top -->
+        <button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+          class="mt-6 px-4 py-2 border border-white hover:bg-white hover:text-black transition rounded flex items-center gap-2">
+          <i class="ri-arrow-up-line"></i> BACK TO TOP
+        </button>
+      </div>
+
+      <!-- Site Map -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Site Map</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i class="ri-home-3-line text-white"></i> <a href="index.html">Homepage</a></li>
+          <li class="flex items-center gap-2"><i class="ri-notification-2-line text-white"></i> <a href="anounce.html">Announcement</a></li>
+          <li class="flex items-center gap-2"><i class="ri-building-line text-white"></i> <a href="#">About Department</a></li>
+          <li class="flex items-center gap-2"><i class="ri-newspaper-line text-white"></i> <a href="#">Academics</a></li>
+          <li class="flex items-center gap-2"><i class="ri-briefcase-line text-white"></i> <a href="#">Student Corner</a></li>
+          <li class="flex items-center gap-2"><i class="ri-contacts-book-line text-white"></i> <a href="#">Departmental Activities</a></li>
+          <li class="flex items-center gap-2"><i class="ri-key-line text-white"></i> <a href="contact.html">Contact us</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <h3 class="text-lg font-semibold mb-4">Legal</h3>
+        <ul class="space-y-2 text-sm text-gray-300">
+          <li class="flex items-center gap-2"><i class="ri-lock-line text-white"></i> <a href="#">Privacy Policy</a></li>
+          <li class="flex items-center gap-2"><i class="ri-file-list-2-line text-white"></i> <a href="terms.html">Terms of Services</a></li>
+          <li class="flex items-center gap-2"><i class="ri-user-3-line text-white"></i> <a href="#">Student Guidelines</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="relative z-10 bg-[#D8953A] text-center text-xs text-black font-medium py-2 mt-10">
+      Copyright © 2025 Department of Information Technology, SIR BPTI. All Rights Reserved.
+    </div>
+  </footer>
+
+
+</body>
+</html>
