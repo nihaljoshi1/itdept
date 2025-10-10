@@ -3,86 +3,655 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT DEPARTMENT FACULTY | SIR BHAVSINHJI POLYTECHNIC INSTITUTE, BHAVNAGAR</title>
-    <link href="./dist/output.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>IT DEPARTMENT FACULTY | SIR BPTI</title>
+      <link href="dist/output.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Manrope', 'sans-serif'],
-                    },
-                    colors: {
-                        primary: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            200: '#bae6fd',
-                            300: '#7dd3fc',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            700: '#0369a1',
-                            800: '#075985',
-                            900: '#0c4a6e',
-                        },
-                        surface: {
-                            50: '#f8fafc',
-                            100: '#f1f5f9',
-                            200: '#e2e8f0',
-                            300: '#cbd5e1',
-                            400: '#94a3b8',
-                            500: '#64748b',
-                            600: '#475569',
-                            700: '#334155',
-                            800: '#1e293b',
-                            900: '#0f172a',
-                        },
-                        accent: {
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                        }
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-out',
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-8px)' },
-                        }
-                    }
-                }
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a2b4c;
+            --secondary: #4a6ee0;
+            --accent: #ff6b6b;
+            --accent-light: #ff9e9e;
+            --light: #f8f9fa;
+            --dark: #1a2b4c;
+            --success: #2ecc71;
+            --gradient: linear-gradient(135deg, var(--secondary), #6a11cb);
+            --gradient-dark: linear-gradient(135deg, var(--primary), #2c3e50);
+            --gradient-hero: linear-gradient(135deg, #1a2b4c 0%, #2c3e50 50%, #4a6ee0 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f5f7ff;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(44, 62, 80, 0.8), rgba(44, 62, 80, 0.9)), url('https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+
+        /* Section Headers */
+        .section-header {
+            text-align: center;
+            margin: 4rem 0 3rem;
+            margin-top: -32px;
+            position: relative;
+        }
+
+        .section-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: var(--primary);
+            display: inline-block;
+            padding-bottom: 15px;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 1rem auto 0;
+        }
+
+        /* Enhanced HOD Profile */
+        .hod-profile {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            margin-bottom: 4rem;
+            display: flex;
+            flex-direction: column;
+            border-top: 5px solid var(--secondary);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .hod-profile:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .hod-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            z-index: 2;
+            box-shadow: 0 5px 15px rgba(74, 110, 224, 0.4);
+        }
+
+        .hod-content {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .hod-image {
+            flex: 1;
+            min-width: 300px;
+            background: linear-gradient(135deg, #f5f7ff, #e6ebff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hod-image::before {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: var(--gradient);
+            border-radius: 50%;
+            top: -50px;
+            right: -50px;
+            opacity: 0.1;
+        }
+
+        .hod-image::after {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: var(--accent);
+            border-radius: 50%;
+            bottom: -50px;
+            left: -50px;
+            opacity: 0.1;
+        }
+
+        .hod-image img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        .hod-details {
+            flex: 2;
+            min-width: 300px;
+            padding: 40px;
+        }
+
+        .hod-details h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .hod-designation {
+            color: var(--secondary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .hod-experience {
+            background: var(--light);
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .hod-details p {
+            margin-bottom: 25px;
+            color: #555;
+        }
+
+        .hod-subjects {
+            margin-bottom: 25px;
+        }
+
+        .hod-subjects h4 {
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+
+        .subject-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .subject-tag {
+            background: var(--light);
+            color: var(--secondary);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            border: 1px solid rgba(74, 110, 224, 0.2);
+        }
+
+        .subject-tag:hover {
+            background: var(--secondary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .hod-contact {
+            margin-top: 25px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .contact-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 5px 15px rgba(74, 110, 224, 0.4);
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(74, 110, 224, 0.6);
+        }
+
+        .contact-btn.outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+            box-shadow: none;
+        }
+
+        .contact-btn.outline:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        /* Enhanced Faculty Grid */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 4rem;
+        }
+
+        .faculty-card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .faculty-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .faculty-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .faculty-image {
+            height: 220px;
+            background: linear-gradient(135deg, #f5f7ff, #e6ebff);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faculty-image::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: var(--gradient);
+            border-radius: 50%;
+            top: -30px;
+            right: -30px;
+            opacity: 0.1;
+        }
+
+        .faculty-image img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+            transition: var(--transition);
+        }
+
+        .faculty-card:hover .faculty-image img {
+            transform: scale(1.05);
+        }
+
+        .faculty-info {
+            padding: 25px;
+        }
+
+        .faculty-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .faculty-designation {
+            color: var(--secondary);
+            font-weight: 500;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        }
+
+        .faculty-experience {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .faculty-subjects {
+            margin-bottom: 20px;
+        }
+
+        .faculty-subjects h4 {
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+
+        .faculty-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .faculty-tag {
+            background-color: var(--light);
+            color: var(--dark);
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            transition: var(--transition);
+        }
+
+        .faculty-tag:hover {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .faculty-contact {
+            text-align: center;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: white;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            animation: modalFade 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: scale(0.9);
+            opacity: 0;
+        }
+
+        .modal.show .modal-content {
+            transform: scale(1);
+            opacity: 1;
+        }
+
+        @keyframes modalFade {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .modal-header {
+            background: var(--gradient);
+            color: white;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .close-modal {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: rotate(90deg);
+        }
+
+        .modal-body {
+            padding: 25px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px;
+            border-radius: 10px;
+            transition: var(--transition);
+            border: 1px solid #f0f0f0;
+        }
+
+        .contact-item:hover {
+            background: #f9f9ff;
+            transform: translateX(5px);
+        }
+
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        /* Scroll to top button */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(74, 110, 224, 0.4);
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 99;
+        }
+
+        .scroll-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-to-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-stats {
+                gap: 30px;
+            }
+            
+            .stat-number {
+                font-size: 2.5rem;
             }
         }
-    </script>
-    <style type="text/tailwindcss">
-        @layer utilities {
-            .text-gradient {
-                @apply bg-clip-text text-transparent bg-gradient-to-r from-accent-500 to-accent-600;
+
+        @media (max-width: 768px) {
+            .hod-content {
+                flex-direction: column;
             }
-            .card-hover {
-                @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+
+            .hod-image, .hod-details {
+                width: 100%;
             }
-            .glass-effect {
-                @apply bg-white/80 backdrop-blur-sm border border-surface-200/50;
+
+            .hero h1 {
+                font-size: 2.5rem;
             }
-            .section-header {
-                @apply text-3xl font-bold text-surface-900 mb-2;
+
+            .hero p {
+                font-size: 1.2rem;
             }
-            .section-subheader {
-                @apply text-lg text-surface-600 mb-8;
+            
+            .hero-stats {
+                flex-wrap: wrap;
+            }
+            
+            .section-header h2 {
+                font-size: 2rem;
+            }
+            
+            .hod-contact {
+                flex-direction: column;
+            }
+            
+            .hero-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .faculty-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero {
+                padding: 4rem 0;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hod-details h3 {
+                font-size: 1.6rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
             }
         }
     </style>
 </head>
-<body class="bg-surface-50 font-sans text-surface-800 min-h-screen">
+<body>
 
       <!-- Top Info Section -->
   <a href="index.html">
@@ -206,469 +775,863 @@
     </div>
 
   </header>
-    <!-- Floating background elements -->
-    <div class="fixed inset-0 overflow-hidden -z-10">
-        <div class="absolute top-20 left-1/4 w-64 h-64 rounded-full bg-primary-100 blur-3xl opacity-40 animate-float"></div>
-        <div class="absolute bottom-20 right-1/4 w-72 h-72 rounded-full bg-primary-100 blur-3xl opacity-40 animate-float animation-delay-2000"></div>
-    </div>
 
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <!-- Header Section -->
-        <header class="text-center mb-16 animate-fade-in">
-            <div class="inline-flex items-center justify-center px-6 py-2 rounded-full bg-white shadow-xs border border-surface-200 mb-6">
-                <span class="h-2 w-2 rounded-full bg-accent-500 mr-2 animate-pulse"></span>
-                <span class="text-sm font-medium tracking-wider text-surface-600">DEPARTMENT OF INFORMATION TECHNOLOGY</span>
-            </div>
-            <h1 class="text-4xl md:text-5xl font-bold text-gradient mb-4 leading-tight">
-                Shaping the <span class="text-surface-900">Digital Future</span>
-            </h1>
-            <p class="text-xl text-surface-600 max-w-3xl mx-auto">
-                Meet our distinguished faculty who are pioneering the next generation of technological innovation
-            </p>
-        </header>
 
-        <!-- HOD Section -->
-        <section class="mb-20 animate-fade-in" style="animation-delay: 0.1s">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
-                <div>
-                    <h2 class="section-header">Department Leadership</h2>
-                    <p class="section-subheader">Guiding the future of technology education</p>
-                </div>
-                <span class="text-xs font-medium tracking-widest text-surface-400 bg-surface-100 px-3 py-1 rounded-full">HEAD OF DEPARTMENT</span>
-            </div>
-            
-            <div class="grid lg:grid-cols-3 gap-8">
-                <!-- HOD Profile Card -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-surface-100 card-hover group">
-                    <div class="h-60 bg-gradient-to-br from-surface-50 to-white flex items-center justify-center relative overflow-hidden">
-                        <div class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5"></div>
-                        <div class="relative z-10 h-40 w-40 rounded-full border-4 border-white overflow-hidden shadow-lg group-hover:border-accent-100 transition-all duration-500">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" 
-                                 alt="HOD" class="h-full w-full object-cover">
-                        </div>
-                        <div class="absolute bottom-4 right-4">
-                            <div class="bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center shadow-xs">
-                                <i class="fas fa-crown text-xs mr-1"></i>
-                                HOD
-                            </div>
-                        </div>
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-2xl font-bold text-surface-900 mb-2">Dr. Rajesh Kumar</h3>
-                        <p class="text-accent-600 font-medium mb-6">PhD in Computer Science</p>
-                        
-                        <div class="space-y-4 mb-6">
-                            <div class="flex items-start">
-                                <div class="bg-accent-50 p-2 rounded-lg mr-3 text-accent-600">
-                                    <i class="fas fa-book"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-surface-700">Subjects</h4>
-                                    <p class="text-sm text-surface-500">Advanced Algorithms, Cloud Computing</p>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-start">
-                                <div class="bg-accent-50 p-2 rounded-lg mr-3 text-accent-600">
-                                    <i class="fas fa-clock"></i>
-                                </div>
-                                <div>
-                                    <h4 class="font-medium text-surface-700">Experience</h4>
-                                    <p class="text-sm text-surface-500">18 Years in Academia & Research</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <h4 class="font-medium text-surface-700 mb-3">Research Focus</h4>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="px-3 py-1.5 bg-surface-50 text-accent-600 text-xs rounded-full border border-accent-100 flex items-center">
-                                    <i class="fas fa-brain mr-1 text-xs"></i> Machine Learning
-                                </span>
-                                <span class="px-3 py-1.5 bg-surface-50 text-accent-600 text-xs rounded-full border border-accent-100 flex items-center">
-                                    <i class="fas fa-network-wired mr-1 text-xs"></i> Distributed Systems
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- HOD Message -->
-                <div class="lg:col-span-2 glass-effect rounded-2xl overflow-hidden p-8 card-hover shadow-sm">
-                    <div class="flex items-start mb-8">
-                        <div class="bg-accent-50 p-3 rounded-xl mr-4 border border-accent-100 text-accent-600">
-                            <i class="fas fa-quote-left text-2xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-surface-900 mb-2">Vision for Excellence</h3>
-                            <div class="h-px w-16 bg-gradient-to-r from-accent-500 to-transparent mb-4"></div>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-6 text-surface-600 mb-8">
-                        <p class="leading-relaxed">
-                            "At the heart of our department lies a commitment to transformative education. We're not just teaching technology - we're cultivating the architects of tomorrow's digital landscape through innovative pedagogy, cutting-edge research, and meaningful industry collaborations."
-                        </p>
-                        <p class="leading-relaxed">
-                            Our newly established <span class="font-semibold text-surface-900">AI Innovation Lab</span> and <span class="font-semibold text-surface-900">Quantum Computing Center</span> provide students with unparalleled opportunities to engage with emerging technologies that will define the next decade of computing.
-                        </p>
-                    </div>
-                    
-                    <div class="flex flex-wrap gap-6">
-                        <div class="flex items-center">
-                            <div class="bg-accent-50 p-3 rounded-lg mr-3 text-accent-600">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-surface-500 uppercase tracking-wider">Contact</div>
-                                <a href="mailto:hod.it@bpti.edu" class="text-accent-600 hover:text-accent-700 font-medium">hod.it@bpti.edu</a>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="bg-accent-50 p-3 rounded-lg mr-3 text-accent-600">
-                                <i class="fas fa-calendar-alt"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-surface-500 uppercase tracking-wider">Office Hours</div>
-                                <div class="text-surface-900 font-medium">Mon-Fri: 10AM - 4PM</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Information Technology Department</h2>
+            <p>Empowering the next generation of IT professionals with cutting-edge knowledge and practical skills.</p>
+        </div>
+    </section>
 
-        <!-- Faculty Grid -->
-        <section class="animate-fade-in" style="animation-delay: 0.2s">
-            <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4">
-                <div>
-                    <h2 class="text-3xl font-bold text-surface-900 mb-2">Our Distinguished Faculty</h2>
-                    <p class="text-lg text-surface-600 mb-8">Experts shaping the future of technology education</p>
+    <!-- HOD Profile Section -->
+    <div class="container">
+        <div class="section-header">
+            <h2>Head of Department</h2>
+            <p class="section-subtitle">Meet our experienced and dedicated Head of Department who leads our IT programs with vision and expertise</p>
+        </div>
+        
+        <div class="hod-profile">
+            <div class="hod-badge">Head of Department</div>
+            <div class="hod-content">
+                <div class="hod-image">
+                    <img src="img/faculty/Panday Sir.jpg" alt="IT DEPARTMENT HOD OF SIR BPTI, GOPAL M. PANDAY">
                 </div>
-                <div class="flex items-center gap-3">
-                    <span class="text-xs font-medium tracking-widest text-surface-400 bg-surface-100 px-3 py-1 rounded-full">EDUCATION PIONEERS</span>
-                    <button class="text-xs font-medium text-primary-600 hover:text-primary-700 flex items-center gap-1">
-                        View all <i class="fas fa-arrow-right text-xs"></i>
-                    </button>
-                </div>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Faculty 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-surface-100 card-hover group relative">
-                    <div class="absolute top-4 right-4 bg-primary-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center z-10">
-                        <i class="fas fa-star mr-1 text-xs"></i> Featured
+                <div class="hod-details">
+                    <h3>Mr. Gopal M. Panday</h3>
+                    <div class="hod-designation">Professor & Head of IT Department</div>
+                    <div class="hod-experience">
+                        <i class="fas fa-briefcase"></i> 18+ Years of Experience
+                    </div>
+                    <p>Mr. Gopal M. Panday is a dedicated academician currently serving as the Lecturer and Head of the Information Technology Department. With 15 years of rich teaching experience, he has played a key role in shaping the academic and professional growth of students. His teaching focuses on bridging the gap between classroom learning and real-world applications.</p>
+                    
+                    <div class="hod-subjects">
+                        <h4>Areas of Expertise:</h4>
+                        <div class="subject-tags">
+                            <span class="subject-tag">C Programming</span>
+                            <span class="subject-tag">JAVA</span>
+                            <span class="subject-tag">Cryptography and Network Security</span>
+                        </div>
                     </div>
                     
-                    <div class="h-48 bg-gradient-to-br from-surface-50 to-white flex items-center justify-center relative overflow-hidden">
-                        <div class="relative z-10 h-28 w-28 rounded-full border-4 border-white overflow-hidden shadow-lg group-hover:border-primary-100 transition-all duration-500">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" 
-                                alt="Prof. Anita Sharma" class="h-full w-full object-cover">
-                        </div>
-                    </div>
-                    
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-surface-900">Prof. Anita Sharma</h3>
-                        </div>
-                        
-                        <p class="text-primary-600 text-sm font-medium mb-4 flex items-center">
-                            <i class="fas fa-graduation-cap mr-2"></i> M.Tech (CS), PhD Pursuing
-                        </p>
-                        
-                        <div class="grid grid-cols-2 gap-3 mb-5">
-                            <div class="flex items-center text-sm">
-                                <div class="bg-primary-50 p-1.5 rounded mr-2 text-primary-600">
-                                    <i class="fas fa-book text-xs"></i>
-                                </div>
-                                <div>
-                                    <div class="text-xs text-surface-500">Subjects</div>
-                                    <div class="text-surface-800 font-medium">DS, Python</div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center text-sm">
-                                <div class="bg-primary-50 p-1.5 rounded mr-2 text-primary-600">
-                                    <i class="fas fa-clock text-xs"></i>
-                                </div>
-                                <div>
-                                    <div class="text-xs text-surface-500">Experience</div>
-                                    <div class="text-surface-800 font-medium">12 Years</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <button onclick="openDialog('anita')" class="w-full bg-surface-50 hover:bg-surface-100 text-primary-600 font-medium py-2 px-4 rounded-lg text-sm transition-colors duration-200 flex items-center justify-center gap-2">
-                            <i class="fas fa-envelope"></i> Contact Professor
+                    <div class="hod-contact">
+                        <button class="contact-btn" onclick="openModal('hod-modal')">
+                            <i class="fas fa-envelope"></i> Contact HOD
                         </button>
-                    </div>
-                </div>
-                <!-- Faculty 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-surface-100 card-hover group relative">
-                    <div class="absolute top-4 right-4 bg-primary-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center z-10">
-                        <i class="fas fa-star mr-1 text-xs"></i> Featured
-                    </div>
-                    
-                    <div class="h-48 bg-gradient-to-br from-surface-50 to-white flex items-center justify-center relative overflow-hidden">
-                        <div class="relative z-10 h-28 w-28 rounded-full border-4 border-white overflow-hidden shadow-lg group-hover:border-primary-100 transition-all duration-500">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" 
-                                alt="Prof. Anita Sharma" class="h-full w-full object-cover">
-                        </div>
-                    </div>
-                    
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-surface-900">Prof. Anita Sharma</h3>
-                        </div>
-                        
-                        <p class="text-primary-600 text-sm font-medium mb-4 flex items-center">
-                            <i class="fas fa-graduation-cap mr-2"></i> M.Tech (CS), PhD Pursuing
-                        </p>
-                        
-                        <div class="grid grid-cols-2 gap-3 mb-5">
-                            <div class="flex items-center text-sm">
-                                <div class="bg-primary-50 p-1.5 rounded mr-2 text-primary-600">
-                                    <i class="fas fa-book text-xs"></i>
-                                </div>
-                                <div>
-                                    <div class="text-xs text-surface-500">Subjects</div>
-                                    <div class="text-surface-800 font-medium">DS, Python</div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center text-sm">
-                                <div class="bg-primary-50 p-1.5 rounded mr-2 text-primary-600">
-                                    <i class="fas fa-clock text-xs"></i>
-                                </div>
-                                <div>
-                                    <div class="text-xs text-surface-500">Experience</div>
-                                    <div class="text-surface-800 font-medium">12 Years</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <button onclick="openDialog('anita')" class="w-full bg-surface-50 hover:bg-surface-100 text-primary-600 font-medium py-2 px-4 rounded-lg text-sm transition-colors duration-200 flex items-center justify-center gap-2">
-                            <i class="fas fa-envelope"></i> Contact Professor
-                        </button>
-                    </div>
-                </div>
-                <!-- Faculty 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-surface-100 card-hover group relative">
-                    <div class="absolute top-4 right-4 bg-primary-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center z-10">
-                        <i class="fas fa-star mr-1 text-xs"></i> Featured
-                    </div>
-                    
-                    <div class="h-48 bg-gradient-to-br from-surface-50 to-white flex items-center justify-center relative overflow-hidden">
-                        <div class="relative z-10 h-28 w-28 rounded-full border-4 border-white overflow-hidden shadow-lg group-hover:border-primary-100 transition-all duration-500">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" 
-                                alt="Prof. Anita Sharma" class="h-full w-full object-cover">
-                        </div>
-                    </div>
-                    
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-surface-900">Prof. Anita Sharma</h3>
-                        </div>
-                        
-                        <p class="text-primary-600 text-sm font-medium mb-4 flex items-center">
-                            <i class="fas fa-graduation-cap mr-2"></i> M.Tech (CS), PhD Pursuing
-                        </p>
-                        
-                        <div class="grid grid-cols-2 gap-3 mb-5">
-                            <div class="flex items-center text-sm">
-                                <div class="bg-primary-50 p-1.5 rounded mr-2 text-primary-600">
-                                    <i class="fas fa-book text-xs"></i>
-                                </div>
-                                <div>
-                                    <div class="text-xs text-surface-500">Subjects</div>
-                                    <div class="text-surface-800 font-medium">DS, Python</div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center text-sm">
-                                <div class="bg-primary-50 p-1.5 rounded mr-2 text-primary-600">
-                                    <i class="fas fa-clock text-xs"></i>
-                                </div>
-                                <div>
-                                    <div class="text-xs text-surface-500">Experience</div>
-                                    <div class="text-surface-800 font-medium">12 Years</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <button onclick="openDialog('anita')" class="w-full bg-surface-50 hover:bg-surface-100 text-primary-600 font-medium py-2 px-4 rounded-lg text-sm transition-colors duration-200 flex items-center justify-center gap-2">
-                            <i class="fas fa-envelope"></i> Contact Professor
-                        </button>
-                    </div>
-                </div>
-                <!-- Faculty 1 -->
-                <div class="bg-white rounded-2xl overflow-hidden shadow-sm border border-surface-100 card-hover group relative">
-                    <div class="absolute top-4 right-4 bg-primary-500 text-white text-xs font-bold px-2 py-1 rounded-full flex items-center z-10">
-                        <i class="fas fa-star mr-1 text-xs"></i> Featured
-                    </div>
-                    
-                    <div class="h-48 bg-gradient-to-br from-surface-50 to-white flex items-center justify-center relative overflow-hidden">
-                        <div class="relative z-10 h-28 w-28 rounded-full border-4 border-white overflow-hidden shadow-lg group-hover:border-primary-100 transition-all duration-500">
-                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=300&q=80" 
-                                alt="Prof. Anita Sharma" class="h-full w-full object-cover">
-                        </div>
-                    </div>
-                    
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">
-                            <h3 class="text-xl font-bold text-surface-900">Prof. Anita Sharma</h3>
-                        </div>
-                        
-                        <p class="text-primary-600 text-sm font-medium mb-4 flex items-center">
-                            <i class="fas fa-graduation-cap mr-2"></i> M.Tech (CS), PhD Pursuing
-                        </p>
-                        
-                        <div class="grid grid-cols-2 gap-3 mb-5">
-                            <div class="flex items-center text-sm">
-                                <div class="bg-primary-50 p-1.5 rounded mr-2 text-primary-600">
-                                    <i class="fas fa-book text-xs"></i>
-                                </div>
-                                <div>
-                                    <div class="text-xs text-surface-500">Subjects</div>
-                                    <div class="text-surface-800 font-medium">DS, Python</div>
-                                </div>
-                            </div>
-                            
-                            <div class="flex items-center text-sm">
-                                <div class="bg-primary-50 p-1.5 rounded mr-2 text-primary-600">
-                                    <i class="fas fa-clock text-xs"></i>
-                                </div>
-                                <div>
-                                    <div class="text-xs text-surface-500">Experience</div>
-                                    <div class="text-surface-800 font-medium">12 Years</div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <button onclick="openDialog('anita')" class="w-full bg-surface-50 hover:bg-surface-100 text-primary-600 font-medium py-2 px-4 rounded-lg text-sm transition-colors duration-200 flex items-center justify-center gap-2">
-                            <i class="fas fa-envelope"></i> Contact Professor
-                        </button>
-                    </div>
-                </div>
-                
-            </div>
-            
-        </section>
-
-        <!-- Contact Dialog (Hidden by default) -->
-        <div id="contactDialog" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
-            <div class="bg-white rounded-2xl w-full max-w-md mx-4 shadow-xl animate-fade-in">
-                <div class="p-6">
-                    <div class="flex justify-between items-center mb-4">
-                        <h3 class="text-xl font-bold text-surface-900" id="professorName">Professor Name</h3>
-                        <button onclick="closeDialog()" class="text-surface-400 hover:text-surface-600">
-                            <i class="fas fa-times"></i>
-                        </button>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <div class="bg-primary-50 p-2 rounded-lg mr-3 text-primary-600">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-surface-500">Email</div>
-                                <div class="text-surface-800 font-medium" id="professorEmail">professor@bpti.edu</div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="bg-primary-50 p-2 rounded-lg mr-3 text-primary-600">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-surface-500">Phone</div>
-                                <div class="text-surface-800 font-medium" id="professorPhone">+91 9876543210</div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="bg-primary-50 p-2 rounded-lg mr-3 text-primary-600">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-surface-500">Office</div>
-                                <div class="text-surface-800 font-medium" id="professorOffice">IT Department, Room 205</div>
-                            </div>
-                        </div>
-                        
-                        <div class="flex items-center">
-                            <div class="bg-primary-50 p-2 rounded-lg mr-3 text-primary-600">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-surface-500">Availability</div>
-                                <div class="text-surface-800 font-medium" id="professorAvailability">Mon-Wed-Fri: 10AM-12PM</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-6 pt-4 border-t border-surface-100">
-                        <p class="text-sm text-surface-600 mb-4">For appointments, please contact at least 24 hours in advance.</p>
-                        <button class="w-full bg-primary-600 hover:bg-primary-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200">
-                            Schedule Meeting
+                        <button class="contact-btn outline">
+                            <i class="fas fa-file-alt"></i> View Profile
                         </button>
                     </div>
                 </div>
             </div>
         </div>
 
-        <script>
-            // Dialog control functions
-            function openDialog(professorId) {
-                const dialog = document.getElementById('contactDialog');
-                
-                // Set professor-specific data
-                switch(professorId) {
-                    case 'anita':
-                        document.getElementById('professorName').textContent = 'Prof. Anita Sharma';
-                        document.getElementById('professorEmail').textContent = 'anita.sharma@bpti.edu';
-                        document.getElementById('professorPhone').textContent = '+91 9876543211';
-                        document.getElementById('professorOffice').textContent = 'IT Department, Room 201';
-                        document.getElementById('professorAvailability').textContent = 'Tue-Thu: 11AM-1PM';
-                        break;
-                    case 'sanjay':
-                        document.getElementById('professorName').textContent = 'Prof. Sanjay Patel';
-                        document.getElementById('professorEmail').textContent = 'sanjay.patel@bpti.edu';
-                        document.getElementById('professorPhone').textContent = '+91 9876543212';
-                        document.getElementById('professorOffice').textContent = 'IT Department, Room 203';
-                        document.getElementById('professorAvailability').textContent = 'Mon-Wed-Fri: 10AM-12PM';
-                        break;
-                    case 'priya':
-                        document.getElementById('professorName').textContent = 'Dr. Priya Nair';
-                        document.getElementById('professorEmail').textContent = 'priya.nair@bpti.edu';
-                        document.getElementById('professorPhone').textContent = '+91 9876543213';
-                        document.getElementById('professorOffice').textContent = 'IT Department, Room 205';
-                        document.getElementById('professorAvailability').textContent = 'Mon-Fri: 2PM-4PM';
-                        break;
-                }
-                
-                dialog.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
-            }
+        <!-- Faculty Section -->
+        <div class="section-header">
+            <h2>Our Faculty Members</h2>
+            <p class="section-subtitle">Our distinguished faculty members bring a wealth of knowledge and industry experience to the classroom</p>
+        </div>
+        
+        <div class="faculty-grid">
+            <!-- Hardik Jagad Sir Card -->
+            <div class="faculty-card">
+                <div class="faculty-image">
+                    <img src="img/faculty/Jagad Sir.jpg" alt="Hardik Sir">
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Hardik Jagad</h3>
+                    <div class="faculty-designation"> <pre></pre>ME (CE), BE (IT)</div>
+                    <div class="faculty-experience">
+                        <i class="fas fa-briefcase"></i> 6+ Years Experience
+                    </div>
+                    <div class="faculty-subjects">
+                        <h4>Subjects:</h4>
+                        <div class="faculty-tags">
+                            <span class="faculty-tag">JAVA</span>
+                            <span class="faculty-tag">Data Structures</span>
+                            <span class="faculty-tag">SQL</span>
+                            <span class="faculty-tag">ASP.NET</span>
+                        </div>
+                    </div>
+                    <div class="faculty-contact">
+                        <button class="contact-btn" onclick="openModal('jagadsir-modal')">
+                            <i class="fas fa-envelope"></i> Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ravi Makwana Sir Card -->
+            <div class="faculty-card">
+                <div class="faculty-image">
+                    <img src="img/faculty/Ravi Sir.jpg" alt="Ravi Sir">
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Ravi Makwana</h3>
+                    <div class="faculty-designation">BE (IT)</div>
+                    <div class="faculty-experience">
+                        <i class="fas fa-briefcase"></i> 11+ Years Experience
+                    </div>
+                    <div class="faculty-subjects">
+                        <h4>Subjects:</h4>
+                        <div class="faculty-tags">
+                            <span class="faculty-tag">C Programmming</span>
+                            <span class="faculty-tag">Operating Systems</span>
+                            <span class="faculty-tag">Computer Networking</span>
+                            <span class="faculty-tag">Data Structures</span>
+                        </div>
+                    </div>
+                    <div class="faculty-contact">
+                        <button class="contact-btn" onclick="openModal('ravisir-modal')">
+                            <i class="fas fa-envelope"></i> Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Jaymit Pandya Sir Card -->
+            <div class="faculty-card">
+                <div class="faculty-image">
+                    <img src="img/faculty/Jaymit Sir.png" alt="Jaymit Sir">
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Jaymit Pandya</h3>
+                    <div class="faculty-designation">ME (CE), BE (IT)</div>
+                    <div class="faculty-experience">
+                        <i class="fas fa-briefcase"></i> 8+ Years Experience
+                    </div>
+                    <div class="faculty-subjects">
+                        <h4>Subjects:</h4>
+                        <div class="faculty-tags">
+                            <span class="faculty-tag">Software Engineering</span>
+                            <span class="faculty-tag">C Programming</span>
+                            <span class="faculty-tag">Database Management Systems</span>
+                        </div>
+                    </div>
+                    <div class="faculty-contact">
+                        <button class="contact-btn" onclick="openModal('jaymitsir-modal')">
+                            <i class="fas fa-envelope"></i> Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Divyesh Joshi Sir Card -->
+            <div class="faculty-card">
+                <div class="faculty-image">
+                    <img src="img/faculty/Joshi Sir.png" alt="Joshi Sir">
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Divyesh Joshi</h3>
+                    <div class="faculty-designation">M.Tech (CE), BE (IT)</div>
+                    <div class="faculty-experience">
+                        <i class="fas fa-briefcase"></i> 7+ Years Experience
+                    </div>
+                    <div class="faculty-subjects">
+                        <h4>Subjects:</h4>
+                        <div class="faculty-tags">
+                            <span class="faculty-tag">Operating System</span>
+                            <span class="faculty-tag">Basic Electronics</span>
+                            <span class="faculty-tag">Computer Networks</span>
+                        </div>
+                    </div>
+                    <div class="faculty-contact">
+                        <button class="contact-btn" onclick="openModal('divyeshsir-modal')">
+                            <i class="fas fa-envelope"></i> Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Krishna Chotai Madem Card -->
+            <div class="faculty-card">
+                <div class="faculty-image">
+                    <img src="img/faculty/Krishna Madem.png" alt="Krishna Madem">
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Krishna Chotai</h3>
+                    <div class="faculty-designation">BE (IT)</div>
+                    <div class="faculty-experience">
+                        <i class="fas fa-briefcase"></i> 12+ Years Experience
+                    </div>
+                    <div class="faculty-subjects">
+                        <h4>Subjects:</h4>
+                        <div class="faculty-tags">
+                            <span class="faculty-tag">DBMS</span>
+                            <span class="faculty-tag">Operating Systems</span>
+                            <span class="faculty-tag">Web Technologies</span>
+                        </div>
+                    </div>
+                    <div class="faculty-contact">
+                        <button class="contact-btn" onclick="openModal('krishnamadem-modal')">
+                            <i class="fas fa-envelope"></i> Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Nitin Sarvaiya Sir Card -->
+            <div class="faculty-card">
+                <div class="faculty-image">
+                    <img src="img/faculty/Nitin Sir.png" alt="Nitin Sir">
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Nitin Sarvaiya</h3>
+                    <div class="faculty-designation">BE (IT)</div>
+                    <div class="faculty-experience">
+                        <i class="fas fa-briefcase"></i> 3+ Years Experience
+                    </div>
+                    <div class="faculty-subjects">
+                        <h4>Subjects:</h4>
+                        <div class="faculty-tags">
+                            <span class="faculty-tag">C Programming</span>
+                            <span class="faculty-tag">DBMS</span>
+                            <span class="faculty-tag">Fundamental of Digital Electronic</span>
+                        </div>
+                    </div>
+                    <div class="faculty-contact">
+                        <button class="contact-btn" onclick="openModal('nitinsir-modal')">
+                            <i class="fas fa-envelope"></i> Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Jaysukh Vala Sir Card -->
+            <div class="faculty-card">
+                <div class="faculty-image">
+                    <img src="img/faculty/Vala Sir.png" alt="Vala Sir">
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Jaysukh Vala</h3>
+                    <div class="faculty-designation">ME (CSE), BE (IT)</div>
+                    <div class="faculty-experience">
+                        <i class="fas fa-briefcase"></i> 3+ Years Experience
+                    </div>
+                    <div class="faculty-subjects">
+                        <h4>Subjects:</h4>
+                        <div class="faculty-tags">
+                            <span class="faculty-tag">Software Engineering</span>
+                            <span class="faculty-tag">C Programming</span>
+                            <span class="faculty-tag">Object Oriented Programming</span>
+                        </div>
+                    </div>
+                    <div class="faculty-contact">
+                        <button class="contact-btn" onclick="openModal('valasir-modal')">
+                            <i class="fas fa-envelope"></i> Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Jigna Gandhi Madem Card -->
+            <div class="faculty-card">
+                <div class="faculty-image">
+                    <img src="img/faculty/Jigna Madem.png" alt="Jigna Sir">
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Jigna Gandhi</h3>
+                    <div class="faculty-designation">BE (IT)</div>
+                    <div class="faculty-experience">
+                        <i class="fas fa-briefcase"></i> 12+ Years Experience
+                    </div>
+                    <div class="faculty-subjects">
+                        <h4>Subjects:</h4>
+                        <div class="faculty-tags">
+                            <span class="faculty-tag">Object Oriented Programming</span>
+                            <span class="faculty-tag">Android Programming</span>
+                            <span class="faculty-tag">Data Structures</span>
+                        </div>
+                    </div>
+                    <div class="faculty-contact">
+                        <button class="contact-btn" onclick="openModal('jignamadem-modal')">
+                            <i class="fas fa-envelope"></i> Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Brijeshgiri Gosai Sir Card -->
+            <div class="faculty-card">
+                <div class="faculty-image">
+                    <img src="img/faculty/Gosai Sir.png" alt="Gosai Sir">
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Brijeshgiri Goswami</h3>
+                    <div class="faculty-designation">BE (IT)</div>
+                    <div class="faculty-experience">
+                        <i class="fas fa-briefcase"></i> 12+ Years Experience
+                    </div>
+                    <div class="faculty-subjects">
+                        <h4>Subjects:</h4>
+                        <div class="faculty-tags">
+                            <span class="faculty-tag">Information Communication Technology</span>
+                            <span class="faculty-tag">Information Communication Network</span>
+                        </div>
+                    </div>
+                    <div class="faculty-contact">
+                        <button class="contact-btn" onclick="openModal('gosaisir-modal')">
+                            <i class="fas fa-envelope"></i> Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Mitul Patel Sir Card -->
+            <div class="faculty-card">
+                <div class="faculty-image">
+                    <img src="img/faculty/Mitul Sir.jpg" alt="Mitul Sir">
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Mitul Patel</h3>
+                    <div class="faculty-designation">BE (IT)</div>
+                    <div class="faculty-experience">
+                        <i class="fas fa-briefcase"></i> 9+ Years Experience
+                    </div>
+                    <div class="faculty-subjects">
+                        <h4>Subjects:</h4>
+                        <div class="faculty-tags">
+                            <span class="faculty-tag">Information Security</span>
+                            <span class="faculty-tag">C</span>
+                            <span class="faculty-tag">C++</span>
+                            <span class="faculty-tag">JAVA</span>
+                            <span class="faculty-tag">ANDROID APP DEVELOPMENT </span>
+                        </div>
+                    </div>
+                    <div class="faculty-contact">
+                        <button class="contact-btn" onclick="openModal('mitulsir-modal')">
+                            <i class="fas fa-envelope"></i> Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Ajaypalsinh Gohil Sir Card -->
+            <div class="faculty-card">
+                <div class="faculty-image">
+                    <img src="img/faculty/Bapu Sir.jpg" alt="Ajaypalsinh Gohil Sir" loading="lazy">
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Ajaypalsinh Gohil</h3>
+                    <div class="faculty-designation">BE (IT)</div>
+                    <div class="faculty-experience">
+                        <i class="fas fa-briefcase"></i> 9+ Years Experience
+                    </div>
+                    <div class="faculty-subjects">
+                        <h4>Subjects:</h4>
+                        <div class="faculty-tags">
+                            <span class="faculty-tag">Information Communication Technology</span>
+                            <span class="faculty-tag">Web Designing using ASP.Net</span>
+                        </div>
+                    </div>
+                    <div class="faculty-contact">
+                        <button class="contact-btn" onclick="openModal('bapusir-modal')">
+                            <i class="fas fa-envelope"></i> Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Dharmishtha Nayka Madem Card -->
+            <div class="faculty-card">
+                <div class="faculty-image">
+                    <img src="img/faculty/Nayka Madem.png" alt="Nayka Madem">
+                </div>
+                <div class="faculty-info">
+                    <h3>Prof. Dharmishtha Nayka</h3>
+                    <div class="faculty-designation">BE (IT)</div>
+                    <div class="faculty-experience">
+                        <i class="fas fa-briefcase"></i> 6+ Years Experience
+                    </div>
+                    <div class="faculty-subjects">
+                        <h4>Subjects:</h4>
+                        <div class="faculty-tags">
+                            <span class="faculty-tag">JAVA</span>
+                            <span class="faculty-tag">C</span>
+                            <span class="faculty-tag">Operating System</span>
+                            <span class="faculty-tag">Data Structures</span>
+                            <span class="faculty-tag">Digital Memory System</span>
+                        </div>
+                    </div>
+                    <div class="faculty-contact">
+                        <button class="contact-btn" onclick="openModal('naykamadem-modal')">
+                            <i class="fas fa-envelope"></i> Contact
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            function closeDialog() {
-                const dialog = document.getElementById('contactDialog');
-                dialog.classList.add('hidden');
-                document.body.style.overflow = ''; // Re-enable scrolling
-            }
+    <!-- Contact Modals -->
+    <!-- HOD Modal -->
+    <div id="hod-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Mr. Gopal M. Panday</h3>
+                <button class="close-modal" onclick="closeModal('hod-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email:</strong> gopal.panday@sirbpti.edu
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <strong>Office:</strong> IT Department, Room 110, First Floor
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <strong>Office Hours:</strong> Mon-Fri, 11:00 AM - 4:00 PM
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-            // Close dialog when clicking outside
-            document.getElementById('contactDialog').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeDialog();
+    <!-- JagadSir Modal -->
+    <div id="jagadsir-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Mr. Hardik Jagad</h3>
+                <button class="close-modal" onclick="closeModal('jagadsir-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email:</strong> hardik.jagad@sirbpti.edu
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <strong>Office:</strong> IT Department, Room 113, First Floor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ravisir-modal Modal -->
+    <div id="ravisir-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Dr. Sanjay Verma</h3>
+                <button class="close-modal" onclick="closeModal('ravisir-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email:</strong> ravi.makwana@sirbpti.edu
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <strong>Office:</strong> IT Department, Room 215, Second Floor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jaymitsir-modal Modal -->
+    <div id="jaymitsir-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Mr. Jaymit Pandya</h3>
+                <button class="close-modal" onclick="closeModal('jaymitsir-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email:</strong> jaymit.pandya@sirbpti.edu
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <strong>Office:</strong> IT Department, Room 214, Second Floor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- divyeshsir-modal Modal -->
+    <div id="divyeshsir-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Mr. Divyesh Joshi</h3>
+                <button class="close-modal" onclick="closeModal('divyeshsir-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email:</strong> divyesh.joshi@sirbpti.edu
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <strong>Office:</strong> IT Department, Room 214, Second Floor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- krishnamadem-modal Modal -->
+    <div id="krishnamadem-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Mrs. Krishna Chotai</h3>
+                <button class="close-modal" onclick="closeModal('krishnamadem-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email:</strong> krishna.chotai@sirbpti.edu
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <strong>Office:</strong> IT Department, Room 108, First Floor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- nitinsir-modal Modal -->
+    <div id="nitinsir-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Mr. Nitin Sarvaiya</h3>
+                <button class="close-modal" onclick="closeModal('nitinsir-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email:</strong> nitin.sarvaiya@sirbpti.edu
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <strong>Office:</strong> IT Department, Room 104, First Floor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- valasir-modal Modal -->
+    <div id="valasir-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Mr. Jaysukh Vala</h3>
+                <button class="close-modal" onclick="closeModal('valasir-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email:</strong> Jaysukh.vala@sirbpti.edu
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <strong>Office:</strong> IT Department, Room 105, First Floor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jignamadem-modal Modal -->
+    <div id="jignamadem-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Mrs. Jigna Gandhi</h3>
+                <button class="close-modal" onclick="closeModal('jignamadem-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email:</strong> jigna.gandhi@sirbpti.edu
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <strong>Office:</strong> IT Department, Room 114, First Floor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- gosaisir-modal Modal -->
+    <div id="gosaisir-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Mr. Brijeshgiri Gosai</h3>
+                <button class="close-modal" onclick="closeModal('gosaisir-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email:</strong> brijeshgiri.gosai@sirbpti.edu
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <strong>Office:</strong> IT Department, Room 111, First Floor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- mitulsir-modal Modal -->
+    <div id="mitulsir-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Mr. Mitul Patel</h3>
+                <button class="close-modal" onclick="closeModal('mitulsir-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email:</strong> mitul.Patel@sirbpti.edu
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <strong>Office:</strong> IT Department, Room 112, First Floor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- bapusir-modal Modal -->
+    <div id="bapusir-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Mr. Ajaypalsinh Gohil</h3>
+                <button class="close-modal" onclick="closeModal('bapusir-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email:</strong> ajaypalsinh.gohil@sirbpti.edu
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <strong>Office:</strong> IT Department, Room 114, First Floor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- naykamadem-modal Modal -->
+    <div id="naykamadem-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Contact Ms. Dharmishtha Nayka</h3>
+                <button class="close-modal" onclick="closeModal('naykamadem-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <strong>Email:</strong> dharmishtha.nayka@sirbpti.edu
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <div>
+                            <strong>Office:</strong> IT Department, Room 114, First Floor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to top button -->
+    <div class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <script>
+        // Modal functions
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300);
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('show');
+                setTimeout(() => {
+                    event.target.style.display = 'none';
+                }, 300);
+            }
+        }
+
+        // Scroll to top functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Add animation to faculty cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
                 }
             });
-        </script>
-     </div>
+        }, observerOptions);
 
-       <!-- footer -->
+        // Observe faculty cards
+        document.querySelectorAll('.faculty-card').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Observe HOD profile
+        const hodProfile = document.querySelector('.hod-profile');
+        hodProfile.style.opacity = '0';
+        hodProfile.style.transform = 'translateY(20px)';
+        hodProfile.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(hodProfile);
+        
+        // Animate HOD profile when visible
+        const hodObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        hodObserver.observe(hodProfile);
+    </script>
+
+      <!-- footer -->
   <footer class="relative bg-[#0B3C38] text-white pt-12 pb-6 overflow-hidden">
     <!-- Background Triangle Lines -->
     <div class="absolute inset-0 z-0 pointer-events-none">
